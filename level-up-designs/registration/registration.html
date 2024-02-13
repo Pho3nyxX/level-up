@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/site.css">
+</head>
+
+<body class="registration-page">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 card mt-5 p-5">
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <h2 class="text-center mb-4">Create a new account</h2>
+
+                    <!-- Firstname-->
+                    <div class="has-validation">
+                        <label for="firstname" class="form-label mb-0">Firstname</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="Jane" required>
+                        <div class="valid-feedback">Looks good</div>
+                        <div class="invalid-feedback"> Please fill out this field.</div>
+                    </div>
+
+                    <!-- Lastname -->
+                    <div class="has-validation">
+                        <label for="lastname" class="form-label mb-0">Lastname</label>
+                        <input type="text" class="form-control" id="lastname" placeholder="Doe" required>
+                        <div class="valid-feedback">Looks good</div>
+                        <div class="invalid-feedback"> Please fill out this field.</div>
+                    </div>
+
+                    <!-- email -->
+                    <div class="has-validation">
+                        <label for="email" class="form-label mb-0">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="janedoe@gmail.com" required>
+                        <div class="valid-feedback">Looks good</div>
+                        <div class="invalid-feedback"> Please fill out this field.</div>
+                    </div>
+
+                    <!-- password -->
+                    <div class="has-validation">
+                        <label for="password" class="form-label mb-0">Password</label>
+                        <input type="text" class="form-control" id="password" placeholder="********" required>
+                        <div class="valid-feedback">Looks good</div>
+                        <div class="invalid-feedback"> Please provide a valid password.
+                            <ul>
+                                <li>Must be 8-20 characters long</li>
+                                <li>Must contain letters, numbers & special characters</li>
+                                <li>Must not contain spaces or emoji</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Terms -->
+                    <div class="">
+                        <p><small>By signing up, you agree to our
+                                <a href="" class="" target="_blank">Terms & Conditions.</a>
+                            </small>
+                        </p>
+                    </div>
+
+                    <!-- button -->
+                    <div class="">
+                        <button type="submit" class="btn btn-outline-secondary form-control">Register Now</button>
+                    </div>
+
+                    <!-- Sign in link -->
+                    <p><small>Already have an account? <a href="" class="">Log In</a></small></p>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/site.js"></script>
+</body>
+
+</html>
