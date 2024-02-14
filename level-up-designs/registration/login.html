@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/site.css">
+</head>
+
+<body class="registration-page">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 card mt-5 p-5">
+
+                <form class="row g-3 needs-validation" novalidate>
+                    <h2 class="text-center mb-4">Login</h2>
+
+                    <!-- email -->
+                    <div class="has-validation">
+                        <label for="email" class="form-label mb-0">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="janedoe@gmail.com" required>
+                        <div class="valid-feedback">Looks good</div>
+                        <div class="invalid-feedback"> Please fill out this field.</div>
+                    </div>
+
+                    <!-- password -->
+                    <div class="has-validation">
+                        <label for="password" class="form-label mb-0">Password</label>
+                        <input type="text" class="form-control" id="password" placeholder="********" required>
+                        <div class="valid-feedback">Looks good</div>
+                        <div class="invalid-feedback"> Please provide a valid password.
+                            <ul>
+                                <li>Must be 8-20 characters long</li>
+                                <li>Must contain letters, numbers & special characters</li>
+                                <li>Must not contain spaces or emoji</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Remember Me & forget password -->
+                    <div class="row g-2 ">
+                        <div class="col">
+                            <input class="form-check-input" type="checkbox" name="" id="rememberMe">
+                            <label class="form-check-label" for="rememberMe">Remember me</label>
+                        </div>
+                        <div class="col">
+                            <p class="text-end"><small><a href="" class="purple-color-text">Forget password?</a></small></p>
+                        </div>
+                    </div>
+
+                    <!-- button -->
+                    <div>
+                        <button type="submit" class="btn btn-outline-secondary form-control">Login</button>
+                    </div>
+                    <p class="text-start"><small>Don't have an account? <a href="" class="">Sign up</a></small></p>
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/site.js"></script>
+</body>
+
+</html>
