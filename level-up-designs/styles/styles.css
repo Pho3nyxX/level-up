@@ -6,8 +6,28 @@
 /*          1. General */
 /* --------------------------------- */
 :root {
-    --red-color: #ED4679;
+    /* colours */
+    --primary-blue: #1C96B3;
+    --secondary-blue: #66CCEB;
+    --black: #1C1F20;
+    --black-75: #5a5c5d;
+    --black-50: #848585;
+    --black-25: #aeafaf;
+    --black-10: #c8c8c8;
+    --black-5: #d1d1d1;
+    --error: #e63329;
+    --dark-mode-primary: #242E42;
+    --dark-mode-secondary: #2F3B52;
+
+    /* transition */
+    --tran-03: all 0.2s ease;
+    --tran-03: all 0.3s ease;
+    --tran-04: all 0.4s ease;
+    --tran-05: all 0.5s ease;
+
 }
+
+
 
 html {
     width: 100%;
@@ -15,9 +35,25 @@ html {
     font-family: 'Roboto';
 }
 
+a {
+    text-decoration: none;
+}
+
 body {}
 
+.primary-blue-text {
+    color: #1C96B3;
+}
 
+.primary-blue {
+    background-color: #1C96B3;
+    color: #fff;
+}
+
+.primary-blue:hover {
+    background-color: #1C96B3;
+    color: #fff;
+}
 
 /* --------------------------------- */
 /*              Typography */
@@ -27,18 +63,19 @@ a {
 }
 
 /*headings*/
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Roboto';
-    font-weight: 700;
+h1.blue,
+h2.blue,
+h3.blue,
+h4.blue,
+h5.blue,
+h6.blue {
+    color: var(--primary-blue);
+    /* font-family: 'Roboto';
+    font-weight: 700; */
     /* line-height: 1.3; */
 }
 
-h1.thin,
+/* h1.thin,
 h2.thin,
 h3.thin,
 h4.thin,
@@ -46,12 +83,178 @@ h5.thin,
 h6.thin {
     font-family: 'Roboto condensed';
     font-weight: 400;
-    /* line-height: 1.3; */
-}
-
-
+    line-height: 1.3;
+} */
 
 
 /* --------------------------------- */
 /*           1. REGISTRATION PAGE */
 /* --------------------------------- */
+.registration-page {
+    .logo i {
+        font-size: 35px;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    p.no-margin-bottom {
+        margin-bottom: 0;
+    }
+
+    .auth-form-container {
+        background: #BBE8F6;
+        padding-bottom: 30px !important;
+        position: relative;
+
+        input.form-control {
+            border: 1px solid #1C96B3;
+        }
+
+        [type=submit] {
+            border: none;
+        }
+
+        .logo-shadow {
+            position: absolute;
+            color: var(--primary-blue);
+            font-size: 100px;
+            z-index: 0;
+            transform: rotate(45deg) scale(200%);
+            opacity: .3;
+        }
+    }
+}
+
+.register-check:checked {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+}
+
+
+
+/* --------------------------------- */
+/*           2. PROFILE PAGE */
+/* --------------------------------- */
+.profile-page {
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding: 10px 14px;
+        /* width: 250px; */
+        background-color: var(--secondary-blue);
+        
+        /* header section */
+        .header {
+            display: inline-block;
+            margin-bottom: 40px;
+            /* align-items: center; */
+
+            .header-container {
+
+                .image {
+                    /* min-width: 60px; */
+                    display: inline-block;
+                    /* align-items: center; */
+                }
+
+                .text {
+                    font-size: 33px;
+                    font-weight: 500;
+                    padding-left: 30px;
+                    padding-right: 30px;
+                }
+
+                .toggle {
+                    position: absolute;
+                    top: 6%;
+                    right: -13px;
+                    transform: translateY(-50%);
+                    height: 30px;
+                    width: 30px;
+                    background: #cdcccc;
+                    border-radius: 50%;
+                    color: #000;
+                    font-size: 22px;
+                }
+
+            }
+        }
+
+        /* name section */
+        .name-section {
+            height: 150px;
+            background-color: #94d1e3;
+            border-radius: 15px;
+            margin-bottom: 40px;
+
+            h6 {
+                line-height: 1.0;
+            }
+
+            .profile-picture {
+                background: transparent;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+
+            .tick-icon {
+                color: #ff0000;
+                text-shadow: 2px 2px 3px #0006;
+            }
+        }
+
+
+        /* progress section */
+        .progress-section {
+            height: 150px;
+            background-color: #94d1e3;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            /* position: relative; */
+
+            .goal {
+                margin-right: 10px;
+                height: 110px;
+                background-color: #5fadc5;
+                border-radius: 15px;
+
+                h6 {
+                    margin-bottom: 5px;
+                    font-size: 20px;
+                }
+
+                p {
+                    font-size: 10px;
+                    margin-bottom: 5px;
+                }
+
+                .goal-progress {
+                    height: 10px;
+
+
+                    .progress-bar {
+                        height: 15px;
+                        width: 15px;
+                        border-radius: 50%;
+                    }
+                }
+                
+            }
+
+            .track {
+                height: 110px;
+                background-color: #5fadc5;
+                border-radius: 15px;
+            }
+        }
+
+    }
+
+}
+

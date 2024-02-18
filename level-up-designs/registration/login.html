@@ -7,19 +7,23 @@
     <title>Login</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
-    <link rel="stylesheet" href="../styles/site.css">
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 
 <body class="registration-page">
 
     <div class="container">
-
         <div class="row justify-content-center">
-            <div class="col-lg-4 col-md-6 card mt-5 p-5">
+
+            <div class="logo col-12 text-center mt-5">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+            <div class="auth-form-container col-lg-4 col-md-6 card mt-5 p-5">
 
                 <form class="row g-3 needs-validation" novalidate>
-                    <h2 class="text-center mb-4">Login</h2>
+                    <i class="bi bi-graph-up-arrow text-center logo-shadow"></i>
 
+                    <h2 class="text-center primary-blue-text">Login</h2>
                     <!-- email -->
                     <div class="has-validation">
                         <label for="email" class="form-label mb-0">Email</label>
@@ -31,7 +35,7 @@
                     <!-- password -->
                     <div class="has-validation">
                         <label for="password" class="form-label mb-0">Password</label>
-                        <input type="text" class="form-control" id="password" placeholder="********" required>
+                        <input type="text" class="form-control" id="password" placeholder="" required>
                         <div class="valid-feedback">Looks good</div>
                         <div class="invalid-feedback"> Please provide a valid password.
                             <ul>
@@ -45,24 +49,23 @@
                     <!-- Remember Me & forget password -->
                     <div class="row g-2 ">
                         <div class="col">
-                            <input class="form-check-input" type="checkbox" name="" id="rememberMe">
+                            <input class="form-check-input register-check" type="checkbox" name="" id="rememberMe">
                             <label class="form-check-label" for="rememberMe">Remember me</label>
                         </div>
                         <div class="col">
-                            <p class="text-end"><small><a href="" class="purple-color-text">Forget password?</a></small></p>
+                            <p class="text-end no-margin-bottom"><small><a href="forget-password.html" class="primary-blue-text">Forget password?</a></small></p>
                         </div>
                     </div>
 
                     <!-- button -->
                     <div>
-                        <button type="submit" class="btn btn-outline-secondary form-control">Login</button>
+                        <button type="submit" class="btn btn-outline-secondary form-control primary-blue">Login</button>
                     </div>
-                    <p class="text-start"><small>Don't have an account? <a href="" class="">Sign up</a></small></p>
+                    <p class="text-start no-margin-bottom"><small>Don't have an account? <a href="registration.html" class="primary-blue-text">Sign up</a></small></p>
                 </form>
 
             </div>
         </div>
-
     </div>
 
     <script src="../scripts/bootstrap.js"></script>
