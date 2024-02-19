@@ -31,48 +31,95 @@
                         </div>
                     </header>
 
-                    <div class="row name-section ms-2 me-2">
-                        <h3 class="ps-4 mt-4 mb-2">Hi, Jane!</h3>
-                        <!-- profile pic -->
-                        <div class="ps-4 col-3">
-                            <img src="/images/profile-image.png" class="profile-picture" alt="Profile">
-                        </div>
+                    <div class="row name-section ms-2 me-2 d-flex justify-content-evenly">
+                        <h3 class="">Hi, Jane!</h3>
 
-                        <!-- details -->
-                        <div class="col-9">
-                            <h6>Lorem Ipsum</h6>
-                            <h6>Graphic Design Track
-                                <i class="bi bi-check-circle-fill tick-icon ms-2"></i>
+                        <div class="profile-picture-container align-items-center d-flex ">
+                            <span>
+                                <img src="/images/profile-image.png" class="picture" alt="Profile">
+                            </span>
+
+                            <h6 class="text mt-2">
+                                <span>Lorem Ipsum</span> <br>
+                                <span>Graphic Design Track</span>
                             </h6>
+                            <i class="bi bi-check-circle-fill tick-icon ms-2 mt-3"></i>
                         </div>
                     </div>
 
-                    <div class="row progress-section ms-2 me-2 align-items-center  d-flex justify-content-center">
+                    <div class="row progress-section ms-2 me-2 align-items-center d-flex justify-content-center">
                         <div class="col-5 goal">
 
-                            <h6 class="mt-2">Goals</h6>
-                            <p>You haven't created any goal</p>
+                            <h6 class="ms-2">Goals</h6>
+                            <p class="ms-2">You haven't created any goal</p>
 
-                            <div class="goal-progress">
-                                <!-- <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> -->
-                                <div class="progress-bar">25%</div>
+                            <div class="goal-progress ms-2">
+                                <div class="progress-bar"></div>
+                                <div class="progress-circle"><span>25%</span></div>
                             </div>
 
                             <a href="">Create Goal</a>
-
                         </div>
 
                         <div class="col-5 track">
-                            <h6 class="mt-2">Track</h6>
-                            <p>Course 1:  Your first design</p>
-                            <div class="track-progress">
-                                <!-- <div class="progress-bar" role="progressbar" aria-label="Basic example" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div> -->
-                                <div class="progress-bar">25%</div>
+                            <h6 class="ms-2">Track</h6>
+                            <p class="ms-2">Course 1: Your first design</p>
+
+                            <div class="track-progress ms-2">
+                                <div class="progress-bar"></div>
+                                <div class="progress-circle"><span>25%</span></div>
+                            </div>
+
+                            <div class="links">
+                                <a href="" class="me-3">Resume</a>
+                                <a href="" class="ms-2">Others</a>
                             </div>
 
                         </div>
                     </div>
 
+                    <div class="row links-section ms-2 me-2 align-items-center d-flex justify-content-center">
+                        <div class="col links-container">
+                            <div class="row">
+                            
+                                <ul class="col">
+                                    <li><a href="">My Mentor</a></li>
+                                    <li><a href="">Profile</a></li>
+                                </ul>
+                                
+                                <ul class="col">
+                                    <li><a href="">My Skills</a></li>
+                                    <li><a href="">My Account</a></li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row notification-section ms-2 me-2 ">
+                        <div class="col-5 date">
+
+                            <div class="sec-border">
+                                <div class="month text-center">January</div>
+                                <div class="day text-center">23</div>
+                                <div class="year text-center">2024</div>
+                            </div>
+
+                            <div class="mentor-pic">
+                                <img src="/images/profile-image.png" class="picture" alt="Profile">
+                            </div>
+
+                            <div class="meeting-time">
+                                <p class="text-center">5:00am <span>EST</span></p>
+                            </div>
+
+                        </div>
+
+                        <div class="col-7 reminder">
+                            <h6 class="mt-3 text-center">Reminder</h6>
+                            <p class="ms-2">You have an upcoming Career Review session with John Doe.</p>
+                        </div>
+                    </div>
 
 
 
