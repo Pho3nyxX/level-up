@@ -670,14 +670,15 @@ h6.thin {
 /* settings section */
 .public-information-page {
 
+    h5 {
+        font-size: 25px;
+        color: var(--primary-blue);
+    }
+
     .photo-container {
         position: relative;
         padding: 40px 25px;
         background-color: #BBE8F6;
-
-        h5 {
-            color: var(--primary-blue);
-        }
 
         .upload {
             display: flex;
@@ -693,6 +694,39 @@ h6.thin {
                 position: absolute;
                 top: 118px;
                 right: 20px;
+            }
+        }
+    }
+
+    /* preference */
+    .preference-container {
+        background-color: #BBE8F6;
+        width: 450px;
+        height: 650px;
+        padding: 30px;
+
+        p {
+            font-weight: 500;
+            margin-bottom: 1px;
+        }
+
+        .option-container {
+            width: 370px;
+        }
+
+        .setting-btn {
+            width: 373px;
+        }
+
+        .profile-description{
+            /* position: absolute; */
+
+            .word-count {
+                position: absolute;
+                bottom: 233px;
+                right: 35px;
+                font-weight: normal;
+                
             }
         }
     }
