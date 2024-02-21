@@ -637,7 +637,6 @@ h6.thin {
     }
 }
 
-
 /* settings */
 .main {
     height: 100%;
@@ -645,10 +644,14 @@ h6.thin {
     .settings {
         padding-left: 100px;
 
-        h5 {
+        h3 {
             margin-bottom: 10px;
-            font-size: 32px;
             color: var(--primary-blue);
+        }
+
+        h5{
+            color: var(--primary-blue);
+
         }
 
         .bold {
@@ -656,16 +659,16 @@ h6.thin {
         }
 
         .settings-container {
-            /* padding: 40px 25px; */
             position: relative;
-            /* background-color: #BBE8F6; */
 
             .upload {
                 display: flex;
 
                 .picture {
-                    height: 120px;
-                    width: 120px;
+                    position: relative;
+                    height: 100px;
+                    width: 100px;
+                    top: 20px;
                 }
 
                 .upload-input {
@@ -673,7 +676,7 @@ h6.thin {
                     height: 40px;
                     position: absolute;
                     top: 110px;
-                    right: 40px;
+                    right: 60px;
                 }
             }
 
@@ -686,6 +689,32 @@ h6.thin {
                     right: 14px;
                 }
 
+            }
+
+            .date{
+                border: 1px solid #d9d5d5;
+                padding: 5px 20px;
+                border-radius: 8px;
+            }
+
+            .contributor{
+                margin-right: 60px;
+            }
+
+            .add{
+                border: 1px solid #d9d5d5;
+                padding: 5px 12px;
+                border-radius: 8px;
+            }
+
+            .add.remove{
+               margin-left: 30px;
+            }
+
+            .setting-btn{
+                .add-another{
+                    margin-right: 135px;
+                }
             }
         }
 
@@ -705,9 +734,13 @@ h6.thin {
                 color: #fff;
             }
         }
+
+        .switch {
+            >input {
+
+                margin-right: 70px;
+            }
+        }
     }
-
-
-
 
 }

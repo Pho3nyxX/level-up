@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>General Info Pic Upload</title>
+    <title>Project</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -257,63 +257,30 @@
 
         <div class="settings">
             <div class="settings-container col-lg-4 col-md-6 mt-5">
-                <h3 class="">Profile Picture</h3>
-                <div class="mb-5 upload">
-                    <img src="/images/profile-image.png" alt="" class="picture">
-                    <input class="form-control upload-input" type="file" placeholder="Upload photo">
-                </div>
+                <h3 class="mb-3">Project</h3>
 
-                <h3 class="mb-0">General Information</h3>
-                <div class="mb-2">
-                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Firstname</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="mb-2">
-                    <label for="exampleFormControlInput1" class="form-label mb-0">Lastname</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-                <div class="mb-2">
-                    <label for="exampleFormControlInput1" class="form-label mb-0">Headline</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-
-                <p class="mb-0 bold">Location</p>
-                <div class="row mb-2">
-                    <div class="col">
-                        <label for="exampleFormControlInput1" class="form-label mb-0">Country/Region</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                    <div class="col">
-                        <label for="exampleFormControlInput1" class="form-label mb-0">City</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                 </div>
 
                 <div class="row mb-4">
                     <div class="col profile-description">
-                        <label for="description" class="">Profile Description</label>
+                        <label for="description" class="">Description</label>
                         <p class="word-count">0 / 100</p>
                         <textarea class="form-control" name="description" id="description" rows="5"></textarea>
                     </div>
                 </div>
 
                 <!-- button -->
-                <div class="setting-btn">
-                    <button type="submit" class="btn btn-outline-secondary form-control primary-blue">Save</button>
+                <div class="row setting-btn">
+                    <button type="submit" class="btn btn-outline-secondary primary-blue col-4 ms-2 add-another">Add another</button>
+                    <button type="submit" class="btn btn-outline-secondary primary-blue col-4">Remove</button>
                 </div>
 
             </div>
         </div>
-        
     </div>
-
-
-
-
-
-
-
-
 
     <script src="../scripts/bootstrap.js"></script>
     <script src="../scripts/site.js"></script>

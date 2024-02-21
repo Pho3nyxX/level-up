@@ -257,10 +257,11 @@
 
         <div class="settings">
             <div class="preference-container col-lg-4 col-md-6 mt-5">
-
-                <h5 class="">General Preferences</h5>
+                <h3 class="mb-2">General</h3>
+                <h5 class="mb-0">Preferences</h5>
+                
                 <div class="d-flex justify-content-center mb-4">
-                    <select class="form-select mt-5 option-container" aria-label="Default select example">
+                    <select class="form-select mt-4 option-container" aria-label="Default select example">
                         <option selected>Language</option>
                         <option value="1">English</option>
                         <option value="2">Spanish</option>
@@ -287,29 +288,68 @@
                 </div>
 
                 <!-- button -->
-                <div class="setting-btn ms-2 mb-5">
+                <div class="setting-btn mb-4">
                     <button type="submit" class="btn btn-outline-secondary form-control primary-blue">Save</button>
                 </div>
 
-                <h5 class="mb-5">Display Mode</h5>
+                <h3 class="mb-2">Visibility</h3>
 
-                <div class="form-check mb-3 mode">
+                <p class="mb-0 bold">Connection visibility</p>
+                <p class="mb-0">Should users be able to view your connection list?</p>
+                <div class="d-flex justify-content-center mb-3">
+                    <select class="form-select option-container" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="1">English</option>
+                        <option value="2">Spanish</option>
+                        <option value="3">French</option>
+                    </select>
+                </div>
+
+                <p class="mb-0 bold">Active status</p>
+                <p class="mb-0">Who should be able to see that you are online?</p>
+                <div class="d-flex justify-content-center mb-3">
+                    <select class="form-select option-container" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="1">English</option>
+                        <option value="2">Spanish</option>
+                        <option value="3">French</option>
+                    </select>
+                </div>
+
+                <p class="mb-0 bold">Followers</p>
+                <p class="mb-0">Who can follow you?</p>
+                <div class="d-flex justify-content-center mb-3">
+                    <select class="form-select option-container" aria-label="Default select example">
+                        <option selected>Select</option>
+                        <option value="1">English</option>
+                        <option value="2">Spanish</option>
+                        <option value="3">French</option>
+                    </select>
+                </div>
+
+                <!-- button -->
+                <div class="setting-btn mb-4">
+                    <button type="submit" class="btn btn-outline-secondary form-control primary-blue">Save</button>
+                </div>
+
+                <h3 class="mb-2">Display Mode</h3>
+
+                <div class="form-check mb-2 mode">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label mode-item" for="flexCheckChecked">Light mode</label>
                 </div>
 
-                <div class="form-check mb-3">
+                <div class="form-check mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label mode-item" for="flexCheckChecked">Dark mode</label>
                 </div>
 
-                <div class="form-check mb-3">
+                <div class="form-check mb-2">
                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
                     <label class="form-check-label mode-item" for="flexCheckChecked">Device settings</label>
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="../scripts/bootstrap.js"></script>
