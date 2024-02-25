@@ -240,32 +240,29 @@
         <div class="row analytics-resources-container">
 
             <div class="col-6 analytics ps-5">
-                <h5>Analytics</h5>
-
+                <h4>Analytics</h4>
                 <div class="performance-container">
-                    <div class="row heading justify-content-between">
-                        <div class="col-4">
-                            <p>Performance Growth</p>
-                        </div>
-                        <div class="col-2">
-                            <select class="option-container" aria-label="Default select example">
-                                <option selected>Week 1 </option>
-                                <option value="1">Month 1</option>
-                                <option value="2">Month 3</option>
-                                <option value="3">Month 6</option>
-                                <option value="3">Year 1</option>
-                            </select>
-                        </div>
+                    <div class="heading justify-content-between">
+                        <h5 class="mt-2">Performance Growth</h5>
+                        <select class="time-filter" aria-label="Default select example">
+                            <option selected>Weekly</option>
+                            <option value="1">Monthly</option>
+                            <option value="2">Quartly</option>
+                            <option value="3">Yearly</option>
+                        </select>
                     </div>
 
                     <div class="row growth-item mt-4 ms-3">
-                        <div class="col-3">
+                        <div class="col-3 mb-5">
                             <p class="mb-0 title">Goals</p>
                             <p>0% growth</p>
                         </div>
-                        <div class="progress-bar">
-                            <!-- <div class="bar"></div> -->
-                            <div class="circle"></div>
+                        <div class="growth-bar">
+                            <div class="circle circle-1"></div>
+                            <div class="circle circle-2"></div>
+                            <div class="circle circle-3"></div>
+                            <div class="circle circle-4"></div>
+                            <div class="circle circle-5"></div>
                         </div>
                     </div>
 
@@ -275,26 +272,35 @@
                             <p>0% growth</p>
                         </div>
                         <div class="col-7 progress-bar-2">
-                            <!-- <div class="bar"></div> -->
-                            <!-- <div class="circle"></div> -->
+                            <div class="growth-bar">
+                                <div class="circle circle-1"></div>
+                                <div class="circle circle-2"></div>
+                                <div class="circle circle-3"></div>
+                                <div class="circle circle-4"></div>
+                                <div class="circle circle-5"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-6 resources ps-5">
-                <h5>Resources</h5>
+                <h4>Resources</h4>
 
                 <div class="resources-container">
+
                     <div class="network d-flex align-items-center justify-content-center">
                         <p>My Network</p>
                     </div>
+
                     <div class="activity d-flex align-items-center justify-content-center">
                         <p>My Activity</p>
                     </div>
+
                     <div class="items d-flex align-items-center justify-content-center">
                         <p>My Items</p>
                     </div>
+                    
                 </div>
             </div>
 

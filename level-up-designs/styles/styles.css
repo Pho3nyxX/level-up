@@ -807,16 +807,19 @@ h6.thin {
                 .heading {
                     border-bottom: 1px solid #525252;
                     padding: 12px 12px;
-
-                    p {
-                        font-size: 20px;
+                    overflow: hidden;
+                    
+                    h5 {
+                        float: left;
                         margin-bottom: 0;
                     }
 
-                    .option-container {
-                        padding: 5px;
+                    .time-filter {
+                        float: right;
+                        padding: 5px 10px;
                         border-radius: 6px;
-                        margin-right: 25px;
+                        margin-right: 15px;
+                        border: none;
                     }
                 }
 
@@ -826,55 +829,53 @@ h6.thin {
                         font-size: 20px;
                     }
 
-                    .progress-bar {
-                        position: absolute;
-                        height: 5px;
+                    .growth-bar {
+                        position: relative;
+                        top: 20px;
+                        height: 8px;
                         width: 450px;
-                        left: 390px;
-                        background-color: #494747;
+                        background-color: #999;
                         border-radius: 10px;
-                        bottom: 415px;
+                        padding: 0;
 
                         /* .bar {
                             position: relative;
-                            height: 12px;
+                            height: 8px;
                             width: 45px;
                             background-color: #555;
-                            top: 0px;
-                            left: 0px;
                             border-radius: 10px;
                         } */
 
-                        .circle {
-                            position: relative;
-                            height: 25px;
-                            width: 25px;
-                            background-color: #0e0e0e;
+                        .circle{
+                            position: absolute;
+                            height: 18px;
+                            width: 18px;
+                            background-color: var(--primary-blue);
                             border-radius: 50%;
-                            top: -18px;
-                            left: 40px;
                         }
+                        .circle-1 {
+                            top: -5px;
+                            left: -9px;
+                        } 
+                        .circle-2 {
+                            top: -5px;
+                            left: 80px;
+                        } 
+                         .circle-3 {
+                            top: -5px;
+                            left: 170px;
+                        } 
+                        .circle-4 {
+                            top: -5px;
+                            left: 270px;
+                        } 
+                       .circle-5 {
+                            top: -5px;
+                            left: 370px;
+                        }  
                     }
 
-                    /* .progress-bar-2 {
-                        position: absolute;
-                        height: 5px;
-                        width: 490px;
-                        left: 420px;
-                        background-color: #494747;
-                        border-radius: 10px;
-                        bottom: 415px;
-
-                        .circle {
-                            position: relative;
-                            height: 25px;
-                            width: 25px;
-                            background-color: #0e0e0e;
-                            border-radius: 50%;
-                            top: -18px;
-                            left: 40px;
-                        }
-                    } */
+                   
                 }
             }
         }
