@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>My profile</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -197,129 +197,141 @@
 
     </aside>
 
-    <!-- settings heading section -->
-    <div class="setting-menu">
-        <h2 class="section-title">Settings</h2>
-
-        <div class="public-information">
-            <a href="">
-                <span>Public information</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="private-information">
-            <a href="">
-                <span>Private information</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="notification">
-            <a href="">
-                <span>Notifications</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="education">
-            <a href="">
-                <span>Education</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="interest">
-            <a href="">
-                <span>Interest</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="account">
-            <a href="">
-                <span>Account</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-        <div class="skill">
-            <a href="">
-                <span>Skills</span>
-                <i class="bi bi-chevron-right"></i>
-            </a>
-        </div>
-
-    </div>
-
     <!-- main body -->
-    <div class="container-fluid p-0 main">
+    <div class="container-fluid main my-profile">
 
-        <div class="settings">
-            <div class="settings-container col-lg-4 col-md-6 mt-5">
-                <h3 class="mb-3">Contact Information</h3>
+        <div class="name-container">
+            <div class="profile-pic">
+                <img src="/images/profile-image.png" alt="" class="picture">
+            </div>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Email</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="janedoe@gmail.com">
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col">
-                        <label for="exampleFormControlInput1" class="form-label mb-0">Phone number</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                    <div class="col">
-                        <label for="exampleFormControlInput1" class="form-label mb-0">Phone type</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                </div>
-
-                <div class="row mb-4">
-                    <div class="col profile-description">
-                        <label for="description" class="">Profile Description</label>
-                        <p class="word-count">0 / 100</p>
-                        <textarea class="form-control" name="description" id="description" rows="5"></textarea>
-                    </div>
-                </div>
-
-                <!-- button -->
-                <div class="setting-btn mb-5">
-                    <button type="submit" class="btn btn-outline-secondary form-control primary-blue">Save</button>
-                </div>
-
-                <h3 class="mb-2">Password</h3>
-                <p>Password must: contain mix letters, numbers and special characters, should be at least 8 characters
-                    long.</p>
-
-                <!-- <div class="">
-                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Current password</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-
-                <div class="">
-                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">New password</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div>
-
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Re-enter password</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1">
-                </div> -->
-
-                <div class="form-check mb-3 mode">
-                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                    <label class="form-check-label mode-item" for="flexCheckChecked">Require all devices to sign in with new password</label>
-                </div>
-
-                <a href="" class="primary-blue-text">Reset password</a>
+            <div class="profile-name">
+                <h3 class="mb-0">Jane Doe</h3>
+                <p class="mb-0">Kinsgton, Jamaica</p>
+                <a href="">100 connections</a>
             </div>
         </div>
 
+        <div class="about-container">
+            <div class="row justify-content-between">
+                <div class="col-1">
+                    <h5>About</h5>
+                </div>
+
+                <div class="col-1 icon">
+                    <a href=""><i class="bi bi-pencil-fill"></i></a>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-10">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat,
+                        leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl,
+                        Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa
+                        quis libero dapibus.
+                    </p>
+                    <p class="text-end"><a href="">See more...</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row analytics-resources-container">
+
+            <div class="col-6 analytics ps-5">
+                <h5>Analytics</h5>
+
+                <div class="performance-container">
+                    <div class="row heading justify-content-between">
+                        <div class="col-4">
+                            <p>Performance Growth</p>
+                        </div>
+                        <div class="col-2">
+                            <select class="option-container" aria-label="Default select example">
+                                <option selected>Week 1 </option>
+                                <option value="1">Month 1</option>
+                                <option value="2">Month 3</option>
+                                <option value="3">Month 6</option>
+                                <option value="3">Year 1</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row growth-item mt-4 ms-3">
+                        <div class="col-3">
+                            <p class="mb-0 title">Goals</p>
+                            <p>0% growth</p>
+                        </div>
+                        <div class="progress-bar">
+                            <!-- <div class="bar"></div> -->
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="row growth-item ms-3">
+                        <div class="col-3">
+                            <p class="mb-0 title">Career paths</p>
+                            <p>0% growth</p>
+                        </div>
+                        <div class="col-7 progress-bar-2">
+                            <!-- <div class="bar"></div> -->
+                            <!-- <div class="circle"></div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6 resources ps-5">
+                <h5>Resources</h5>
+
+                <div class="resources-container">
+                    <div class="network d-flex align-items-center justify-content-center">
+                        <p>My Network</p>
+                    </div>
+                    <div class="activity d-flex align-items-center justify-content-center">
+                        <p>My Activity</p>
+                    </div>
+                    <div class="items d-flex align-items-center justify-content-center">
+                        <p>My Items</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 
-        <script src="../scripts/bootstrap.js"></script>
-        <script src="../scripts/site.js"></script>
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/site.js"></script>
 </body>
 
 </html>
