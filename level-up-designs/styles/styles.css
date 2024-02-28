@@ -476,9 +476,6 @@ h6.thin {
 
 /* sidebar collapsed */
 .sidebar.collapsed {
-    /* position: fixed;
-    top: 0;
-    left: 0; */
     height: 100%;
     width: 80px;
     padding: 10px 0px;
@@ -495,7 +492,6 @@ h6.thin {
     .narrow.active {
         background: var(--primary-blue);
     }
-
 
     /* header section */
     .header {
@@ -992,7 +988,8 @@ h6.thin {
         overflow: hidden;
         display: flex;
 
-        .network-sort {
+        .network-sort,
+        .goal-sort {
             float: left;
             height: 40px;
             width: 240px;
@@ -1046,6 +1043,23 @@ h6.thin {
             .page-link {
                 padding: 10px 40px;
             }
+        }
+
+        .new-goal {
+            float: left;
+            height: 40px;
+            width: 240px;
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: none;
+            background-color: #eee;
+            justify-content: center;
+            display: flex;
+        }
+
+        .goal-title {
+            font-size: 25px;
+            color: var(--primary-blue);
         }
 
     }
@@ -1234,21 +1248,74 @@ h6.thin {
             }
         }
 
-        .staus-container, .due-date-container, .comment {
+        .staus-container,
+        .due-date-container,
+        .comment {
             border: none;
             border-bottom: 1px solid #c5c3c3;
             padding-left: 0;
         }
 
-        .due-date-container, .comment{
+        .due-date-container,
+        .comment {
             width: 820px;
             padding-bottom: 5px;
         }
 
-        .buttons{
+        .buttons {
             .save {
                 margin-right: 399px;
             }
         }
     }
+
+    .goal-head {
+        display: flex;
+        justify-content: center;
+
+        >div:first-child {
+            background-color: #E0E0E0;
+            flex-grow: 1;
+            border-top-right-radius: 6px;
+            border-top-left-radius: 6px;
+            padding: 7px 35px;
+            text-align: center;
+        }
+
+        >div:last-child {
+            padding-left: 10px;
+            background-color: #fff;
+            flex-grow: 10;
+            border-bottom: 1px solid #cecccc;
+        }
+    }
+
+    .goal-body {
+        display: flex;
+        background-color: #E0E0E0;
+
+        >div:first-child {
+            flex-grow: 1;
+            padding: 10px 15px;
+            border-radius: 6px;
+        }
+
+        >div:last-child {
+            flex-grow: 0;
+            width: 80px;
+
+            a {
+                i {
+                    color: #939090;
+                    font-size: 18px;
+                }
+            }
+
+            .edit{
+                margin-right: 15px;
+            }
+        }
+
+    }
+
 }
