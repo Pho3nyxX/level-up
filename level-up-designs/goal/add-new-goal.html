@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Followers</title>
+    <title>Add New Goal</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -200,174 +200,46 @@
     <!-- main body -->
     <div class="container-fluid main">
 
-        <div class="filter-container justify-content-between">
-            <select class="sort mt-2" aria-label="Default select example">
-                <option selected>Sort</option>
-                <option value="1">Followers</option>
-                <option value="2">Following</option>
-            </select>
-
-            <div>
-                <p class="mb-0 title">Total following:</p>
-                <p class="mb-0 text-center number">#50</p>
-            </div>
-
-            <div class="search mt-2">
-                <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Search by name">
+        <!-- title -->
+        <div class="row title-container">
+            <div class="col">
+                <h4 class="mt-3">Add New Goal</h4>
             </div>
         </div>
 
-        <div class="row mt-3">
-            <div class="col-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
+        <!-- content -->
+        <div class="row mt-5 justify-content-center">
+            <div class="add-new-goal-container col-lg-6 col-md-6 p-5">
+                <form class="row g-3 ">
+
+                    <div class="title">
+                        <p class="mb-0">Place title here</p>
                     </div>
 
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
+                    <div class="mt-4">
+                        <select class="form-select staus-container" aria-label="Default select example">
+                            <option selected>Status</option>
+                            <option value="1">Not started</option>
+                            <option value="2">In progress</option>
+                            <option value="3">Completed</option>
+                        </select>
                     </div>
 
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
+                    <div class="mt-4">
+                        <input type="date" class="due-date-container" placeholder="Due Date">
                     </div>
 
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
+                    <div class="mt-4">
+                        <input type="text" class="comment" placeholder="Add comment">
                     </div>
 
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
+                    <div class="row buttons mt-4">
+                        <button type="submit" class="btn btn-outline-secondary primary-blue col-3 ms-2 save">Add another</button>
+                        <button type="submit" class="btn btn-outline-secondary primary-blue col-3">Remove</button>
                     </div>
-                </div>
-            </div>
-
-            <div class="col-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
-                    </div>
-
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
-                    </div>
-
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
-                    </div>
-
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
-                    </div>
-
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4 mb-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
-                    </div>
-
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 mb-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Followed 10 days ago</a>
-                    </div>
-
-                    <div class="modify mt-5">
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
-
-        <a href="" class="ms-3">See more...</a>
     </div>
 
     <script src="../scripts/bootstrap.js"></script>

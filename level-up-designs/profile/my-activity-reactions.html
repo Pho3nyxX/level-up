@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My activities reactions</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="full-page">
+
+    <!-- sidebar -->
+    <aside class="sidebar collapsed">
+
+        <header class="row header d-flex justify-content-evenly wide">
+            <div class="container header-container align-items-center d-flex justify-content-center wide">
+                <span class="image">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </span>
+                <span class="text">Level Up</span>
+                <i class="bi bi-chevron-left toggle d-flex align-items-center"></i>
+            </div>
+        </header>
+
+        <header class="row header d-flex justify-content-evenly narrow">
+            <div class="container header-container align-items-center d-flex justify-content-center">
+                <span class="image">
+                    <i class="bi bi-graph-up-arrow"></i>
+                </span>
+                <!-- <i class="bi bi-chevron-right toggle d-flex align-items-center"></i> -->
+            </div>
+        </header>
+
+        <div class="row name-section ms-2 me-2 d-flex justify-content-evenly wide">
+            <h3 class="">Hi, Jane!</h3>
+
+            <div class="profile-picture-container align-items-center d-flex ">
+                <span>
+                    <img src="/images/profile-image.png" class="picture" alt="Profile">
+                </span>
+
+                <h6 class="text mt-2">
+                    <span>Lorem Ipsum</span> <br>
+                    <span>Graphic Design Track</span>
+                </h6>
+                <i class="bi bi-check-circle-fill tick-icon ms-2 mt-3"></i>
+            </div>
+        </div>
+
+        <div class="row progress-section ms-2 me-2 align-items-center d-flex justify-content-center wide">
+            <div class="col-5 goal">
+
+                <h6 class="ms-2">Goals</h6>
+                <p class="ms-2">You haven't created any goal</p>
+
+                <div class="goal-progress ms-2">
+                    <div class="progress-bar"></div>
+                    <div class="progress-circle"><span>25%</span></div>
+                </div>
+
+                <a href="">Create Goal</a>
+            </div>
+
+            <div class="col-5 track">
+                <h6 class="ms-2">Track</h6>
+                <p class="ms-2">Course 1: Your first design</p>
+
+                <div class="track-progress ms-2">
+                    <div class="progress-bar"></div>
+                    <div class="progress-circle"><span>25%</span></div>
+                </div>
+
+                <div class="links">
+                    <a href="" class="me-3">Resume</a>
+                    <a href="" class="ms-2">Others</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row links-section ms-2 me-2 align-items-center d-flex justify-content-center wide">
+            <div class="col links-container">
+                <div class="row">
+
+                    <ul class="col">
+                        <li><a href="">My Mentor</a></li>
+                        <li><a href="">Profile</a></li>
+                    </ul>
+
+                    <ul class="col">
+                        <li><a href="">My Skills</a></li>
+                        <li><a href="">My Account</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row notification-section ms-2 me-2  wide">
+            <div class="col-5 date">
+
+                <div class="sec-border">
+                    <div class="month text-center">January</div>
+                    <div class="day text-center">23</div>
+                    <div class="year text-center">2024</div>
+                </div>
+
+                <div class="mentor-pic">
+                    <img src="/images/profile-image.png" class="picture" alt="Profile">
+                </div>
+
+                <div class="meeting-time">
+                    <p class="text-center">5:00am <span>EST</span></p>
+                </div>
+
+            </div>
+
+            <div class="col-7 reminder">
+                <h6 class="mt-3 text-center">Reminder</h6>
+                <p class="ms-2">You have an upcoming Career Review session with John Doe.</p>
+            </div>
+        </div>
+
+        <div class="picture narrow">
+            <img src="/images/profile-image.png" class="profile-picture" alt="Profile">
+        </div>
+
+        <div class="home narrow">
+            <a href="">
+                <i class="bi bi-house-door-fill"></i>
+                <span>Home</span>
+            </a>
+        </div>
+
+        <div class="goal narrow">
+            <a href="">
+                <i class="bi bi-list-check"></i>
+                <span>Goal</span>
+            </a>
+        </div>
+
+        <div class="track narrow">
+            <a href="">
+                <i class="bi bi-bar-chart-fill"></i>
+                <span>Track</span>
+            </a>
+        </div>
+
+        <div class="profile narrow">
+            <a href="">
+                <i class="bi bi-person-fill"></i>
+            </a>
+            <div class="submenu shadow">
+                <a href="">Profile</a>
+                <a href="">My Profile</a>
+                <a href="">Notification</a>
+                <a href="">Education</a>
+                <a href="">Interest</a>
+                <a href="">Settings</a>
+            </div>
+        </div>
+
+        <div class="account narrow">
+            <a href="">
+                <img src="/images/account-settings-svgrepo-com.svg" alt="">
+            </a>
+            <div class="submenu shadow">
+                <a href="">Account</a>
+                <a href="">About</a>
+                <a href="">Settings</a>
+            </div>
+        </div>
+
+        <div class="mentor narrow">
+            <a href="">
+                <img src="/images/group-svgrepo-com.svg" alt="">
+            </a>
+            <div class="submenu shadow">
+                <a href="">Mentor</a>
+                <a href="">My Mentor</a>
+            </div>
+        </div>
+
+        <div class="skill narrow">
+            <a href="">
+                <img src="/images/problem-solving-skill-svgrepo-com.svg" alt="">
+            </a>
+            <div class="submenu shadow">
+                <a href="">Skill</a>
+                <a href="">My Skill</a>
+                <a href="">Skill assessment</a>
+            </div>
+        </div>
+
+    </aside>
+
+    <!-- main body -->
+    <div class="container-fluid main">
+
+        <div class="row filter-container justify-content-between">
+            <div class="col-3 mt-1">
+                <h4 class="">My Activities</h4>
+            </div>
+            <div class="col activity-links-container text-center">
+                <a href="" class="activity-links">My posts</a>
+                <a href="" class="activity-links">Comments I made</a>
+                <a href="" class="activity-links active">Reactions I made</a>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-4 activity">
+                <div class="activity-container mb-5">
+                    <div class="profile-pic">
+                        <img src="/images/profile-image.png" alt="" class="picture-1">
+                        <img src="/images/profile-image.png" alt="" class="picture-2">
+                    </div>
+                    <div class="details mt-4">
+                        <p class="mb-0">You reacted on <a href="">John Doe's post</a>.</p>
+                        <p class="mb-0">Posted 10 months ago.</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-pencil-fill edit"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col reaction ms-3">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <img src="/images/clap-svgrepo-com.svg" alt="Clap">
+                        <i class="bi bi-heart-fill"></i>
+                        <p class="mb-0">10</p>
+                    </div>
+
+                    <div class="col links">
+                        <a href="">See more...</a>
+                        <a href="">10 comments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 activity offset-md-2">
+                <div class="activity-container mb-5">
+                    <div class="profile-pic">
+                        <img src="/images/profile-image.png" alt="" class="picture-1">
+                        <img src="/images/profile-image.png" alt="" class="picture-2">
+                    </div>
+                    <div class="details mt-4">
+                        <p class="mb-0">You reacted on <a href="">John Doe's post</a>.</p>
+                        <p class="mb-0">Posted 10 months ago.</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-pencil-fill edit"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col reaction ms-3">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <img src="/images/clap-svgrepo-com.svg" alt="Clap">
+                        <i class="bi bi-heart-fill"></i>
+                        <p class="mb-0">10</p>
+                    </div>
+
+                    <div class="col links">
+                        <a href="">See more...</a>
+                        <a href="">10 comments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 activity">
+                <div class="activity-container mb-5">
+                    <div class="profile-pic">
+                        <img src="/images/profile-image.png" alt="" class="picture-1">
+                        <img src="/images/profile-image.png" alt="" class="picture-2">
+                    </div>
+                    <div class="details mt-4">
+                        <p class="mb-0">You reacted on <a href="">John Doe's post</a>.</p>
+                        <p class="mb-0">Posted 10 months ago.</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-pencil-fill edit"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col reaction ms-3">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <img src="/images/clap-svgrepo-com.svg" alt="Clap">
+                        <i class="bi bi-heart-fill"></i>
+                        <p class="mb-0">10</p>
+                    </div>
+
+                    <div class="col links">
+                        <a href="">See more...</a>
+                        <a href="">10 comments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 activity offset-md-2">
+                <div class="activity-container mb-5">
+                    <div class="profile-pic">
+                        <img src="/images/profile-image.png" alt="" class="picture-1">
+                        <img src="/images/profile-image.png" alt="" class="picture-2">
+                    </div>
+                    <div class="details mt-4">
+                        <p class="mb-0">You reacted on <a href="">John Doe's post</a>.</p>
+                        <p class="mb-0">Posted 10 months ago.</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-pencil-fill edit"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col reaction ms-3">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <img src="/images/clap-svgrepo-com.svg" alt="Clap">
+                        <i class="bi bi-heart-fill"></i>
+                        <p class="mb-0">10</p>
+                    </div>
+
+                    <div class="col links">
+                        <a href="">See more...</a>
+                        <a href="">10 comments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 mb-4 activity">
+                <div class="activity-container mb-5">
+                    <div class="profile-pic">
+                        <img src="/images/profile-image.png" alt="" class="picture-1">
+                        <img src="/images/profile-image.png" alt="" class="picture-2">
+                    </div>
+                    <div class="details mt-4">
+                        <p class="mb-0">You reacted on <a href="">John Doe's post</a>.</p>
+                        <p class="mb-0">Posted 10 months ago.</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-pencil-fill edit"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col reaction ms-3">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <img src="/images/clap-svgrepo-com.svg" alt="Clap">
+                        <i class="bi bi-heart-fill"></i>
+                        <p class="mb-0">10</p>
+                    </div>
+
+                    <div class="col links">
+                        <a href="">See more...</a>
+                        <a href="">10 comments</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 mb-4 activity offset-md-2">
+                <div class="activity-container mb-5">
+                    <div class="profile-pic">
+                        <img src="/images/profile-image.png" alt="" class="picture-1">
+                        <img src="/images/profile-image.png" alt="" class="picture-2">
+                    </div>
+                    <div class="details mt-4">
+                        <p class="mb-0">You reacted on <a href="">John Doe's post</a>.</p>
+                        <p class="mb-0">Posted 10 months ago.</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-pencil-fill edit"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col reaction ms-3">
+                        <i class="bi bi-hand-thumbs-up-fill"></i>
+                        <img src="/images/clap-svgrepo-com.svg" alt="Clap">
+                        <i class="bi bi-heart-fill"></i>
+                        <p class="mb-0">10</p>
+                    </div>
+
+                    <div class="col links">
+                        <a href="">See more...</a>
+                        <a href="">10 comments</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="" class="ms-3">See more...</a>
+    </div>
+
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/site.js"></script>
+</body>
+
+</html>

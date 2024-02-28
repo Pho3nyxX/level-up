@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My network</title>
+    <title>Saved Items</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -200,168 +200,149 @@
     <!-- main body -->
     <div class="container-fluid main">
 
-        <div class="filter-container justify-content-between">
-            <select class="network-sort mt-2" aria-label="Default select example">
+        <!-- header -->
+        <div class="row filter-container justify-content-between">
+            <div class="col-3">
+                <h4 class="mt-3">Saved Items</h4>
+            </div>
+            <div class="col saved-items-pages-container text-center">
+                <a href="" class="page-link active">Courses</a>
+                <a href="" class="page-link">Posts</a>
+            </div>
+        </div>
+
+        <!-- sort -->
+        <div class="mt-4">
+            <select class="course-sort" aria-label="Default select example">
                 <option selected>Sort</option>
-                <option value="1">Firstname</option>
-                <option value="2">Lastname</option>
-                <option value="3">Recently added</option>
+                <option value="1">In-progress</option>
+                <option value="2">Ended</option>
             </select>
-
-            <div>
-                <p class="mb-0 title">Total connections:</p>
-                <p class="mb-0 text-center number">#100</p>
-            </div>
-
-            <div class="search mt-2">
-                <input type="search" class="form-control" id="exampleFormControlInput1" placeholder="Search by name">
-            </div>
         </div>
 
+        <!-- content -->
         <div class="row mt-3">
-            <div class="col-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
+
+            <div class="col-4 course">
+                <div class="course-container mb-4">
+                    <div class="course-image">
+                        <img src="/images/java-4-logo-svgrepo-com.svg" alt="Java">
                     </div>
                     <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
+                        <a href="" class="course-title">Java Essential Training</a>
+                        <p class="mb-0">By: Patricia Johnson</p>
+                        <p class="mb-0">Duration: 4h 30m</p>
                     </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
                         <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col links">
+                        <a href="">Go to course</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
+            <div class="col-4 course offset-md-2">
+                <div class="course-container mb-4">
+                    <div class="course-image">
+                        <img src="/images/database-svgrepo-com.svg" alt="Java">
                     </div>
                     <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
+                        <a href="" class="course-title">Database Essential Training</a>
+                        <p class="mb-0">By: Patricia Johnson</p>
+                        <p class="mb-0">Duration: 4h 30m</p>
                     </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
                         <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col links">
+                        <a href="">Go to course</a>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="col-4 mb-4 course">
+                <div class="course-container mb-4">
+                    <div class="course-image">
+                        <img src="/images/css-svgrepo-com.svg" alt="Java">
+                    </div>
+                    <div class="details mt-4">
+                        <a href="" class="course-title">CSS Essential Training</a>
+                        <p class="mb-0">By: Patricia Johnson</p>
+                        <p class="mb-0">Duration: 4h 30m</p>
+                    </div>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
+                        <i class="bi bi-trash-fill trash"></i>
+                    </div>
+                </div>
+
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col links">
+                        <a href="">Go to course</a>
                     </div>
                 </div>
             </div>
 
-            <div class="col-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
+            <div class="col-4 mb-4 course offset-md-2">
+                <div class="course-container mb-4">
+                    <div class="course-image">
+                        <img src="/images/python-svgrepo-com.svg" alt="Java">
                     </div>
                     <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
+                        <a href="" class="course-title">Python Essential Training</a>
+                        <p class="mb-0">By: Patricia Johnson</p>
+                        <p class="mb-0">Duration: 4h 30m</p>
                     </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
+                    <div class="modify mt-3">
+                        <i class="bi bi-bookmark-fill save"></i>
                         <i class="bi bi-trash-fill trash"></i>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
-                    </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-trash-fill trash"></i>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
-                    </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-trash-fill trash"></i>
+                <div class="row justify-content-between mb-4">
+                    <div class="col-12">
+                        <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
-                    </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-trash-fill trash"></i>
-                    </div>
-                </div>
-            </div>
 
-            <div class="col-4 mb-4 connections">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
-                    </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-trash-fill trash"></i>
+                <div class="row">
+                    <div class="col links">
+                        <a href="">Go to course</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-4 mb-4 connections offset-md-2">
-                <div class="connections-container">
-                    <div class="profile-pic">
-                        <img src="/images/profile-image.png" alt="" class="picture">
-                    </div>
-                    <div class="details mt-4">
-                        <h3 class="mb-0">Jane Doe</h3>
-                        <p class="mb-0">Software Engineer Path</p>
-                        <a href="">Connected 10 days ago</a>
-                    </div>
-                    <div class="modify mt-5">
-                        <i class="bi bi-chat-left-dots-fill message"></i>
-                        <i class="bi bi-person-plus-fill follow"></i>
-                        <i class="bi bi-trash-fill trash"></i>
-                    </div>
-                </div>
+                
             </div>
         </div>
 
-        <a href="" class="ms-3">See more...</a>
+        <a href="" >See more...</a>
     </div>
 
     <script src="../scripts/bootstrap.js"></script>
