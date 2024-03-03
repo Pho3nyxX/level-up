@@ -256,29 +256,30 @@
     <div class="container-fluid p-0 main">
 
         <div class="settings">
-            <div class="settings-container col-lg-4 col-md-6 mt-5">
-                <h3 class="mb-3">Project</h3>
+            <form class="row g-3 needs-validation" novalidate>
+                <div class="settings-container col-lg-4 col-md-6 mt-5">
+                    <h3 class="mb-3">Project</h3>
 
-                <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                    </div>
 
-                <div class="row mb-4">
-                    <div class="col profile-description">
-                        <label for="description" class="">Description</label>
-                        <p class="word-count">0 / 100</p>
-                        <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                    <div class="row mb-4">
+                        <div class="col profile-description">
+                            <label for="description" class="">Description</label>
+                            <p class="word-count">0 / 100</p>
+                            <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- button -->
+                    <div class="row setting-btn">
+                        <button type="submit" class="btn btn-outline-secondary primary-blue col-4 ms-2 add-another">Add another</button>
+                        <button type="submit" class="btn btn-outline-secondary primary-blue col-4">Remove</button>
                     </div>
                 </div>
-
-                <!-- button -->
-                <div class="row setting-btn">
-                    <button type="submit" class="btn btn-outline-secondary primary-blue col-4 ms-2 add-another">Add another</button>
-                    <button type="submit" class="btn btn-outline-secondary primary-blue col-4">Remove</button>
-                </div>
-
-            </div>
+            </form>
         </div>
     </div>
 
