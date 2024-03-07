@@ -1746,7 +1746,8 @@ p {
     }
 }
 
-.roadmap-container, .courses-container {
+.roadmap-container,
+.course-filter-container {
     h1 {
         margin-top: 50px;
         margin-bottom: 50px;
@@ -1858,4 +1859,85 @@ p {
             }
         }
     }
+}
+
+/* course filter */
+.course-filter-container {
+    .course-filter {
+        display: flex;
+        margin-bottom: 50px;
+
+        .filter {
+            background-color: var(--teritary-blue);
+            border-radius: 8px;
+        }
+
+        .all {
+            padding: 10px 20px;
+        }
+
+        .watched {
+            padding: 10px 30px;
+        }
+
+        .course-search {
+
+            >input {
+                width: 500px;
+                background-color: var(--teritary-blue);
+                padding: 10px;
+            }
+        }
+    }
+}
+
+/* courses */
+.courses-container {
+
+    >.row {
+        gap: 20px;
+    }
+
+    .course {
+        margin-bottom: 20px;
+        
+        .course-item {
+            height: 417px;
+
+            .img-container {
+                height: 170px;
+                background-color: #f1efef;
+                margin-bottom: 17px;
+            }
+
+            .content {
+
+                h4 {
+                    color: var(--primary-blue);
+                    margin-bottom: 15px;
+                    font-weight: 700;
+                }
+
+                .description {
+                    margin-bottom: 8px;
+                }
+
+                .duration {
+                    font-size: 13px;
+                    margin-bottom: 30px;
+                }
+
+                a {
+                    text-transform: uppercase;
+                    background-color: var(--secondary-blue);
+                    border-radius: 8px;
+                    padding: 14px 128px;
+                }
+            }
+
+
+        }
+
+    }
+
 }
