@@ -1959,7 +1959,7 @@ p {
     }
 }
 
-/* course */
+/* lesson */
 .content-section {
     padding-top: 40px;
 
@@ -2077,6 +2077,51 @@ p {
                     font-size: 18px;
                 }
             }
+        }
+    }
+}
+
+/* my course */
+.my-course{
+    padding-top: 40px;
+
+    h1{
+        margin-bottom: 42px;
+    }
+
+    .content{
+        border-bottom: 3px solid var(--black-10);
+        margin-bottom: 35px;
+
+        a{
+            padding: 8px;
+            font-size: 18px;
+            margin-right: 30px;
+            display: inline-block;
+            position: relative;
+            
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: -3px;
+                left: 0;
+                background-color: var(--primary-blue);;
+                width: 0;
+                height: 4px;
+                transition: width 0.4s;
+            }
+
+            &:hover{
+                color: var(--primary-blue);
+                
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+
+        >span:first-child{
+            color: var(--primary-blue);
         }
     }
 }
