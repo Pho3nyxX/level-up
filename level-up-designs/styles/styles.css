@@ -177,10 +177,6 @@ p {
 
             .toggle {
                 font-size: 18px;
-                border: 1px solid #817f7f;
-                background-color: #cec9c9;
-                padding: 2px;
-                border-radius: 5px;
             }
         }
     }
@@ -513,10 +509,14 @@ p {
 
             .toggle {
                 font-size: 18px;
-                border: 1px solid #817f7f;
-                background-color: #cec9c9;
-                padding: 2px;
-                border-radius: 5px;
+
+                i {
+                    color: #000;
+                }
+            }
+
+            .text {
+                display: none;
             }
         }
     }
@@ -2132,11 +2132,11 @@ p {
         position: relative;
         margin-bottom: 25px;
 
-        &.last{
+        &.last {
             margin-bottom: 70px;
         }
 
-        &:hover{
+        &:hover {
             background-color: var(--blue-10);
         }
 
@@ -2148,7 +2148,8 @@ p {
 
             h3 {
                 margin-bottom: 19px;
-                a{
+
+                a {
                     color: var(--primary-blue);
                 }
             }
@@ -2207,19 +2208,17 @@ p {
                 .course-progress {
                     height: 3px;
                     width: 40%;
-                    border: 2px solid var(--primary-blue);;
+                    border: 2px solid var(--primary-blue);
+                    ;
                 }
             }
         }
     }
 
-    .load{
+    .load {
         padding: 10px 25px;
         color: var(--primary-blue);
         background-color: var(--teritary-blue);
         border-radius: 6px;
     }
 }
-
-
-
