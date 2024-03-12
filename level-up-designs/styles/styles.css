@@ -1918,15 +1918,10 @@ p {
         padding: 10px 30px;
     }
 
-    >.row {
-        gap: 20px;
-    }
-
     .course {
         margin-bottom: 20px;
 
         .course-item {
-            height: 417px;
 
             .img-container {
                 height: 170px;
@@ -1956,6 +1951,7 @@ p {
                     background-color: var(--secondary-blue);
                     border-radius: 8px;
                     padding: 14px 128px;
+                    display: inline-block;
                 }
             }
         }
@@ -2152,6 +2148,9 @@ p {
 
             h3 {
                 margin-bottom: 19px;
+                a{
+                    color: var(--primary-blue);
+                }
             }
 
             p {
@@ -2221,4 +2220,6 @@ p {
         border-radius: 6px;
     }
 }
+
+
 
