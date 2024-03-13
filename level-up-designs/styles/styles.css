@@ -18,13 +18,12 @@
     --orange-10: #fef2e8;
     --orange-25: #f0dcc4;
     --orange-50: #f2c9a0;
-    /* --orange-25: #e0d6c1; */
     --black: #1C1F20;
-    --black-75: #5a5c5d;
-    --black-50: #848585;
-    --black-25: #aeafaf;
-    --black-10: #c8c8c8;
     --black-5: #d1d1d1;
+    --black-10: #c8c8c8;
+    --black-25: #aeafaf;
+    --black-50: #848585;
+    --black-75: #5a5c5d;
     --error: #e63329;
     --dark-mode-primary: #242E42;
     --dark-mode-secondary: #2F3B52;
@@ -1880,6 +1879,9 @@ p {
     }
 }
 
+/* --------------------------------- */
+/*           4. COURSES PAGE */
+/* --------------------------------- */
 /* course filter */
 .course-filter-container {
     .course-filter {
@@ -2229,6 +2231,9 @@ p {
     margin-bottom: 100px;
 }
 
+/* --------------------------------- */
+/*           5. MENTOR PAGE */
+/* --------------------------------- */
 /* mentor search */
 .mentors-container {
 
@@ -2503,8 +2508,36 @@ p {
             }
         }
     }
+
+    .session-caption{
+        margin-top: 60px;
+        margin-bottom: 78px;
+    }
+
+    .session-item{
+        h4{
+            margin-bottom: 18px;
+        }
+
+        p{
+            margin-bottom: 39px;
+        }
+
+        a{
+            background-color: var(--teritary-blue);
+            border-radius: 8px;
+            padding: 8px 18px;
+        }
+
+        .line{
+            color: var(--orange);
+            margin-top: 58px;
+            margin-bottom: 71px;
+        }
+    }
 }
 
+/* mentor remarks */
 .mentees-remarks-container {
     margin-bottom: 60px;
     background-color: var(--blue-10);
@@ -2610,11 +2643,12 @@ p {
     }
 
 }
-
+/* load button */
 .mentor-load {
     margin-left: 35px;
 }
 
+/* mentor publication */
 .publication-container{
 
     h4{
@@ -2637,3 +2671,4 @@ p {
         }
     }
 }
+
