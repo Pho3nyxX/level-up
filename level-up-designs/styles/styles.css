@@ -2369,49 +2369,141 @@ p {
         }
     }
 
-    h4{
+    h4 {
         font-size: 26px;
     }
 
-    .mentor-main-content{
+    .mentor-main-content {
 
-        .check-lists{
-            border: 2px solid var(--orange-25);
-            border-radius: 8px;
-            padding: 38px 51px;
+        .list-container {
+            margin-bottom: 92px;
 
-            h4{
-                margin-bottom: 21px;
+            .list {
+                margin-right: 30px;
             }
 
-            p{
-                margin-bottom: 20px;
-                line-height: 1.58;
-            }
+            .check-lists {
+                border: 2px solid var(--orange-25);
+                border-radius: 8px;
+                padding: 30px;
 
-            ul{
-                margin-bottom: 35px;
-                padding-left: 16px !important;
+                h4 {
+                    margin-bottom: 21px;
+                }
 
-                li{
-                    list-style: none;
+                p {
+                    margin-bottom: 20px;
+                    line-height: 1.58;
+                }
 
-                    i{
-                        color: var(--orange);
+                ul {
+                    margin-bottom: 35px;
+                    padding-left: 16px !important;
+
+                    li {
+                        list-style: none;
+
+                        i {
+                            color: var(--orange);
+                        }
+                    }
+                }
+
+                a {
+                    background-color: var(--blue-25);
+                    border: none;
+                    border-radius: 8px;
+                    padding: 8px 32px;
+                }
+
+                .links {
+                    >a:first-child {
+                        margin-right: 6px;
                     }
                 }
             }
+        }
 
-            a{
-                background-color: var(--blue-25);
-                border: none;
-                border-radius: 8px;
-                padding: 8px 32px;
+        .something-container {
+            .title {
+                margin-bottom: 23px;
             }
 
-            .links{
-                >a:first-child{
-                    margin-right: 6px;
+            .text {
+                margin-bottom: 10px;
+            }
+        }
+
+        .line {
+            border: 2px solid var(--orange-50);
+            rotate: 90deg;
+            margin-left: 26px;
+        }
+
+        .skills-container {
+            margin-bottom: 92px;
+
+            >div:first-child {
+                padding-left: 0;
+                padding-right: 0;
+                margin-bottom: 34px;
+                display: flex;
+            }
+
+            >div:last-child {
+                display: flex;
+
+                .first {
+                    padding-left: 0;
+                }
+
+                .second {
+                    padding-left: 90px;
+                }
+
+                ul {
+                    li {
+                        list-style: none;
+                        line-height: 1.78;
+                    }
+                }
+            }
+        }
+
+        .similar-mentor-container {
+
+            >div:first-child {
+                margin-bottom: 34px;
+                display: flex;
+            }
+
+            .similar {
+                display: flex;
+                margin-bottom: 26px;
+
+                .picture-container {
+                    height: 182px;
+                    width: 227px;
+                    background-color: var(--black-5);
+                    margin-right: 29px;
+                }
+
+                .similar-content{
+                    
+                    h5{
+                        margin-bottom: 14px;
+                    }
+                    
+                    .similar-reviews{
+                        margin-top: 7px;
+
+                        /* .icons{
+                            .star{
+                                font-size: 11px;
+                            }
+                        } */
+
+                    }
                 }
             }
 
