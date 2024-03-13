@@ -17,6 +17,7 @@
     --orange-light: #e2b585;
     --orange-10: #fef2e8;
     --orange-25: #f0dcc4;
+    --orange-50: #f2c9a0;
     /* --orange-25: #e0d6c1; */
     --black: #1C1F20;
     --black-75: #5a5c5d;
@@ -1897,27 +1898,28 @@ p {
         .watched {
             padding: 10px 30px;
         }
-
-        .course-search {
-
-            >input {
-                width: 500px;
-                background-color: var(--teritary-blue);
-                padding: 10px;
-            }
-        }
     }
+}
+
+/* search bar */
+.search {
+
+    >input {
+        width: 500px;
+        background-color: var(--teritary-blue);
+        padding: 10px;
+    }
+}
+
+/* load more link */
+.load {
+    background-color: var(--teritary-blue);
+    border-radius: 8px;
+    padding: 10px 30px;
 }
 
 /* courses */
 .courses-container {
-
-    a {
-        background-color: var(--teritary-blue);
-        border-radius: 8px;
-        padding: 10px 30px;
-    }
-
     .course {
         margin-bottom: 20px;
 
@@ -2221,4 +2223,99 @@ p {
         background-color: var(--teritary-blue);
         border-radius: 6px;
     }
+}
+
+.title-search-container {
+    margin-bottom: 100px;
+}
+
+/* mentor search */
+.mentors-container {
+
+    .filter-container {
+
+        .filter {
+            background-color: var(--blue-25);
+            border: none;
+            padding: 15px;
+            width: 230px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .mentor {
+        margin-left: 30px;
+
+        .mentor-item {
+            margin-bottom: 90px;
+            position: relative;
+
+            .mentor-image {
+                width: 124px;
+                height: 124px;
+                border-radius: 50%;
+                background-color: var(--black-5);
+                position: absolute;
+                top: -64px;
+                left: 104px;
+            }
+
+            .content {
+                background-color: var(--blue-10);
+                padding: 107px 30px 33px 24px;
+
+                h4 {
+                    margin-bottom: 15px;
+
+                    >sup {
+                        padding-left: 5px;
+                        color: var(--orange-50);
+                        font-size: 13px;
+
+                    }
+                }
+
+                p {
+                    margin-bottom: 32px;
+                }
+
+                .reviews {
+                    display: flex;
+                    margin-bottom: 34px;
+
+                    .icons {
+                        margin-right: 12px;
+
+                        i {
+                            color: var(--orange-50);
+                        }
+                    }
+
+                    span {
+                        font-size: 13px;
+                        line-height: 1.78;
+                    }
+                }
+
+                .tags {
+
+                    span {
+                        border-radius: 8px;
+                        border: 2px solid var(--orange-25);
+                        padding: 6px 22px;
+                        margin-right: 6px;
+                    }
+                }
+            }
+
+            a {
+                background-color: var(--secondary-blue);
+                padding: 14px 122px;
+            }
+        }
+    }
+}
+
+.mentor-load {
+    margin-left: 35px;
 }

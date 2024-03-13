@@ -55,7 +55,6 @@
                     </div>
 
                     <div class="categories hide">
-
                         <nav class="navbar-expand-lg">
                             <div class="collapse navbar-collapse">
                                 <ul class="navbar-nav">
@@ -308,7 +307,6 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -664,7 +662,7 @@
             // show categories div
             filterLink.addEventListener("click", (e) => {
                 e.preventDefault();
-                console.log(categoriesContainer);
+                // console.log(categoriesContainer);
                 categoriesContainer.classList.toggle("hide");
             });
 
@@ -674,7 +672,6 @@
             // show category           
             categoriesContainer.addEventListener("click", (e) => {
                 e.preventDefault();
-                // console.log(e.target.tagName);
                 const categoryDropdown = document.querySelector(".category-dropdown");
                 if (e.target.tagName.toLowerCase() == "a") {
                     const categoryName = e.target.dataset.category;
