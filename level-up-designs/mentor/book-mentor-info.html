@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Session Slot</title>
+    <title>Book Session Information</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -267,10 +267,10 @@
                     <div class="col tabs-title">
                         <ul class="nav">
                             <li class="nav-item text-center active">
-                                <a class="nav-link active" href="#">Choose Appointment Slot</a>
+                                <a class="nav-link" href="#">Choose Appointment Slot</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="#">Your information</a>
+                                <a class="nav-link active" href="#">Your information</a>
                             </li>
                             <li class="nav-item text-center">
                                 <a class="nav-link" href="#">Confirmation</a>
@@ -279,38 +279,104 @@
                     </div>
                 </div>
 
-                <div class="row session">
-                    <div class="col selected-session">
-                        <span><strong>Project Review</strong></span>
-                        <span>30 minutes</span>
+                <div class="row general-information-container">
+                    <h5 class="ps-0 mb-3">General Information</h5>
+                    <div class="col">
+                        <div class="row personal-info-item">
+                            <div class="col-3">
+                                <span><strong>Name</strong></span>
+                            </div>
+                            <div class="col-9">
+                                <Span>Janette Jackson</Span>
+                            </div>
+                        </div>
+
+                        <div class="row personal-info-item">
+                            <div class="col-3">
+                                <span><strong>Email</strong></span>
+                            </div>
+                            <div class="col-9">
+                                <Span>jjackson@gmail.com</Span>
+                            </div>
+                        </div>
+
+                        <div class="row personal-info-item">
+                            <div class="col-3">
+                                <span><strong>Phone</strong></span>
+                            </div>
+                            <div class="col-9">
+                                <Span>(876) 123-4567</Span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="row date-time-container">
-                    <div class="col datetime date"></div>
-
-                    <div class="col datetime time">
-                        <span><strong>Friday January 1</strong></span>
-                        <span class="zone">Time Zone: Eastern Time (GMT -5:00)</span>
-
-                        <div class="row">
-                            <div class="col-4 date-items">
-                                <span><strong>9:00 AM</strong></span>
-                                <span><strong>12:00 AM</strong></span>
-                                <span><strong>3:00 AM</strong></span>
-                                <span><strong>7:30 PM</strong></span>
+                <div class="row booking-container">
+                    <h5 class="ps-0 mb-3">Additional Booking Details</h5>
+                    <div class="col">
+                        <div class="row detail-item">
+                            <div class="col-3 ps-0 pe-0">
+                                <label for="">What is your goal?</label>
                             </div>
-
-                            <div class="col-4 date-items">
-                                <span><strong>10:00 AM</strong></span>
-                                <span><strong>1:00 AM</strong></span>
-                                <span><strong>4:00 PM</strong></span>
+                            <div class="col-9 ps-0">
+                                <select class="" aria-label="Default select example">
+                                    <option selected>Choose</option>
+                                    <option value="1">I don't wish to say now</option>
+                                    <option value="2">I am a student looking for help with my studies</option>
+                                    <option value="3">I am a recent graguate & i need help to start my career</option>
+                                    <option value="4">I need help with a personal project</option>
+                                    <option value="5">I want to assistance with my learning journey</option>
+                                </select>
                             </div>
+                        </div>
 
-                            <div class="col-4 date-items">
-                                <span><strong>11:00 AM</strong></span>
-                                <span><strong>2:00 AM</strong></span>
-                                <span><strong>5:00 AM</strong></span>
+                        <div class="row detail-item">
+                            <div class="col-3 ps-0 pe-0">
+                                <label for="">Target date of completion?</label>
+                            </div>
+                            <div class="col-9 ps-0">
+                                <select class="" aria-label="Default select example">
+                                    <option selected>Choose</option>
+                                    <option value="1">No i do not</option>
+                                    <option value="2">I want to reach this goal in a few weeks</option>
+                                    <option value="3">I want to reach this goal in a month</option>
+                                    <option value="4">I want to reach this goal in a few months</option>
+                                    <option value="5">I want to reach this goal in a year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row detail-item">
+                            <div class="col-3 ps-0 pe-0">
+                                <label for="">Earliest contact time?</label>
+                            </div>
+                            <div class="col-9 ps-0">
+                                <select class="" aria-label="Default select example">
+                                    <option selected>Choose</option>
+                                    <option value="1">I prefer Instant messages</option>
+                                    <option value="2">I want replies in a few minutes</option>
+                                    <option value="3">I want replies in an hours</option>
+                                    <option value="4">I want replies in a day</option>
+                                    <option value="5">I want replies immediately</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row detail-item">
+                            <div class="col-3 ps-0 pe-0">
+                                <label for="">State challenges had so far</label>
+                            </div>
+                            <div class="col-9 ps-0">
+                                <textarea class="form-control" placeholder="" rows="1"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="row detail-item">
+                            <div class="col-3 ps-0 pe-0">
+                                <label for="">What have you done towards achieving this goal?</label>
+                            </div>
+                            <div class="col-9 ps-0">
+                                <textarea class="form-control" placeholder="" rows="2"></textarea>
                             </div>
                         </div>
                     </div>

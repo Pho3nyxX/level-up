@@ -2716,6 +2716,12 @@ p {
                 a {
                     font-size: 19px;
                     color: var(--black);
+
+                    &.active {
+                        border-bottom: 3px solid var(--orange-25);
+                        border-right-color: var(--orange-25);
+                        background-color: var(--blue-25);
+                    }
                 }
             }
         }
@@ -2740,50 +2746,94 @@ p {
         }
     }
 
-    .date-time-container{
+    .date-time-container {
         padding-left: 15px;
         padding-right: 160px;
-       
-        .datetime{
+
+        .datetime {
             background-color: var(--orange-5);
-            /* padding: 91px 110px 199px 62px; */
             padding: 91px 62px 199px;
         }
 
-        .date{
+        .date {}
 
-        }
-
-        .time{
+        .time {
             border-left: 1px solid var(--black-10);
-            span{
+
+            span {
                 display: block;
             }
 
-            >span:first-child{
+            >span:first-child {
                 font-size: 18px;
                 margin-bottom: 24px;
             }
 
-            .zone{
+            .zone {
                 margin-bottom: 58px;
             }
 
-            .date-items{
+            .date-items {
 
-                span{
+                span {
                     background-color: #fff;
                     padding: 15px;
                     margin-bottom: 16px;
                     border: 1px solid var(--black-10);
                     text-align: center;
 
-                    &:hover{
+                    &:hover {
                         background-color: var(--blue-50);
                         border-color: var(--orange-50);
                     }
                 }
+            }
+        }
+    }
 
+    .general-information-container {
+        padding-left: 15px;
+        padding-right: 160px;
+        margin-bottom: 45px;
+
+        .personal-info-item {
+            margin-bottom: 6px;
+
+            div {
+                padding: 12px;
+            }
+
+            >div:first-child {
+                background-color: #eee;
+                border-right: 1px solid var(--black-10);
+            }
+
+            >div:last-child {
+                background-color: var(--blue-5);
+            }
+        }
+    }
+
+    .booking-container {
+        padding-left: 15px;
+        padding-right: 160px;
+
+        .detail-item {
+            margin-bottom: 8px;
+
+            label {
+                width: 258px;
+                padding: 14px;
+                background-color: #eee;
+                border-right: 1px solid var(--black-10);
+            }
+
+            select,
+            textarea {
+                padding: 14px;
+                border: none;
+                background-color: var(--blue-5);
+                width: 774px;
             }
         }
     }
