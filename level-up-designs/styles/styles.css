@@ -10,10 +10,13 @@
     --primary-blue: #1C96B3;
     --secondary-blue: #66CCEB;
     --teritary-blue: #d9f2fa;
+    --blue-5: #f7fcfe;
     --blue-10: #effafd;
     --blue-25: #d9f2fa;
     --blue-fourth: #bde8f6;
+    --blue-50: #b2e2ef;
     --orange: #F58219;
+    --orange-5: #fef9f3;
     --orange-light: #e2b585;
     --orange-10: #fef2e8;
     --orange-25: #f0dcc4;
@@ -2234,7 +2237,6 @@ p {
 /* --------------------------------- */
 /*           5. MENTOR PAGE */
 /* --------------------------------- */
-/* mentor search */
 .mentors-container {
 
     .filter-container {
@@ -2509,27 +2511,27 @@ p {
         }
     }
 
-    .session-caption{
+    .session-caption {
         margin-top: 60px;
         margin-bottom: 78px;
     }
 
-    .session-item{
-        h4{
+    .session-item {
+        h4 {
             margin-bottom: 18px;
         }
 
-        p{
+        p {
             margin-bottom: 39px;
         }
 
-        a{
+        a {
             background-color: var(--teritary-blue);
             border-radius: 8px;
             padding: 8px 18px;
         }
 
-        .line{
+        .line {
             color: var(--orange);
             margin-top: 58px;
             margin-bottom: 71px;
@@ -2643,32 +2645,146 @@ p {
     }
 
 }
+
 /* load button */
 .mentor-load {
     margin-left: 35px;
 }
 
 /* mentor publication */
-.publication-container{
+.publication-container {
 
-    h4{
+    h4 {
         margin-bottom: 41px;
     }
 
-    .pubication{
+    .pubication {
 
-        .item{
+        .item {
 
-            .caption{
-                a{
+            .caption {
+                a {
                     font-size: 19px;
                 }
             }
 
-            .date{
+            .date {
                 color: var(--black-25);
             }
         }
     }
 }
 
+.mentor-content {
+    padding-top: 40px;
+
+    h1 {
+        font-size: 53px;
+        margin-bottom: 82px;
+    }
+
+    .filters {
+        border-right: 2px solid var(--black-5);
+        padding-left: 97px;
+
+        .filter-item {
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-color: var(--black-5);
+            padding: 10px;
+            width: 202px;
+        }
+    }
+
+    .tabs-title {
+        margin-bottom: 30px;
+
+        ul {
+
+            li {
+                width: 344px;
+                border-right: 3px solid var(--black-10);
+                background-color: #eee;
+
+                &:hover {
+                    border-bottom: 3px solid var(--orange-25);
+                    border-right-color: var(--orange-25);
+                    background-color: var(--blue-25);
+                }
+
+                a {
+                    font-size: 19px;
+                    color: var(--black);
+                }
+            }
+        }
+    }
+
+    .session {
+        padding-left: 15px;
+        padding-right: 160px;
+
+        .selected-session {
+            background-color: var(--blue-5);
+            padding: 45px 80px;
+            margin-bottom: 36px;
+
+            span {
+                display: block;
+            }
+
+            >span:first-child {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .date-time-container{
+        padding-left: 15px;
+        padding-right: 160px;
+       
+        .datetime{
+            background-color: var(--orange-5);
+            /* padding: 91px 110px 199px 62px; */
+            padding: 91px 62px 199px;
+        }
+
+        .date{
+
+        }
+
+        .time{
+            border-left: 1px solid var(--black-10);
+            span{
+                display: block;
+            }
+
+            >span:first-child{
+                font-size: 18px;
+                margin-bottom: 24px;
+            }
+
+            .zone{
+                margin-bottom: 58px;
+            }
+
+            .date-items{
+
+                span{
+                    background-color: #fff;
+                    padding: 15px;
+                    margin-bottom: 16px;
+                    border: 1px solid var(--black-10);
+                    text-align: center;
+
+                    &:hover{
+                        background-color: var(--blue-50);
+                        border-color: var(--orange-50);
+                    }
+                }
+
+            }
+        }
+    }
+}
