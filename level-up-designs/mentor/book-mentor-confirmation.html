@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Session Information</title>
+    <title>Book Session Confirmation</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -270,116 +270,69 @@
                                 <a class="nav-link" href="#">Choose Appointment Slot</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link active" href="#">Your information</a>
+                                <a class="nav-link" href="#">Your information</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="#">Confirmation</a>
+                                <a class="nav-link active" href="#">Confirmation</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="row general-information-container">
-                    <h5 class="ps-0 mb-3">General Information</h5>
-                    <div class="col">
-                        <div class="row personal-info-item">
-                            <div class="col-3">
-                                <span><strong>Name</strong></span>
-                            </div>
-                            <div class="col-9">
-                                <Span>Janette Jackson</Span>
-                            </div>
+                <div class="row your-information-container">
+                    <h5 class="ps-0 mb-3">Your Information</h5>
+                    <div class="col personal">
+                        <div class="item">
+                            <span><strong>Name:&nbsp; &nbsp;</strong></span>
+                            <Span>Janette Jackson</Span>
                         </div>
 
-                        <div class="row personal-info-item">
-                            <div class="col-3">
-                                <span><strong>Email</strong></span>
-                            </div>
-                            <div class="col-9">
-                                <Span>jjackson@gmail.com</Span>
-                            </div>
+                        <div class="item">
+                            <span><strong>Email:&nbsp; &nbsp;</strong></span>
+                            <Span>jjackson@gmail.com</Span>
                         </div>
 
-                        <div class="row personal-info-item">
-                            <div class="col-3">
-                                <span><strong>Phone</strong></span>
-                            </div>
-                            <div class="col-9">
-                                <span>(876) 123-4567</span>
-                            </div>
+                        <div class="item">
+                            <span><strong>Phone:&nbsp; &nbsp;</strong></span>
+                            <span>(876) 123-4567</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="row booking-container">
-                    <h5 class="ps-0 mb-3">Additional Booking Details</h5>
-                    <div class="col">
-                        <div class="row detail-item">
-                            <div class="col-3 ps-0 pe-0">
-                                <label for="">What is your goal?</label>
-                            </div>
-                            <div class="col-9 ps-0">
-                                <select class="" aria-label="Default select example">
-                                    <option selected>Choose</option>
-                                    <option value="1">I don't wish to say now</option>
-                                    <option value="2">I am a student looking for help with my studies</option>
-                                    <option value="3">I am a recent graguate & i need help to start my career</option>
-                                    <option value="4">I need help with a personal project</option>
-                                    <option value="5">I want to assistance with my learning journey</option>
-                                </select>
-                            </div>
+                <div class="row detail-entered-container">
+                    <h5 class="ps-0 mb-3">Details Entered</h5>
+                    <div class="col details">
+                        <div class="item">
+                            <span><strong>Goal:&nbsp; &nbsp;</strong></span>
+                            <Span>I don't wish to say now</Span>
                         </div>
 
-                        <div class="row detail-item">
-                            <div class="col-3 ps-0 pe-0">
-                                <label for="">Target date of completion?</label>
-                            </div>
-                            <div class="col-9 ps-0">
-                                <select class="" aria-label="Default select example">
-                                    <option selected>Choose</option>
-                                    <option value="1">No i do not</option>
-                                    <option value="2">I want to reach this goal in a few weeks</option>
-                                    <option value="3">I want to reach this goal in a month</option>
-                                    <option value="4">I want to reach this goal in a few months</option>
-                                    <option value="5">I want to reach this goal in a year</option>
-                                </select>
-                            </div>
+                        <div class="item">
+                            <span><strong>Target date of completion?:&nbsp; &nbsp;</strong></span>
+                            <Span>No i do not</Span>
                         </div>
 
-                        <div class="row detail-item">
-                            <div class="col-3 ps-0 pe-0">
-                                <label for="">Earliest contact time?</label>
-                            </div>
-                            <div class="col-9 ps-0">
-                                <select class="" aria-label="Default select example">
-                                    <option selected>Choose</option>
-                                    <option value="1">I prefer Instant messages</option>
-                                    <option value="2">I want replies in a few minutes</option>
-                                    <option value="3">I want replies in an hours</option>
-                                    <option value="4">I want replies in a day</option>
-                                    <option value="5">I want replies immediately</option>
-                                </select>
-                            </div>
+                        <div class="item">
+                            <span><strong>Earliest contact time?:&nbsp; &nbsp;</strong></span>
+                            <Span>I want replies in a day</Span>
                         </div>
 
-                        <div class="row detail-item">
-                            <div class="col-3 ps-0 pe-0">
-                                <label for="">State challenges had so far</label>
-                            </div>
-                            <div class="col-9 ps-0">
-                                <textarea class="form-control" placeholder="" rows="1"></textarea>
-                            </div>
+                        <div class="item">
+                            <span><strong>State challenges had so far:&nbsp; &nbsp;</strong></span>
+                            <Span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </Span>
                         </div>
 
-                        <div class="row detail-item">
-                            <div class="col-3 ps-0 pe-0">
-                                <label for="">What have you done towards achieving this goal?</label>
-                            </div>
-                            <div class="col-9 ps-0">
-                                <textarea class="form-control" placeholder="" rows="2"></textarea>
-                            </div>
+                        <div class="item">
+                            <span><strong>What have you done towards achieving this goal?:&nbsp; &nbsp;</strong></span>
+                            <Span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </Span>
                         </div>
                     </div>
+
+                </div>
+
+                <div class="links">
+                    <a href="#">Confirm</a>
+                    <a href="#">Cancel</a>
                 </div>
             </div>
         </div>

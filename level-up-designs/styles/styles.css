@@ -2804,7 +2804,7 @@ p {
             }
 
             >div:first-child {
-                background-color: #eee;
+                background-color: var(--orange-5);
                 border-right: 1px solid var(--black-10);
             }
 
@@ -2824,7 +2824,7 @@ p {
             label {
                 width: 258px;
                 padding: 14px;
-                background-color: #eee;
+                background-color: var(--orange-5);
                 border-right: 1px solid var(--black-10);
             }
 
@@ -2835,6 +2835,45 @@ p {
                 background-color: var(--blue-5);
                 width: 774px;
             }
+        }
+    }
+
+    .your-information-container{
+        padding-left: 15px;
+        padding-right: 160px;
+        margin-bottom: 27px;
+
+        .personal{
+            background-color: var(--orange-5);
+            padding:22px 45px;
+
+            .item{
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    .detail-entered-container{
+        padding-left: 15px;
+        padding-right: 160px;
+        
+        .details{
+            margin-bottom: 26px;
+            background-color: var(--orange-5);
+            padding: 50px 42px;
+
+            .item{
+                margin-bottom: 24px;
+            }
+        }
+    }
+
+    .links{
+        a{
+            padding: 18px 42px;
+            background-color: var(--blue-25);
+            border-radius: 8px;
+            margin-right: 15px;
         }
     }
 }
