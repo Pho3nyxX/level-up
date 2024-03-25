@@ -1,7 +1,6 @@
 /* Level Up Website*/
 /* Author: Abi Matthews-Gordon */
 
-
 /* --------------------------------- */
 /*          1. General */
 /* --------------------------------- */
@@ -9,23 +8,28 @@
     --primary-blue: #1C96B3;
     --secondary-blue: #66CCEB;
     --teritary-blue: #d9f2fa;
+
     --blue-5: #f7fcfe;
     --blue-10: #effafd;
     --blue-25: #d9f2fa;
     --blue-fourth: #bde8f6;
     --blue-50: #b2e2ef;
+
     --orange: #F58219;
     --orange-5: #fef9f3;
     --orange-light: #e2b585;
     --orange-10: #fef2e8;
+    --orange-20: #dfdccd;
     --orange-25: #f0dcc4;
     --orange-50: #f2c9a0;
+
     --black: #1C1F20;
     --black-5: #d1d1d1;
     --black-10: #c8c8c8;
     --black-25: #aeafaf;
     --black-50: #848585;
     --black-75: #5a5c5d;
+
     --error: #e63329;
     --dark-mode-primary: #242E42;
     --dark-mode-secondary: #2F3B52;
@@ -69,6 +73,10 @@ body.full-page {
 .primary-blue:hover {
     background-color: #1C96B3;
     color: #fff;
+}
+
+.auth-orange-20{
+    background-color: var(--orange-20);
 }
 
 /* --------------------------------- */
