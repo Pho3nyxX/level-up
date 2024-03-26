@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Session Confirmation</title>
+    <title>Add New Skill</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -196,125 +196,30 @@
 
     </aside>
 
-    <div class="mentor-content main">
-        <div class="row me-0">
-            <h1 class="blue text-center">Book Session</h1>
+    <div class="skills-container main">
+        <div class="container add-skills">
+            <h1 class="blue">Add New Skill</h1>
 
-            <div class="col-2 filters">
-                <select class="filter-item mt-2" aria-label="Default select example">
-                    <option selected>Sessions</option>
-                    <option value="1">Portfolio Review</option>
-                    <option value="2">Career Strategy</option>
-                    <option value="3">Mock Interview</option>
-                    <option value="4">Resume Feedback</option>
-                </select>
-
-                <select class="filter-item mt-2" aria-label="Default select example">
-                    <option selected>Duration</option>
-                    <option value="1">30 mins</option>
-                    <option value="2">1 hour</option>
-                    <option value="3">1.5 hour</option>
-                    <option value="3">2 hours</option>
-                    <option value="3">2.5 hours</option>
-                </select>
-
-                <select class="filter-item mt-2" aria-label="Default select example">
-                    <option selected>Mentor</option>
-                    <option value="1">Janette Jackson</option>
-                    <option value="2">Paul Watson</option>
-                    <option value="3">Tom Jerry</option>
-                    <option value="3">Suzy Smith</option>
-                </select>
-
-                <select class="filter-item mt-2" aria-label="Default select example">
-                    <option selected>SKill</option>
-                    <option value="1">Communication</option>
-                    <option value="2">Database Design</option>
-                    <option value="3">Java</option>
-                    <option value="3">Negotiation</option>
-                </select>
-
-                <select class="filter-item mt-2" aria-label="Default select example">
-                    <option selected>Company</option>
-                    <option value="1">Amazon</option>
-                    <option value="2">Cisco</option>
-                    <option value="3">Meta</option>
-                    <option value="3">Microsoft</option>
-                </select>
+            <div class="input-group search has-validation mb-3">
+                <input class="form-control" type="text" placeholder="Type skill here" required>
             </div>
 
-            <div class="col-8">
-                <div class="row">
-                    <div class="col tabs-title">
-                        <ul class="nav">
-                            <li class="nav-item text-center active">
-                                <a class="nav-link" href="#">Choose Appointment Slot</a>
-                            </li>
-                            <li class="nav-item text-center">
-                                <a class="nav-link" href="#">Your information</a>
-                            </li>
-                            <li class="nav-item text-center">
-                                <a class="nav-link active" href="#">Confirmation</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+            <span>Suggested skills based on your profile</span>
 
-                <div class="row your-information-container">
-                    <h5 class="ps-0 mb-3">Your Information</h5>
-                    <div class="col personal">
-                        <div class="item">
-                            <span><strong>Name:&nbsp; &nbsp;</strong></span>
-                            <Span>Janette Jackson</Span>
-                        </div>
-
-                        <div class="item">
-                            <span><strong>Email:&nbsp; &nbsp;</strong></span>
-                            <Span>jjackson@gmail.com</Span>
-                        </div>
-
-                        <div class="item">
-                            <span><strong>Phone:&nbsp; &nbsp;</strong></span>
-                            <span>(876) 123-4567</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row detail-entered-container">
-                    <h5 class="ps-0 mb-3">Details Entered</h5>
-                    <div class="col details">
-                        <div class="item">
-                            <span><strong>Goal:&nbsp; &nbsp;</strong></span>
-                            <Span>I don't wish to say now</Span>
-                        </div>
-
-                        <div class="item">
-                            <span><strong>Target date of completion?:&nbsp; &nbsp;</strong></span>
-                            <Span>No i do not</Span>
-                        </div>
-
-                        <div class="item">
-                            <span><strong>Earliest contact time?:&nbsp; &nbsp;</strong></span>
-                            <Span>I want replies in a day</Span>
-                        </div>
-
-                        <div class="item">
-                            <span><strong>State challenges had so far:&nbsp; &nbsp;</strong></span>
-                            <Span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </Span>
-                        </div>
-
-                        <div class="item">
-                            <span><strong>What have you done towards achieving this goal?:&nbsp; &nbsp;</strong></span>
-                            <Span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna </Span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="links">
-                    <a href="#">Confirm</a>
-                    <a href="#">Cancel</a>
-                </div>
+            <div class="suggested tags p-5 mt-4 mb-4">
+                <a href=""><span type="submit" class="mb-3">Java </span></a>
+                <a href=""><span type="submit" class="mb-3">JavaScript</span></a>
+                <a href=""><span type="submit" class="mb-3">MySQL</span></a>
+                <a href=""><span type="submit" class="mb-3">React</span></a>
+                <a href=""><span type="submit" class="mb-3">ASP.Net</span></a>
+                <a href=""><span type="submit" class="mb-3">Scrum</span></a>
+                <a href=""><span type="submit" class="mb-3">Communication</span></a>
             </div>
+
+            <div class="add-skill-btn">
+                <button type="submit" class="btn">Save</button>
+                <button type="submit" class="btn">Cancel</button>
+            </div> 
         </div>
 
         <!-- footer -->

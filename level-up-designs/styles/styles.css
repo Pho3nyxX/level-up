@@ -62,6 +62,7 @@ body.full-page {
     .main {
         overflow: scroll;
         height: 100%;
+        flex-grow: 1;
     }
 }
 
@@ -1188,16 +1189,15 @@ p {
                 width: 170px;
                 flex-grow: 0;
 
-                .save,
-                .edit {
+                >a:first-child {
                     font-size: 20px;
                     margin-right: 30px;
-                    color: #939090;
+                    color: var(--orange-30);
                 }
 
-                .trash {
+                >a:last-child {
                     font-size: 20px;
-                    color: #939090;
+                    color: var(--orange-30);
                 }
             }
 
@@ -1633,7 +1633,7 @@ p {
     }
 
     h1 {
-        font-size: 53px;
+        /* font-size: 53px; */
         color: var(--primary-blue);
         margin-bottom: 30px;
     }
@@ -2321,7 +2321,7 @@ p {
                     margin-bottom: 32px;
                 }
 
-                .tags {
+                /* .tags {
 
                     span {
                         border-radius: 8px;
@@ -2329,7 +2329,7 @@ p {
                         padding: 6px 22px;
                         margin-right: 6px;
                     }
-                }
+                } */
             }
 
             a {
@@ -2695,7 +2695,7 @@ p {
     padding-top: 40px;
 
     h1 {
-        font-size: 53px;
+        /* font-size: 53px; */
         margin-bottom: 82px;
     }
 
@@ -2893,4 +2893,60 @@ p {
             margin-right: 15px;
         }
     }
+}
+
+.tags {
+
+    span {
+        border-radius: 8px;
+        border: 2px solid var(--orange-25);
+        padding: 6px 22px;
+        margin-right: 6px;
+    }
+}
+/* --------------------------------- */
+/*           6. SKILL PAGE */
+/* --------------------------------- */
+
+.skills-container {
+    padding-top: 40px;
+
+    h1 {
+        margin-bottom: 82px;
+    }
+
+    .add-skills{
+        .search {
+            max-width: 601px;
+        }
+    }
+
+    .suggested{
+        max-width: 601px;
+        background-color: var(--blue-5);
+
+        span{
+            &:hover{
+                background-color: var(--orange-25);
+            }
+        }
+    }
+
+    .add-skill-btn{
+
+        [type=submit]{
+            padding: 5px 25px;
+        }
+        
+        [type=submit]:first-child{
+            background-color: var(--secondary-blue);
+            margin-right: 20px;
+        }
+
+        [type=submit]:last-child{
+            border: 2px solid var(--secondary-blue);
+            margin-right: 20px;
+        }
+    }
+
 }
