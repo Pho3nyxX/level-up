@@ -92,9 +92,10 @@ body.full-page {
     background-color: var(--orange-35);
 }
 
-.bgc-blue-5{
+.bgc-blue-5 {
     background-color: var(--blue-5);
 }
+
 /* --------------------------------- */
 /*              Typography */
 /* --------------------------------- */
@@ -1188,19 +1189,19 @@ p {
                 }
             }
 
-            .modify {
+            .modify-links {
                 width: 170px;
                 flex-grow: 0;
 
                 >a:first-child {
-                    font-size: 20px;
+                    /* font-size: 20px; */
                     margin-right: 30px;
-                    color: var(--orange-30);
+                    /* color: var(--orange-30); */
                 }
 
                 >a:last-child {
-                    font-size: 20px;
-                    color: var(--orange-30);
+                    /* font-size: 20px; */
+                    /* color: var(--orange-30); */
                 }
             }
 
@@ -1217,7 +1218,6 @@ p {
                     width: 100px;
                 }
             }
-
         }
 
         .reaction {
@@ -1349,6 +1349,12 @@ p {
             }
         }
     }
+
+}
+
+.modify {
+    color: var(--orange-35);
+    font-size: 20px;
 }
 
 /* --------------------------------- */
@@ -2907,9 +2913,45 @@ p {
         margin-right: 6px;
     }
 }
+
 /* --------------------------------- */
 /*           6. SKILL PAGE */
 /* --------------------------------- */
+.skill-btn {
+
+    [type=submit] {
+        color: var(--black);
+    }
+    
+    [type=submit]:first-child {
+        padding:7px 25px;
+        background-color: var(--secondary-blue);
+        margin-right: 20px;
+        border: none;
+    }
+    
+    [type=submit]:last-child {
+        padding: 5px 25px;
+        border: 2px solid var(--secondary-blue);
+        margin-right: 20px;
+
+        &.skill-btn-2{
+            background-color: #fff;
+        }
+    }
+}
+
+
+.suggested {
+    max-width: 601px;
+    background-color: var(--blue-5);
+
+    span {
+        &:hover {
+            background-color: var(--orange-25);
+        }
+    }
+}
 
 .skills-container {
     padding-top: 40px;
@@ -2918,37 +2960,27 @@ p {
         margin-bottom: 82px;
     }
 
-    .add-skills{
+    .add-skills {
         .search {
             max-width: 601px;
         }
     }
 
-    .suggested{
+    /* .suggested {
         max-width: 601px;
         background-color: var(--blue-5);
 
-        span{
-            &:hover{
+        span {
+            &:hover {
                 background-color: var(--orange-25);
             }
         }
-    }
-}
+    } */
 
-.skill-btn{
-
-    [type=submit]{
-        padding: 5px 25px;
-    }
-    
-    [type=submit]:first-child{
-        background-color: var(--secondary-blue);
-        margin-right: 20px;
+    .title-btn {
+        display: flex;
     }
 
-    [type=submit]:last-child{
-        border: 2px solid var(--secondary-blue);
-        margin-right: 20px;
-    }
+
+
 }
