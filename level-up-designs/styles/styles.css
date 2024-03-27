@@ -27,6 +27,7 @@
     --orange-30: #ecd1b4;
     --orange-35: #fcd3af;
     --orange-50: #f2c9a0;
+    --orange-80: #f79b47;
 
     --black: #1C1F20;
     --black-5: #d1d1d1;
@@ -3025,6 +3026,11 @@ p {
         padding: 5px 25px;
         border: 2px solid var(--primary-blue);
         border-radius: 8px;
+
+        &.summary {
+            border: 2px solid var(--orange-80);
+
+        }
     }
 
     .question {
@@ -3041,35 +3047,35 @@ p {
             }
         }
 
-        .options{
+        .options {
 
-            .option{
+            .option {
                 margin-bottom: 5px;
                 padding: 10px 0 10px 35px;
                 border: 1px solid var(--blue-50);
                 border-radius: 8px;
                 background-color: var(--blue-5);
 
-                &:hover{
+                &:hover {
                     background-color: #fff;
                 }
 
-                [type=radio]{
+                [type=radio] {
                     border-color: var(--orange);
                 }
             }
         }
     }
 
-    .question-navigation{
+    .question-navigation {
         background-color: var(--blue-5);
         padding: 46px 52px;
 
-        h3{
+        h3 {
             margin-bottom: 40px;
         }
 
-        .question-item{
+        .question-item {
             border-radius: 8px;
             border: 1px solid var(--orange);
             padding: 15px;
@@ -3077,10 +3083,17 @@ p {
             justify-content: center;
             margin-right: 8px;
 
-            &:hover{
+            &:hover {
                 background-color: #fff;
             }
         }
     }
 
+    .table-striped>tbody>tr:nth-of-type(odd)>* {
+        --bs-table-bg-type: var(--orange-5);
+    }
+
+    .table> :not(caption)>*>* {
+        border-color: var(--blue-50);
+    }
 }
