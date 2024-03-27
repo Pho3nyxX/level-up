@@ -12,6 +12,7 @@
     --blue-5: #f7fcfe;
     /* --blue-10: #effafd; */
     --blue-10: #e8f4f7;
+    --blue-20: #e2edec;
     --blue-25: #d9f2fa;
     --blue-fourth: #bde8f6;
     --blue-50: #b2e2ef;
@@ -78,6 +79,10 @@ body.full-page {
 .primary-blue:hover {
     background-color: #1C96B3;
     color: #fff;
+}
+
+.bgc-orange-5{
+    background-color: var(--orange-5);
 }
 
 .bgc-orange-20 {
@@ -2330,15 +2335,6 @@ p {
                     margin-bottom: 32px;
                 }
 
-                /* .tags {
-
-                    span {
-                        border-radius: 8px;
-                        border: 2px solid var(--orange-25);
-                        padding: 6px 22px;
-                        margin-right: 6px;
-                    }
-                } */
             }
 
             a {
@@ -2941,7 +2937,6 @@ p {
     }
 }
 
-
 .suggested {
     max-width: 601px;
     background-color: var(--blue-5);
@@ -2960,27 +2955,33 @@ p {
         margin-bottom: 82px;
     }
 
-    .add-skills {
+    .skills-sec {
         .search {
             max-width: 601px;
         }
     }
 
-    /* .suggested {
-        max-width: 601px;
-        background-color: var(--blue-5);
-
-        span {
-            &:hover {
-                background-color: var(--orange-25);
-            }
-        }
-    } */
-
     .title-btn {
         display: flex;
     }
 
+    .intro-container{
+        padding: 48px;
 
+        .title-time{
+            display: flex;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--blue-20);
+            margin-bottom: 45px;
+        }
+
+        p{
+            margin-bottom: 34px;
+        }
+
+        .list-title{
+            margin-bottom: 10px;
+        }
+    }
 
 }
