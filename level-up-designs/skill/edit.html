@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Skill</title>
+    <title>Edit Skill</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -198,28 +198,55 @@
 
     <div class="skills-container main">
         <div class="container add-skills">
-            <h1 class="blue">Add New Skill</h1>
+            <h1 class="blue">Edit Skill</h1>
 
-            <div class="input-group search has-validation mb-3">
-                <input class="form-control" type="text" placeholder="Type skill here" required>
+            <span><b>Where did you put this skill to use?</b></span> <br>
+            <span>Select the one that applies</span>
+
+            <div class="row">
+                <div class="col-4 mt-4 p-4 bgc-blue-5">
+                    <h4 class="blue">Education</h4>
+                    <div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Based on school added in profile</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Based on school added in profile</label>
+                        </div>
+                    </div>
+
+                    <h4 class="blue">Experience</h4>
+                    <div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Based on experience added in profile</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Based on experience added in profile</label>
+                        </div>
+                    </div>
+
+                    <h4 class="blue">Certifications</h4>
+                    <div>
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Based on certification added in profile</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">Based on certification added in profile</label>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <span>Suggested skills based on your profile</span>
-
-            <div class="suggested tags p-5 mt-4 mb-4">
-                <a href=""><span type="submit" class="mb-3">Java </span></a>
-                <a href=""><span type="submit" class="mb-3">JavaScript</span></a>
-                <a href=""><span type="submit" class="mb-3">MySQL</span></a>
-                <a href=""><span type="submit" class="mb-3">React</span></a>
-                <a href=""><span type="submit" class="mb-3">ASP.Net</span></a>
-                <a href=""><span type="submit" class="mb-3">Scrum</span></a>
-                <a href=""><span type="submit" class="mb-3">Communication</span></a>
-            </div>
-
-            <div class="add-skill-btn">
+            <div class="skill-btn mt-4">
                 <button type="submit" class="btn">Save</button>
                 <button type="submit" class="btn">Cancel</button>
-            </div> 
+            </div>
         </div>
 
         <!-- footer -->

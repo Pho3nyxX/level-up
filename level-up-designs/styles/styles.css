@@ -92,6 +92,9 @@ body.full-page {
     background-color: var(--orange-35);
 }
 
+.bgc-blue-5{
+    background-color: var(--blue-5);
+}
 /* --------------------------------- */
 /*              Typography */
 /* --------------------------------- */
@@ -2931,22 +2934,21 @@ p {
             }
         }
     }
+}
 
-    .add-skill-btn{
+.skill-btn{
 
-        [type=submit]{
-            padding: 5px 25px;
-        }
-        
-        [type=submit]:first-child{
-            background-color: var(--secondary-blue);
-            margin-right: 20px;
-        }
-
-        [type=submit]:last-child{
-            border: 2px solid var(--secondary-blue);
-            margin-right: 20px;
-        }
+    [type=submit]{
+        padding: 5px 25px;
+    }
+    
+    [type=submit]:first-child{
+        background-color: var(--secondary-blue);
+        margin-right: 20px;
     }
 
+    [type=submit]:last-child{
+        border: 2px solid var(--secondary-blue);
+        margin-right: 20px;
+    }
 }
