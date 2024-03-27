@@ -81,7 +81,7 @@ body.full-page {
     color: #fff;
 }
 
-.bgc-orange-5{
+.bgc-orange-5 {
     background-color: var(--orange-5);
 }
 
@@ -99,6 +99,10 @@ body.full-page {
 
 .bgc-blue-5 {
     background-color: var(--blue-5);
+}
+
+.bgc-white{
+    background-color: #fff;
 }
 
 /* --------------------------------- */
@@ -2918,20 +2922,20 @@ p {
     [type=submit] {
         color: var(--black);
     }
-    
+
     [type=submit]:first-child {
-        padding:7px 25px;
+        padding: 7px 25px;
         background-color: var(--secondary-blue);
         margin-right: 20px;
         border: none;
     }
-    
+
     [type=submit]:last-child {
         padding: 5px 25px;
         border: 2px solid var(--secondary-blue);
         margin-right: 20px;
 
-        &.skill-btn-2{
+        &.skill-btn-2 {
             background-color: #fff;
         }
     }
@@ -2965,21 +2969,34 @@ p {
         display: flex;
     }
 
-    .intro-container{
+    .intro-container {
         padding: 48px;
 
-        .title-time{
+        .title-time {
             display: flex;
             padding-bottom: 15px;
             border-bottom: 1px solid var(--blue-20);
             margin-bottom: 45px;
+
+            i {
+                font-size: 20px;
+                color: var(--black-10);
+            }
         }
 
-        p{
+        h4 {
+            margin-bottom: 30px;
+        }
+
+        p {
             margin-bottom: 34px;
         }
 
-        .list-title{
+        .message{
+            margin-bottom: 46px;
+        }
+
+        .list-title {
             margin-bottom: 10px;
         }
     }
