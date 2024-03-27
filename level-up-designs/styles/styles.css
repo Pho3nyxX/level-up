@@ -68,16 +68,19 @@ body.full-page {
 }
 
 .primary-blue-text {
-    color: #1C96B3;
+    color: var(--primary-blue);
+}
+.orange-text {
+    color: var(--orange);
 }
 
 .primary-blue {
-    background-color: #1C96B3;
+    background-color: var(--primary-blue);
     color: #fff;
 }
 
 .primary-blue:hover {
-    background-color: #1C96B3;
+    background-color: var(--primary-blue);
     color: #fff;
 }
 
@@ -101,8 +104,12 @@ body.full-page {
     background-color: var(--blue-5);
 }
 
-.bgc-white{
+.bgc-white {
     background-color: #fff;
+
+    &:hover {
+        background-color: #fff;
+    }
 }
 
 /* --------------------------------- */
@@ -2992,7 +2999,7 @@ p {
             margin-bottom: 34px;
         }
 
-        .message{
+        .message {
             margin-bottom: 46px;
         }
 
