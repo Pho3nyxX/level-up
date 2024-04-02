@@ -83,8 +83,12 @@ body.full-page {
     color: var(--error);
 }
 
-.green-icon{
+.green-icon {
     color: var(--green);
+}
+
+.orange-icon {
+    color: var(--orange);
 }
 
 .primary-blue {
@@ -101,6 +105,11 @@ body.full-page {
     background-color: var(--orange-5);
 }
 
+.bgc-orange-10 {
+    background-color: var(--orange-10);
+
+}
+
 .bgc-orange-20 {
     background-color: var(--orange-20);
 }
@@ -115,6 +124,10 @@ body.full-page {
 
 .bgc-blue-5 {
     background-color: var(--blue-5);
+}
+
+.bgc-blue-10 {
+    background-color: var(--blue-10);
 }
 
 .bgc-white {
@@ -1303,12 +1316,13 @@ p {
     .add-new-goal-container {
 
         .title {
-            padding: 10px 30px;
-            background-color: #f3fafb;
-            border-radius: 8px;
 
-            p {
-                font-size: 25px;
+            >input {
+                border: none;
+                padding: 10px 30px;
+                background-color: var(--orange-10);
+                border-radius: 8px;
+                font-size: 20px;
             }
         }
 
@@ -1327,8 +1341,26 @@ p {
         }
 
         .buttons {
-            .save {
+
+            [type=submit] {
+                border: none;
+                padding: 12px 45px;
+                border-radius: 8px;
+                color: #000;
+
+                &:hover {
+                    color: #000;
+                }
+            }
+
+            [type=submit]:first-child {
+                background-color: var(--blue-50);
                 margin-right: 399px;
+            }
+
+            [type=submit]:last-child {
+                border: 2px solid var(--blue-50);
+                background-color: #fff;
             }
         }
     }
@@ -1382,8 +1414,8 @@ p {
 }
 
 .modify {
-    color: var(--orange-35);
-    font-size: 20px;
+    color: var(--primary-blue);
+    font-size: 15px;
 }
 
 /* --------------------------------- */
@@ -1877,6 +1909,12 @@ p {
             position: relative;
             width: 50%;
 
+            h4 {
+                a {
+                    color: var(--primary-blue);
+                }
+            }
+
             &.left {
                 left: 0;
 
@@ -1988,7 +2026,7 @@ p {
 
     >input {
         width: 500px;
-        background-color: var(--teritary-blue);
+        background-color: var(--orange-5);
         padding: 10px;
     }
 }
@@ -2016,9 +2054,11 @@ p {
             .content {
 
                 h4 {
-                    color: var(--primary-blue);
-                    margin-bottom: 15px;
-                    font-weight: 700;
+                    >a {
+                        color: var(--primary-blue);
+                        margin-bottom: 15px;
+                        font-weight: 700;
+                    }
                 }
 
                 .description {
@@ -2030,7 +2070,7 @@ p {
                     margin-bottom: 30px;
                 }
 
-                a {
+                .view {
                     text-transform: uppercase;
                     background-color: var(--secondary-blue);
                     border-radius: 8px;
@@ -2125,7 +2165,10 @@ p {
 
 
             .controls {
-                color: var(--primary-blue);
+
+                a {
+                    color: var(--primary-blue);
+                }
 
                 i {
                     font-size: 25px;
@@ -2347,6 +2390,10 @@ p {
                 h4 {
                     margin-bottom: 15px;
 
+                    a {
+                        color: var(--primary-blue);
+                    }
+
                     >sup {
                         padding-left: 5px;
                         color: var(--orange-50);
@@ -2361,7 +2408,7 @@ p {
 
             }
 
-            a {
+            .view-profile {
                 background-color: var(--secondary-blue);
                 padding: 14px 122px;
             }
@@ -2777,7 +2824,7 @@ p {
         padding-right: 160px;
 
         .selected-session {
-            background-color: var(--blue-5);
+            background-color: var(--blue-10);
             padding: 45px 80px;
             margin-bottom: 36px;
 
@@ -2796,11 +2843,80 @@ p {
         padding-right: 160px;
 
         .datetime {
-            background-color: var(--orange-5);
+            background-color: var(--orange-10);
             padding: 91px 62px 199px;
         }
 
-        .date {}
+
+        .date {
+
+            .month {
+                margin-bottom: 24px;
+
+                a {
+                    i {
+                        font-size: 18px;
+                    }
+                }
+
+                span {
+                    font-size: 18px;
+                }
+            }
+
+            .calendar {
+                width: 379px;
+                height: auto;
+                box-sizing: border-box;
+
+                .date {
+                    padding: 20px;
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+                    grid-gap: 20px;
+                    box-sizing: border-box;
+
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 25px;
+
+                        &.day {
+                            font-weight: bold;
+                        }
+
+                        &.day:first-child,
+                        &.number:nth-child(7n + 1) {
+                            color: var(--orange);
+                        }
+
+                        &.number {
+                            height: 40px;
+                            width: 40px;
+                            border-radius: 50%;
+                            background-color: #fff;
+                            border: 1px solid var(--black-10);
+
+                            &:hover {
+                                background-color: var(--blue-50);
+                                border-color: var(--orange-50);
+                            }
+
+                            &.none {
+                                background-color: var(--orange-10);
+                                border: none;
+
+                                &:hover {
+                                    border-color: var(--orange-50);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
 
         .time {
             border-left: 1px solid var(--black-10);
@@ -2825,6 +2941,7 @@ p {
                     padding: 15px;
                     margin-bottom: 16px;
                     border: 1px solid var(--black-10);
+                    border-radius: 8px;
                     text-align: center;
 
                     &:hover {
@@ -2849,12 +2966,12 @@ p {
             }
 
             >div:first-child {
-                background-color: var(--orange-5);
+                background-color: var(--orange-10);
                 border-right: 1px solid var(--black-10);
             }
 
             >div:last-child {
-                background-color: var(--blue-5);
+                background-color: var(--blue-10);
             }
         }
     }
@@ -2869,7 +2986,7 @@ p {
             label {
                 width: 258px;
                 padding: 14px;
-                background-color: var(--orange-5);
+                background-color: var(--orange-10);
                 border-right: 1px solid var(--black-10);
             }
 
@@ -2877,7 +2994,7 @@ p {
             textarea {
                 padding: 14px;
                 border: none;
-                background-color: var(--blue-5);
+                background-color: var(--blue-10);
                 width: 774px;
             }
         }
@@ -2889,7 +3006,7 @@ p {
         margin-bottom: 27px;
 
         .personal {
-            background-color: var(--orange-5);
+            background-color: var(--orange-10);
             padding: 22px 45px;
 
             .item {
@@ -2905,7 +3022,7 @@ p {
 
         .details {
             margin-bottom: 26px;
-            background-color: var(--orange-5);
+            background-color: var(--orange-10);
             padding: 50px 42px;
 
             .item {
@@ -2917,9 +3034,16 @@ p {
     .links {
         a {
             padding: 12px 45px;
-            background-color: var(--blue-25);
             border-radius: 8px;
+        }
+
+        a:first-child {
+            background-color: var(--blue-50);
             margin-right: 15px;
+        }
+
+        a:last-child {
+            border: 2px solid var(--blue-50);
         }
     }
 }
@@ -2963,7 +3087,7 @@ p {
 
 .suggested {
     max-width: 601px;
-    background-color: var(--blue-5);
+    background-color: var(--blue-10);
 
     span {
         &:hover {
@@ -3030,7 +3154,7 @@ p {
 
     .countdown {
         padding: 5px 25px;
-        border: 2px solid var(--primary-blue);
+        border: 2px solid var(--blue-25);
         border-radius: 8px;
 
         &.summary {
@@ -3099,11 +3223,12 @@ p {
             display: flex;
             justify-content: center;
             margin-right: 8px;
-
-            &:hover {
-                background-color: #fff;
-            }
+            background-color: #fff;
         }
+    }
+
+    .table-hover>tbody>tr:hover>* {
+        --bs-table-bg-state: var(--orange-10);
     }
 
     .table-striped>tbody>tr:nth-of-type(odd)>* {
