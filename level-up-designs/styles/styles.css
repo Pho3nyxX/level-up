@@ -1653,15 +1653,15 @@ p {
         }
     }
 
-    .pagination-container {
+}
+.pagination-container {
 
-        .page {
-            font-size: 20px;
-            border-radius: 4px;
-            padding: 6px 12px;
-            background-color: var(--teritary-blue);
-            color: var(--primary-blue);
-        }
+    .page {
+        font-size: 20px;
+        border-radius: 4px;
+        padding: 6px 12px;
+        background-color: var(--teritary-blue);
+        color: var(--primary-blue);
     }
 }
 
