@@ -2619,7 +2619,8 @@ p {
 
                     h5 {
                         margin-bottom: 14px;
-                        a{
+
+                        a {
                             color: var(--primary-blue);
                         }
                     }
@@ -3073,18 +3074,16 @@ p {
 /* --------------------------------- */
 .skill-btn {
 
-    [type=submit] {
-        color: var(--black);
-    }
-
-    [type=submit]:first-child {
-        padding: 7px 25px;
+    .link {
+        padding: 8px 25px;
         background-color: var(--secondary-blue);
         margin-right: 20px;
         border: none;
+        border-radius: 6px;
     }
 
-    [type=submit]:last-child {
+    [type=submit] {
+        color: var(--black);
         padding: 5px 25px;
         border: 2px solid var(--secondary-blue);
         margin-right: 20px;
@@ -3219,7 +3218,7 @@ p {
     }
 
     .question-navigation {
-        background-color: var(--blue-5);
+        background-color: var(--blue-10);
         padding: 46px 52px;
 
         h3 {
@@ -3234,6 +3233,11 @@ p {
             justify-content: center;
             margin-right: 8px;
             background-color: #fff;
+
+            &.question-none {
+                border: none;
+                background-color: var(--blue-10);
+            }
         }
     }
 
