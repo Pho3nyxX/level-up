@@ -38,13 +38,6 @@
 
     --error: #e63329;
 
-    --dark-mode-primary: #242E42;
-    --dark-mode-secondary: #2F3B52;
-
-    /* --light-mode-primary: #f2f2fc; */
-    /* --light-mode-primary: #f1f1f1; */
-    /* light-mode-card: #e4e4e4; */
-
     --green: #09bf09;
 }
 
@@ -60,7 +53,7 @@ a {
 }
 
 body {
-    /* background-color: var(--light-mode-primary); */
+
 }
 
 body.full-page {
@@ -100,11 +93,21 @@ body.full-page {
 .primary-blue {
     background-color: var(--primary-blue);
     color: #fff;
+
+    &:hover{
+        background-color: var(--primary-blue);
+        color: #fff;
+    }
 }
 
-.primary-blue:hover {
-    background-color: var(--primary-blue);
-    color: #fff;
+.secondary-blue {
+    background-color: var(--secondary-blue);
+    color: #000;
+
+    &:hover{
+        background-color: var(--secondary-blue);
+        color: #000;
+    }
 }
 
 .bgc-orange-5 {
@@ -724,6 +727,12 @@ p {
     }
 }
 
+.setting-btn{
+    [type=submit]{
+        padding: 8px 128px;
+    }
+}
+
 /* settings */
 .main {
     height: 100%;
@@ -738,7 +747,6 @@ p {
 
         h5 {
             color: var(--primary-blue);
-
         }
 
         .bold {
@@ -753,7 +761,7 @@ p {
             [type=date].form-control,
             .form-select,
             textarea.form-control {
-                background-color: var(--orange-20);
+                background-color: var(--orange-10);
             }
 
             .upload {
@@ -813,6 +821,9 @@ p {
         }
 
         .mode {
+            [type=checkbox]{
+                border-color: var(--orange);
+            }
             .mode-item {
                 font-size: 18px;
             }
@@ -2067,7 +2078,6 @@ p {
                 }
 
                 >a {
-
                     text-transform: uppercase;
                     background-color: var(--secondary-blue);
                     border-radius: 8px;
