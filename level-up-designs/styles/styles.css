@@ -3082,6 +3082,13 @@ p {
         border-radius: 6px;
     }
 
+    .link-2 {
+        color: var(--black);
+        padding: 5px 25px;
+        border: 2px solid var(--secondary-blue);
+        border-radius: 6px;
+    }
+
     [type=submit] {
         color: var(--black);
         padding: 5px 25px;
