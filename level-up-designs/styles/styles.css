@@ -2059,11 +2059,15 @@ p {
                 }
 
                 .duration {
-                    font-size: 13px;
                     margin-bottom: 30px;
+
+                    span {
+                        font-size: 13px;
+                    }
                 }
 
-                .view {
+                >a {
+
                     text-transform: uppercase;
                     background-color: var(--secondary-blue);
                     border-radius: 8px;
@@ -2615,6 +2619,9 @@ p {
 
                     h5 {
                         margin-bottom: 14px;
+                        a{
+                            color: var(--primary-blue);
+                        }
                     }
 
                     .similar-reviews {

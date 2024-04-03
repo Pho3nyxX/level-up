@@ -198,7 +198,6 @@
 
     <div class="container-fluid content-section main">
         <div class="row me-0">
-
             <!-- breadcrumb -->
             <div class="container ps-4 mt-5 mb-5 text-center">
                 <div class="row mb-0">
@@ -207,7 +206,7 @@
                             <div class="col-3 me-0 ms-0 pe-0 ps-0 container">
                                 <div class="breadcrumb-container text-start" aria-label="breadcrumb">
                                     <div>
-                                        <a href="courses.html">Courses/</a>
+                                        <a href="courses.html">Courses ></a>
                                         <span>Introduction to HTML</span>
                                     </div>
                                 </div>
@@ -299,7 +298,6 @@
                     </div>
                 </div>
             </div>
-
             <!-- content -->
             <div class="col-9 ">
                 <!-- video  preview -->
@@ -341,12 +339,12 @@
                 </div>
 
                 <div class="menus">
-                    <a href="">Career Paths</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
-                    <a href="">Become a mentor</a>
-                    <a href="">Privacy</a>
-                    <a href="">Terms</a>
+                    <a href="../career-path/career-paths.html">Career Paths</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Become a mentor</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
                 </div>
 
                 <div class="row socials-and-switch justify-content-between">
@@ -369,40 +367,7 @@
 
     <script src="../scripts/bootstrap.js"></script>
     <script src="../scripts/site.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            // load categories div
-            // load filter toggle div
-            const categoriesContainer = document.querySelectorAll(".categories");
-            const filterLink = document.querySelector(".filter-menu-toggle a");
-
-            // set click listener on filter
-            // show categories div
-            filterLink.addEventListener("click", (e) => {
-                e.preventDefault();
-                console.log(categoriesContainer);
-                categoriesContainer.classList.toggle("hide");
-            });
-
-            // set click listener on categories div
-            // check if its a link that was click & which link
-            // get category of clicked link
-            // show category           
-            categoriesContainer.addEventListener("click", (e) => {
-                e.preventDefault();
-                // console.log(e.target.tagName);
-                const categoryDropdown = document.querySelector(".category-dropdown");
-                if (e.target.tagName.toLowerCase() == "a") {
-                    const categoryName = e.target.dataset.category;
-                    const categoryDiv = categoriesContainer.querySelector(`div[data-category='${categoryName}']`);
-                    categoryDiv.classList.toggle("hide");
-                }
-
-                // toggle/switch the show class
-                categoryDropdown.classList.toggle("show");
-            });
-        });
-    </script>
+ 
 </body>
 
 </html>
