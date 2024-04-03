@@ -1066,7 +1066,7 @@ p {
             padding: 5px 10px;
             border-radius: 6px;
             border: none;
-            background-color: var(--orange-5);
+            background-color: var(--orange-10);
         }
 
         .title {
@@ -1118,11 +1118,11 @@ p {
         .new-goal {
             float: left;
             height: 40px;
-            width: 240px;
+            width: 200px;
             padding: 5px 10px;
             border-radius: 6px;
             border: none;
-            /* background-color: #f3f3f3; */
+            background-color: var(--secondary-blue);
             justify-content: center;
             display: flex;
         }
@@ -1349,12 +1349,12 @@ p {
             }
 
             [type=submit]:first-child {
-                background-color: var(--blue-50);
+                background-color: var(--secondary-blue);
                 margin-right: 399px;
             }
 
             [type=submit]:last-child {
-                border: 2px solid var(--blue-50);
+                border: 2px solid var(--secondary-blue);
                 background-color: #fff;
             }
         }
