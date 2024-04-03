@@ -1628,7 +1628,6 @@ p {
             display: flex;
 
             i {
-                color: var(--secondary-blue);
                 margin-right: 5px;
             }
 
@@ -1641,8 +1640,7 @@ p {
             display: block;
             padding: 13px;
             text-transform: uppercase;
-            color: var(--primary-blue);
-            background-color: var(--teritary-blue);
+            background-color: var(--secondary-blue);
             margin-top: 50px;
         }
     }
@@ -1808,7 +1806,7 @@ p {
             gap: 125px;
 
             .slide {
-                background-color: var(--primary-blue);
+                background-color: var(--blue-50);
                 padding: 32px;
                 width: 327px;
                 max-width: 327px;
