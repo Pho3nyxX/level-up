@@ -778,6 +778,7 @@ p {
                     position: absolute;
                     top: 110px;
                     right: 60px;
+                    background-color: var(--orange-10);
                 }
             }
 
@@ -811,18 +812,29 @@ p {
             }
 
             .add-interest {
-                div{
-                    a{
+                div {
+                    a {
                         border: 1px solid #d9d5d5;
                         padding: 5px 12px;
-                        border-radius: 8px;  
+                        border-radius: 8px;
                     }
                 }
             }
 
-            .setting-btn {
-                .add-another {
-                    margin-right: 135px;
+            .project {
+                div:first-child {
+                    a{
+                        padding: 12px 30px;
+                        border-radius: 6px;
+                    }
+                }
+
+                div:last-child {
+                    [type=submit]{
+                        padding: 12px 30px;
+                        border-radius: 6px;
+                        border: 2px solid var(--secondary-blue);
+                    }
                 }
             }
         }
@@ -1181,13 +1193,17 @@ p {
                 a {
                     width: 170px;
                     flex-grow: 0;
-                    color: var(--black-25);
+                    color: var(--orange-50);
                 }
 
                 .message,
                 .follow {
-                    font-size: 20px;
+                    font-size: 16px;
                     margin-right: 30px;
+                }
+
+                .trash {
+                    font-size: 16px;
                 }
             }
         }
@@ -1205,7 +1221,7 @@ p {
             display: flex;
             background-color: var(--blue-10);
             padding: 10px;
-            height: 115px;
+            /* height: 115px; */
 
             .profile-pic {
                 width: 150px;
@@ -1246,18 +1262,18 @@ p {
                 }
             }
 
-            .modify-links {
+            /* .modify-links {
 
-                a{
+                a {
                     margin-right: 20px;
                     color: var(--orange-50);
                 }
-            }
+            } */
 
             .course-image {
                 height: 120px;
                 width: 120px;
-                background-color: #e4f6f9;
+                background-color: var(--orange-20);
                 margin-right: 20px;
                 align-items: center;
                 justify-content: center;
@@ -1416,6 +1432,14 @@ p {
                 margin-right: 15px;
             }
         }
+    }
+}
+
+.modify-links {
+
+    a {
+        margin-right: 20px;
+        color: var(--orange-50);
     }
 }
 
