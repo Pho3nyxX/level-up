@@ -52,9 +52,7 @@ a {
     color: #000;
 }
 
-body {
-
-}
+body {}
 
 body.full-page {
     width: 100%;
@@ -94,7 +92,7 @@ body.full-page {
     background-color: var(--primary-blue);
     color: #fff;
 
-    &:hover{
+    &:hover {
         background-color: var(--primary-blue);
         color: #fff;
     }
@@ -104,7 +102,7 @@ body.full-page {
     background-color: var(--secondary-blue);
     color: #000;
 
-    &:hover{
+    &:hover {
         background-color: var(--secondary-blue);
         color: #000;
     }
@@ -727,8 +725,8 @@ p {
     }
 }
 
-.setting-btn{
-    [type=submit]{
+.setting-btn {
+    [type=submit] {
         padding: 8px 128px;
     }
 }
@@ -800,17 +798,26 @@ p {
             }
 
             .contributor {
-                margin-right: 60px;
+
+                div:last-child {
+                    line-height: 2.5;
+
+                    a {
+                        border: 1px solid #d9d5d5;
+                        padding: 5px 12px;
+                        border-radius: 8px;
+                    }
+                }
             }
 
-            .add {
-                border: 1px solid #d9d5d5;
-                padding: 5px 12px;
-                border-radius: 8px;
-            }
-
-            .add.remove {
-                margin-left: 30px;
+            .add-interest {
+                div{
+                    a{
+                        border: 1px solid #d9d5d5;
+                        padding: 5px 12px;
+                        border-radius: 8px;  
+                    }
+                }
             }
 
             .setting-btn {
@@ -821,9 +828,10 @@ p {
         }
 
         .mode {
-            [type=checkbox]{
+            [type=checkbox] {
                 border-color: var(--orange);
             }
+
             .mode-item {
                 font-size: 18px;
             }
@@ -1104,7 +1112,7 @@ p {
 
             .activity-links,
             .page-link {
-                background-color: #F3F3F3;
+                background-color: var(--orange-10);
                 padding: 10px 20px;
                 border-radius: 8px;
                 border: none;
@@ -1190,13 +1198,14 @@ p {
         /* padding-left: 0; */
         padding-top: 25px;
         padding-bottom: 25px;
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid var(--orange-25);
 
         .activity-container,
         .course-container {
             display: flex;
-            background-color: #f3fafb;
+            background-color: var(--blue-10);
             padding: 10px;
+            height: 115px;
 
             .profile-pic {
                 width: 150px;
@@ -1238,18 +1247,10 @@ p {
             }
 
             .modify-links {
-                width: 170px;
-                flex-grow: 0;
 
-                >a:first-child {
-                    /* font-size: 20px; */
-                    margin-right: 30px;
-                    /* color: var(--orange-30); */
-                }
-
-                >a:last-child {
-                    /* font-size: 20px; */
-                    /* color: var(--orange-30); */
+                a{
+                    margin-right: 20px;
+                    color: var(--orange-50);
                 }
             }
 
