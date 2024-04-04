@@ -10,16 +10,13 @@
     --teritary-blue: #d9f2fa;
 
     --blue-5: #f7fcfe;
-    /* --blue-10: #effafd; */
     --blue-10: #e8f4f7;
     --blue-20: #e2edec;
     --blue-25: #d9f2fa;
-    /* --blue-fourth: #bde8f6; */
     --blue-50: #b2e2ef;
 
     --orange: #F58219;
     --orange-5: #fef9f3;
-    /* --orange-light: #e2b585; */
     --orange-10: #fef2e8;
     --orange-15: #feecdd;
     --orange-20: #dfdccd;
@@ -1211,7 +1208,6 @@ p {
 
     .activity,
     .course {
-        /* padding-left: 0; */
         padding-top: 25px;
         padding-bottom: 25px;
         border-bottom: 1px solid var(--orange-25);
@@ -1261,14 +1257,6 @@ p {
                     font-size: 20px;
                 }
             }
-
-            /* .modify-links {
-
-                a {
-                    margin-right: 20px;
-                    color: var(--orange-50);
-                }
-            } */
 
             .course-image {
                 height: 120px;
