@@ -13,6 +13,7 @@
     --blue-10: #e8f4f7;
     --blue-20: #e2edec;
     --blue-25: #d9f2fa;
+    --blue-35: #BBE8F6;
     --blue-50: #b2e2ef;
 
     --orange: #F58219;
@@ -200,7 +201,7 @@ p {
     }
 
     .auth-form-container {
-        background: #BBE8F6;
+        background: var(--blue-35);
         padding-bottom: 30px !important;
         position: relative;
 
@@ -214,7 +215,7 @@ p {
 
         .logo-shadow {
             position: absolute;
-            color: var(--primary-blue);
+            color: #fff;
             font-size: 100px;
             z-index: 0;
             transform: rotate(45deg) scale(200%);

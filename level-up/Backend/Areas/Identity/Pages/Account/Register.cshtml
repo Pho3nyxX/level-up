@@ -1,0 +1,99 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!-- <h1>@ViewData["Title"]</h1> -->
+
+<div class="container">
+<div class="row justify-content-center">
+    <div class="auth-form-container col-lg-4 col-md-6 card mt-5 p-5">
+    <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="row g-3 needs-validation" novalidate>
+           
+             <h2 class="text-center blue">Create new account.</h2>
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+             <!-- Firstname-->
+             <div class="has-validation">
+                   <label asp-for="Input.FirstName" class="form-label mb-0">Firstname</label>
+                    <input asp-for="Input.FirstName" class="form-control bgc-orange-20" autocomplete="firstname" aria-required="true" placeholder="Jane" required />
+                   <span asp-validation-for="Input.FirstName" class="text-danger"></span>
+             </div>
+
+            <!-- Lastname -->
+            <div class="has-validation">
+                <label asp-for="Input.LastName" class="form-label mb-0">Lastname</label>
+                <input asp-for="Input.LastName" class="form-control bgc-orange-20" autocomplete="lastname" aria-required="true" placeholder="Doe" required />
+                <span asp-validation-for="Input.LastName" class="text-danger"></span>
+            </div>
+
+            <!-- email -->
+            <div class="has-validation">
+                <label asp-for="Input.Email" class="form-label mb-0">Email</label>
+                <input asp-for="Input.Email" class="form-control bgc-orange-20" autocomplete="username" aria-required="true" placeholder="janedoe@gmail.com" required />
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+
+            <!-- password -->
+            <div class="has-validation">
+                <label asp-for="Input.Password" class="form-label mb-0">Password</label>
+                <input asp-for="Input.Password" class="form-control bgc-orange-20" autocomplete="new-password" aria-required="true" placeholder="password" required />
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+
+             <!-- Terms -->
+            <div>
+                <p class="mb-0">
+                    <small>
+                        By signing up, you agree to our
+                        <a href="" class="primary-blue-text" target="_blank">Terms & Conditions.</a>
+                    </small>
+                </p>
+            </div>
+
+            <!-- button -->
+            <div class="">
+                <button id="registerSubmit" type="submit" class="btn form-control primary-blue">Register</button>
+            </div>
+
+            <!-- Sign in link -->
+            <p><small>Already have an account? <a href="login.html" class="primary-blue-text">Log In</a></small></p>
+        </form>
+    </div>
+   <!-- <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to register.</h3>
+              <hr /> 
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+        </div> -->
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
