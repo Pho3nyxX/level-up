@@ -1,5 +1,27 @@
 {
+  "name": "level-up-website",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf level-up-designs/dist/*",
+    "init": "npm run clean && cp -r level-up-designs/fonts  level-up-designs/dist && cp -r level-up-designs/images level-up-designs/dist && cp -r level-up-designs/*.html level-up-designs/dist",
+    "bundle": "npm run init && node ./esbuild.config.js",
+    "build": "npm run bundle -- production",
+    "start": "npm run bundle -- development"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.2",
+    "bootstrap-icons": "^1.11.2",
+    "gsap": "^3.12.5"
+  },
   "devDependencies": {
     "esbuild": "^0.20.0"
   }
 }
+
+
