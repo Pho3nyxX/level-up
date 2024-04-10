@@ -2204,36 +2204,49 @@ p {
     }
 }
 
-.info-head {
-    display: flex;
-    gap: 100px;
-    align-items: center;
-    margin-bottom: 41px;
-
-    .image-container {
-
-        .pic-container {
-            height: 120px;
-            width: 120px;
-            border-radius: 50%;
-            background-color: #eee;
-        }
-
-        .taught-by {
-
-            >div:first-child {
-                font-size: 18px;
-            }
-        }
-    }
-}
-
 .instructor-overview {
     padding-top: 40px;
     padding-bottom: 70px;
 
     h1 {
         margin-bottom: 42px;
+    }
+
+    .name-title {
+        span:first-child {
+            font-size: 25px;
+        }
+    }
+
+    .pic-container {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        background-color: #eee;
+    }
+
+    .socials {
+        a {
+            i {
+                color: var(--primary-blue);
+                font-size: 16px;
+            }
+        }
+    }
+
+    .total {
+        >div:first-child {
+            margin-right: 30px;
+        }
+
+        span:last-child {
+            font-weight: 500;
+            font-size: 18px;
+        }
+    }
+
+    .more-courses-sec{
+        margin-top: 35px;
     }
 }
 
@@ -2543,7 +2556,7 @@ p {
 
     .item {
         border-right: 1px solid var(#E4E4E4);
-        
+
 
         .head {
             >div:first-child {
@@ -2556,24 +2569,23 @@ p {
     }
 }
 
-.more-courses-sec{
+.more-courses-sec {
     margin-top: 97px;
-    
 
-    h3{
+    h3 {
         margin-bottom: 40px;
     }
 
-    .item{
-        .image{
+    .item {
+        .image {
             height: 171px;
             width: 219px;
             background-color: #eee;
             margin-bottom: 17px;
         }
 
-        .ratings-container{
-            .ratings{
+        .ratings-container {
+            .ratings {
                 margin-top: 2px;
                 font-size: 12px;
             }
@@ -2702,17 +2714,6 @@ p {
 
                 .mentor-review {
                     width: 340px;
-                }
-
-                .socials {
-
-                    a {
-                        i {
-                            font-size: 18px;
-                            margin-right: 15px;
-                            /* filter: grayscale(90%); */
-                        }
-                    }
                 }
             }
         }
@@ -2881,6 +2882,16 @@ p {
             color: var(--orange);
             margin-top: 58px;
             margin-bottom: 71px;
+        }
+    }
+}
+
+.socials {
+
+    a {
+        i {
+            font-size: 18px;
+            margin-right: 15px;
         }
     }
 }
