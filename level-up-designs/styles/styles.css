@@ -78,6 +78,10 @@ body.full-page {
     color: var(--error);
 }
 
+.blue-icon {
+    color: var(--primary-blue);
+}
+
 .green-icon {
     color: var(--green);
 }
@@ -1218,7 +1222,6 @@ p {
             display: flex;
             background-color: var(--blue-10);
             padding: 10px;
-            /* height: 115px; */
 
             .profile-pic {
                 width: 150px;
@@ -1740,10 +1743,11 @@ p {
     margin-bottom: 30px;
 
     .view-roadmap {
-        background-color: var(--teritary-blue);
+        background-color: var(--secondary-blue);
         padding: 15px 40px;
         border-radius: 8px;
         font-size: 18px;
+        display: inline-block;
     }
 }
 
@@ -1768,6 +1772,10 @@ p {
                 i {
                     color: var(--secondary-blue);
                     padding-right: 10px;
+
+                    &::before{
+                        rotate: 90deg;
+                    }
                 }
             }
         }
@@ -1800,6 +1808,29 @@ p {
     margin-bottom: 50px;
     background-color: #f3f3f3;
 
+    .slider{
+        position: relative;
+    }
+
+    .bring-to-view{
+        top: 170px;
+        position: absolute;
+        font-size: 60px;
+        a{
+            i{
+                color: var(--secondary-blue);
+            }
+        }
+    }
+
+    .previous {
+        left: -85px;
+    }
+
+    .next {
+        right: -85px;
+    }
+
     .slider-container {
         position: relative;
         padding: 55px 35px 25px 35px;
@@ -1810,18 +1841,6 @@ p {
                 font-size: 50px;
                 color: var(--primary-blue);
             }
-        }
-
-        .previous {
-            top: 150px;
-            left: -85px;
-            position: absolute;
-        }
-
-        .next {
-            top: 150px;
-            right: -85px;
-            position: absolute;
         }
 
         .slides {
@@ -1839,6 +1858,7 @@ p {
                 margin-bottom: 2px;
                 flex-grow: 1;
                 border-radius: 8px;
+                position: relative;
 
                 blockquote {
                     position: relative;
@@ -1860,8 +1880,8 @@ p {
                     }
 
                     .name {
-                        font-size: 18px;
-                        color: var(--primary-blue);
+                        font-size: 20px;
+                        color: var(--orange);
                     }
                 }
 
@@ -1873,7 +1893,7 @@ p {
                     top: 11px;
                     left: 147px;
                     margin-bottom: 26px;
-                    color: var(--orange-35);
+                    color: var(--primary-blue);
                 }
             }
         }
@@ -2225,15 +2245,6 @@ p {
         background-color: #eee;
     }
 
-    .socials {
-        a {
-            i {
-                color: var(--primary-blue);
-                font-size: 16px;
-            }
-        }
-    }
-
     .total {
         >div:first-child {
             margin-right: 30px;
@@ -2258,43 +2269,6 @@ p {
     h1 {
         margin-bottom: 42px;
     }
-
-    /* .switch {
-        border-bottom: 3px solid var(--orange-15);
-        margin-bottom: 35px;
-
-        a {
-            padding: 8px;
-            font-size: 18px;
-            margin-right: 30px;
-            display: inline-block;
-            position: relative;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: -3px;
-                left: 0;
-                background-color: var(--primary-blue);
-                ;
-                width: 0;
-                height: 4px;
-                transition: width 0.4s;
-            }
-
-            &:hover {
-                color: var(--primary-blue);
-
-                &::after {
-                    width: 100%;
-                }
-            }
-        }
-
-        >span:first-child {
-            color: var(--primary-blue);
-        }
-    } */
 
     .content-container {
         border-radius: 4px;
