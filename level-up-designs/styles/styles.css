@@ -1621,25 +1621,34 @@ p {
 
         .buttons {
 
-            [type=submit] {
-                border: none;
-                padding: 12px 45px;
-                border-radius: 8px;
-                color: #000;
+            div{
 
-                &:hover {
+                [type=submit] {
+                    display: inline-block;
+                    border: none;
+                    padding: 12px 40px;
+                    border-radius: 8px;
                     color: #000;
+    
+                    &:hover {
+                        color: #000;
+                    }
+                }
+            }
+            
+
+            >div:first-child{
+                [type=submit]:first-child {
+                    background-color: var(--secondary-blue);
                 }
             }
 
-            [type=submit]:first-child {
-                background-color: var(--secondary-blue);
-                margin-right: 399px;
-            }
+            >div:last-child{
 
-            [type=submit]:last-child {
-                border: 2px solid var(--secondary-blue);
-                background-color: #fff;
+                [type=submit]:last-child {
+                    border: 2px solid var(--secondary-blue);
+                    background-color: #fff;
+                }
             }
         }
     }
@@ -2867,7 +2876,7 @@ p {
         }
 
         a {
-            background-color: var(--teritary-blue);
+            background-color: var(--secondary-blue);
             border-radius: 8px;
             padding: 8px 18px;
         }
@@ -3282,12 +3291,12 @@ p {
         }
 
         a:first-child {
-            background-color: var(--blue-50);
+            background-color: var(--secondary-blue);
             margin-right: 15px;
         }
 
         a:last-child {
-            border: 2px solid var(--blue-50);
+            border: 2px solid var(--secondary-blue);
         }
     }
 }
