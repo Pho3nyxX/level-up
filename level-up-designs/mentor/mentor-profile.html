@@ -16,26 +16,25 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container">
             <div class="collapse navbar-collapse justify-content-between menu-container">
+                <!-- brand name -->
                 <div class="brand-name">
                     <h3 class="mb-0"><a href="">Level<span>Up</span></a></h3>
                 </div>
 
+                <!-- menus -->
                 <div class="menus">
-                    <a href="/career-path/aspiration.html">Career Paths</a>
-                    <a href="dashboard.html" class="active">Courses</a>
-                    <a href="">Assessment</a>
-                    <a href="">Mentors</a>
-                    <a href="">About Us</a>
-                    <a href="">Contact</a>
+                    <a href="../career-path/career-paths.html">Career Paths</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="../skill/my-skills.html">Assessment</a>
+                    <a href="../mentor/mentors.html" class="active">Mentors</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
                 </div>
 
-                <div class="picture-container">
-                    <a href="">
-                        <img src="" alt="">
-                    </a>
+                <div class="access-btn">
+                    <a href="">Log In</a> |
+                    <a href="">Sign Up</a>
                 </div>
-
-
             </div>
         </div>
     </nav>
@@ -275,23 +274,23 @@
     </div>
 
     <!-- mentee remarks -->
-    <section class="mentees-remarks-container">
-        <div class="container">
-            <h2 class="blue text-center"><strong>Mentees Remarks</strong></h2>
-            <!-- container -->
-            <div class="slider-container">
-                <!-- prev next -->
-                <div class="previous">
-                    <a href="">
-                        <i class="bi bi-chevron-left"></i>
-                    </a>
-                </div>
+    <section class="mentees-remarks-container ">
+        <div class="container slider">
+            <h2 class="blue text-center">Mentees Remarks</h2>
 
-                <div class="next">
-                    <a href="">
-                        <i class="bi bi-chevron-right"></i>
-                    </a>
-                </div>
+            <div class="previous bring-to-view">
+                <a href="">
+                    <i class="bi bi-chevron-left"></i>
+                </a>
+            </div>
+
+            <div class="next bring-to-view">
+                <a href="">
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+            </div>
+
+            <div class="slider-container">
 
                 <!-- slides -->
                 <div class="slides">
@@ -468,7 +467,7 @@
             </div>
 
             <div class="row socials-and-switch justify-content-between">
-                <div class="col-3 socials">
+                <div class="col-3 footer-socials">
                     <a href=""><i class="bi bi-linkedin"></i></a>
                     <a href=""><i class="bi bi-twitter-x"></i></a>
                     <a href=""><i class="bi bi-facebook"></i></a>
@@ -486,40 +485,7 @@
 
     <script src="../scripts/bootstrap.js"></script>
     <script src="../scripts/site.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", (event) => {
-            // load categories div
-            // load filter toggle div
-            const categoriesContainer = document.querySelectorAll(".categories");
-            const filterLink = document.querySelector(".filter-menu-toggle a");
-
-            // set click listener on filter
-            // show categories div
-            filterLink.addEventListener("click", (e) => {
-                e.preventDefault();
-                console.log(categoriesContainer);
-                categoriesContainer.classList.toggle("hide");
-            });
-
-            // set click listener on categories div
-            // check if its a link that was click & which link
-            // get category of clicked link
-            // show category           
-            categoriesContainer.addEventListener("click", (e) => {
-                e.preventDefault();
-                // console.log(e.target.tagName);
-                const categoryDropdown = document.querySelector(".category-dropdown");
-                if (e.target.tagName.toLowerCase() == "a") {
-                    const categoryName = e.target.dataset.category;
-                    const categoryDiv = categoriesContainer.querySelector(`div[data-category='${categoryName}']`);
-                    categoryDiv.classList.toggle("hide");
-                }
-
-                // toggle/switch the show class
-                categoryDropdown.classList.toggle("show");
-            });
-        });
-    </script>
+   
 </body>
 
 </html>
