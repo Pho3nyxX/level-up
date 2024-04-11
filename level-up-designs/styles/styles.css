@@ -719,11 +719,21 @@ p {
                     }
                 }
             }
-        }
-    }
-    
 
-    .links-section {
+            &.menu-container{
+                .sub-menu{
+                    li{
+                        list-style: none;
+                        a{
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }  
+
+    /* .links-section {
         padding: 15px;
 
         .links-container {
@@ -743,7 +753,7 @@ p {
                 }
             }
         }
-    }
+    } */
 
     .notification-section {
         padding: 32px 17px 20px 18px;
@@ -794,7 +804,7 @@ p {
 
             .meeting-time {
                 position: absolute;
-                bottom: -11px;
+                bottom: -4px;
                 left: 26px;
                 padding: 4px;
                 width: 110px;
