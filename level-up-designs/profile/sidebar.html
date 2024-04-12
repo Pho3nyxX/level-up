@@ -14,245 +14,213 @@
 
     <!-- sidebar -->
     <aside class="sidebar">
-
-        <header class="row header d-flex justify-content-evenly">
-            <div class="container header-container align-items-center d-flex justify-content-center">
+        <header class="header">
+            <div class="container header-container d-flex justify-content-evenly">
                 <div class="image">
                     <i class="bi bi-graph-up-arrow"></i>
                 </div>
-                <h1 class="text mb-0">Level<span class="orange-text"><b>Up</b></h1>
-                <a href="#" class="toggle"><i class="bi bi-chevron-double-left"></i></a>
+                <h1 class="text mb-0 pt-1">Level<span class="orange-text"><b>Up</b></h1>
+                <a href="#" class="toggle pt-3"><i class="bi bi-chevron-double-left"></i></a>
             </div>
         </header>
 
-        <div class="row name-section ms-2 me-2 d-flex justify-content-evenly section-container wide">
-            <div class="col">
-                <h2 class=""><b>Hi, Jane!</b></h2>
+        <div class="sidebar-inner">
+            <div class="mini-dashboard">
+                <div class="row name-section ms-2 me-2 d-flex justify-content-evenly section-container wide">
+                    <div class="col">
+                        <h2 class=""><b>Hi, Jane!</b></h2>
 
-                <div class="profile-picture-container align-items-center d-flex ">
-                    <div>
-                        <img src="../images/profile-image.png" class="picture" alt="Profile">
+                        <div class="profile-picture-container align-items-center d-flex ">
+                            <div>
+                                <img src="../images/profile-image.png" class="picture" alt="Profile">
+                            </div>
+
+                            <h6 class="text mt-2">
+                                <span>Lorem Ipsum</span> <br>
+                                <span>Design Course</span>
+                            </h6>
+                            <i class="bi bi-check-circle-fill tick-icon ms-2 mt-3"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row progress-section section-container ms-2 me-2 d-flex justify-content-evenly wide">
+                    <div class="col-5 goal display">
+                        <h3 class="ms-2 mb-0">Goals</h3>
+                        <span class="ms-2">Continue your progress</span>
+
+                        <div class="display-progress ms-2 mt-2">
+                            <div class="progress-bar"></div>
+                            <div class="progress-circle"><span><b>25%</b></span></div>
+                        </div>
+
+                        <div class="links mt-2 mb-2">
+                            <a href="../goal/add-new-goal.html">Create Goal</a>
+                        </div>
                     </div>
 
-                    <h6 class="text mt-2">
-                        <span>Lorem Ipsum</span> <br>
-                        <span>Graphic Design Track</span>
-                    </h6>
-                    <i class="bi bi-check-circle-fill tick-icon ms-2 mt-3"></i>
-                </div>
-            </div>
-        </div>
+                    <div class="col-5 track display">
+                        <h3 class="ms-2 mb-0">Course</h3>
+                        <span class="ms-2">Course 1: Your first design</span>
 
-        <div class="row progress-section section-container ms-2 me-2 d-flex justify-content-evenly wide">
-            <div class="col-5 goal display">
-                <h3 class="ms-2 mb-0">Goals</h3>
-                <span class="ms-2">Continue your progress</span>
+                        <div class="display-progress ms-2 mt-2">
+                            <div class="progress-bar"></div>
+                            <div class="progress-circle"><span><b>25%</b></span></div>
+                        </div>
 
-                <div class="display-progress ms-2 mt-2">
-                    <div class="progress-bar"></div>
-                    <div class="progress-circle"><span><b>25%</b></span></div>
-                </div>
+                        <div class="links mt-2 mb-2">
+                            <a href="../course/lesson.html">Resume</a>
+                        </div>
+                    </div>
 
-                <div class="links mt-2 mb-2">
-                    <a href="../goal/add-new-goal.html">Create Goal</a>
-                </div>
-            </div>
+                    <div class="col-5 network display">
+                        <h3 class="ms-2 mb-0">Network
+                            <i class="bi bi-person"></i>
+                        </h3>
 
-            <div class="col-5 track display">
-                <h3 class="ms-2 mb-0">Track</h3>
-                <span class="ms-2">Course 1: Your first design</span>
+                        <div class="connections-container">
+                            <div class="ms-2 first text-center">You have made</div>
+                            <div class="number text-center">45</div>
+                            <div class="end text-center">Connections</div>
+                        </div>
 
-                <div class="display-progress ms-2 mt-2">
-                    <div class="progress-bar"></div>
-                    <div class="progress-circle"><span><b>25%</b></span></div>
-                </div>
+                        <div class="links mb-2">
+                            <a href="../profile/my-network.html">My Network</a>
+                        </div>
+                    </div>
 
-                <div class="links mt-2 mb-2">
-                    <a href="../course/lesson.html">Resume</a>
-                </div>
-            </div>
+                    <div class="col-5 skills display">
+                        <h3 class="ms-2 mb-0 network-skills">Skills
+                            <i class="bi bi-pencil"></i>
+                        </h3>
 
-            <div class="col-5 network display">
-                <h3 class="ms-2 mb-0">Network
-                    <i class="bi bi-person"></i>
-                </h3>
+                        <div class="profile-skills-tags">
+                            <span>Typing</span>
+                            <span>UX</span>
+                            <span>Networking</span>
+                            <span>Science</span>
+                            <span>Communication</span>
+                            <span>UI</span>
+                        </div>
 
-                <div class="connections-container">
-                    <div class="ms-2 first text-center">You have made</div>
-                    <div class="number text-center">45</div>
-                    <div class="end text-center">Connections</div>
-                </div>
-
-                <div class="links mb-2">
-                    <a href="../profile/my-network.html">My Network</a>
-                </div>
-            </div>
-
-            <div class="col-5 skills display">
-                <h3 class="ms-2 mb-0 network-skills">Skills
-                    <i class="bi bi-pencil"></i>
-                </h3>
-
-                <div class="profile-skills-tags">
-                    <span>Typing</span>
-                    <span>UX</span>
-                    <span>Networking</span>
-                    <span>Science</span>
-                    <span>Communication</span>
-                    <span>UI</span>
+                        <div class="links mb-2">
+                            <a href="../skill/my-skills.html">My Skills</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="links mb-2">
-                    <a href="../skill/my-skills.html">My Skills</a>
-                </div>
-            </div>
+                <div class="row notification-section section-container ms-2 me-2 wide">
+                    <div class="col-5 date">
+                        <div class="sec-border">
+                            <div class="ms-2 month text-center">January</div>
+                            <div class="day text-center">23</div>
+                            <div class="year text-center">2024</div>
+                        </div>
 
-            <div class="col-5 menu-container display">
-                <h3 class="mb-1">Profile
-                    <!-- <i class="bi bi-chevron-down orange-icon"> -->
-                </h3>
+                        <div class="mentor-pic">
+                            <img src="../images/profile-image.png" class="picture" alt="Profile">
+                        </div>
 
-                <ul class="sub-menu">
-                    <li><a href="#">Notification</a></li>
-                    <li><a href="#">Education</a></li>
-                    <li><a href="#">Interest</a></li>
-                </ul>
-            </div>
+                        <div class="meeting-time">
+                            <p class="text-center">5:00 AM <span>EST</span></p>
+                        </div>
+                    </div>
 
-            <div class="col-5 menu-container display">
-                <h3 class="ms-2 mb-0">Account
-                    <!-- <i class="bi bi-chevron-down orange-icon"> -->
-                </h3>
-                <ul class="sub-menu">
-                    <li><a href="#">About</a></li>
-                </ul>
-            </div>
-
-            <a href="#" class="text-end"><i class="bi bi-chevron-up"></i></a>
-        </div>
-
-        <!-- <div class="row links-section section-container ms-2 me-2 d-flex justify-content-evenly wide">
-            <div class="col links-container">
-                <div class="row">
-                    <ul class="col">
-                        <li>
-                            <h5><a href="#">My Mentor</a></h5>
-                        </li>
-                        <li>
-                            <h5><a href="#">Profile</a></h5>
-                        </li>
-                    </ul>
-
-                    <ul class="col">
-                        <li>
-                            <h5><a href="#">My Skills</a></h5>
-                        </li>
-                        <li>
-                            <h5><a href="#">My Account</a></h5>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
-
-        <div class="row notification-section section-container ms-2 me-2 wide">
-            <div class="col-5 date">
-                <div class="sec-border">
-                    <div class="ms-2 month text-center">January</div>
-                    <div class="day text-center">23</div>
-                    <div class="year text-center">2024</div>
-                </div>
-
-                <div class="mentor-pic">
-                    <img src="../images/profile-image.png" class="picture" alt="Profile">
-                </div>
-
-                <div class="meeting-time">
-                    <p class="text-center">5:00 AM <span>EST</span></p>
+                    <div class="col-7 reminder">
+                        <h5 class="mt-3 ms-2">Reminder</h5>
+                        <p class="ms-2">You have an upcoming <a href="../mentor/sessions.html#career-strategy"><b>Career Strategy</b></a> session with your mentor <a href="../mentor/mentor-profile.html"><b>Jane Doe</b>.</a></p>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-7 reminder">
-                <h5 class="mt-3 ms-2">Reminder</h5>
-                <p class="ms-2">You have an upcoming <a href="../mentor/sessions.html#career-strategy"><b>Career Strategy</b></a> session with your mentor <a href="../mentor/mentor-profile.html"><b>Jane Doe</b>.</a></p>
+            <div class="menu">
+                <div class="picture menu-item pt-0">
+                    <a href="#">
+                        <img src="../images/profile-image.png" class="profile-picture" alt="Profile">
+                    </a>
+                    <div class="submenu shadow">
+                        <a>Log out</a>
+                    </div>
+                </div>
+
+                <div class="home menu-item">
+                    <a href="../index.html">
+                        <i class="bi bi-house-door"></i>
+                        <span>Home</span>
+                    </a>
+                </div>
+
+                <div class="goal menu-item">
+                    <a href="../goal/goal-dashboard.html">
+                        <i class="bi bi-list-check"></i>
+                        <!-- <span>Goal</span> -->
+                    </a>
+                    <div class="submenu shadow">
+                        <a href="../goal/goal-dashboard.html">Goal Dahsboard</a>                        
+                        <a href="../goal/add-new-goal.html">Add New Goal</a>                        
+                    </div>
+                </div>
+
+                <div class="track menu-item">
+                    <a href="../course/courses.html">
+                        <i class="bi bi-book"></i>
+                        <!-- <span>Course</span> -->
+                    </a>
+                    <div class="submenu shadow">
+                        <a href="../course/courses.html">Courses</a>
+                        <a href="../course/my-courses.html">My Courses</a>
+                    </div>
+                </div>
+
+                <div class="profile menu-item">
+                    <a href="#">
+                        <i class="bi bi-person"></i>
+                    </a>
+                    <div class="submenu shadow">
+                        <a href="#">Profile</a>
+                        <a href="#">Notification</a>
+                        <a href="#">Education</a>
+                        <a href="#">Interest</a>
+                    </div>
+                </div>
+
+                <div class="account menu-item">
+                    <a href="#">
+                        <i class="bi bi-person-gear"></i>
+                    </a>
+                    <div class="submenu shadow">
+                        <a href="#">Account</a>
+                        <a href="#">About</a>
+                    </div>
+                </div>
+
+                <div class="mentor menu-item">
+                    <a href="#">
+                        <i class="bi bi-people"></i>
+                    </a>
+                    <div class="submenu shadow">
+                        <a href="#">Mentor</a>
+                        <a href="#">My Mentor</a>
+                    </div>
+                </div>
+
+                <div class="skill menu-item">
+                    <a href="#">
+                        <i class="bi bi-laptop"></i>
+                    </a>
+                    <div class="submenu shadow">
+                        <a href="../skill/my-skills.html">My Skill</a>
+                        <a href="../skill/add-new.html">Add New Skill</a>
+                    </div>
+                </div>
+
+                <div class="settings menu-item">
+                    <a href="#">
+                        <i class="bi bi-gear"></i>
+                        <span>Settings</span>
+                    </a>
+                </div>
             </div>
-        </div>
-
-        <div class="picture narrow">
-            <img src="../images/profile-image.png" class="profile-picture" alt="Profile">
-        </div>
-
-        <div class="home narrow">
-            <a href="">
-                <i class="bi bi-house-door-fill"></i>
-                <span>Home</span>
-            </a>
-        </div>
-
-        <div class="goal narrow">
-            <a href="">
-                <i class="bi bi-list-check"></i>
-                <span>Goal</span>
-            </a>
-        </div>
-
-        <div class="track narrow">
-            <a href="">
-                <i class="bi bi-bar-chart-fill"></i>
-                <span>Track</span>
-            </a>
-        </div>
-
-        <div class="profile narrow">
-            <a href="">
-                <i class="bi bi-person-fill"></i>
-            </a>
-            <div class="submenu shadow">
-                <a href="">Profile</a>
-                <a href="">My Profile</a>
-                <a href="">Notification</a>
-                <a href="">Education</a>
-                <a href="">Interest</a>
-                <a href="">Settings</a>
-            </div>
-        </div>
-
-        <div class="account narrow">
-            <a href="">
-                <img src="../images/account-settings-svgrepo-com.svg" alt="">
-            </a>
-            <div class="submenu shadow">
-                <a href="">Account</a>
-                <a href="">About</a>
-                <a href="">Settings</a>
-            </div>
-        </div>
-
-        <div class="mentor narrow">
-            <a href="">
-                <img src="../images/group-svgrepo-com.svg" alt="">
-            </a>
-            <div class="submenu shadow">
-                <a href="">Mentor</a>
-                <a href="">My Mentor</a>
-            </div>
-        </div>
-
-        <div class="skill narrow">
-            <a href="">
-                <img src="../images/problem-solving-skill-svgrepo-com.svg" alt="">
-            </a>
-            <div class="submenu shadow">
-                <a href="">Skill</a>
-                <a href="">My Skill</a>
-                <a href="">Skill assessment</a>
-            </div>
-        </div>
-
-        <div class="settings narrow active">
-            <a href="">
-                <img src="../images/settings-svgrepo-com.svg" alt="">
-            </a>
         </div>
     </aside>
 
@@ -329,11 +297,11 @@
             // set a click listener on the <a>
             // show collapsed sidebar
             toggleLink.addEventListener("click", (e) => {
-                console.log("clicked");
+                // console.log("clicked");
                 e.preventDefault();
                 asideContainer.classList.toggle("collapsed");
             });
-        });
+        });  
     </script>
 </body>
 

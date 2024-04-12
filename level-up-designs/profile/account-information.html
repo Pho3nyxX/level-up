@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Display</title>
+    <title>Account Information</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -258,28 +258,48 @@
         <div class="settings">
             <form class="row g-3 needs-validation" novalidate>
                 <div class="settings-container col-lg-4 col-md-6 mt-5">
-                    <h3 class="">Social Media</h3>
-                    <div class="">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Github</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://github.com">
+
+                    <h3 class="mb-3">Contact Information</h3>
+
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Email</label>
+                        <input type="email" class="form-control bgc-orange-20" id="exampleFormControlInput1" placeholder="janedoe@gmail.com">
                     </div>
-                    <div class="m">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Linkedin</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://linkedin.com/in/">
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="exampleFormControlInput1" class="form-label mb-0">Phone number</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
+                        <div class="col">
+                            <label for="exampleFormControlInput1" class="form-label mb-0">Phone type</label>
+                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                        </div>
                     </div>
-                    <div class="">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Twitter</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://twitter.com">
-                    </div>
-                    <div class="mb-4">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Website</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="https://domain.com">
+
+                    <div class="row mb-4">
+                        <div class="col profile-description">
+                            <label for="description" class="">Profile Description</label>
+                            <p class="word-count">0 / 100</p>
+                            <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                        </div>
                     </div>
 
                     <!-- button -->
-                    <div class="setting-btn">
+                    <div class="setting-btn mb-5">
                         <button type="submit" class="btn form-control secondary-blue">Save</button>
                     </div>
+
+                    <h3 class="mb-2">Password</h3>
+                    <p>Password must: contain mix letters, numbers and special characters, should be at least 8 characters
+                        long.</p>
+
+                    <div class="form-check mb-3 mode">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                        <label class="form-check-label mode-item" for="flexCheckChecked">Require all devices to sign in with new password</label>
+                    </div>
+
+                    <a href="" class="orange-text">Reset password</a>
                 </div>
             </form>
         </div>
