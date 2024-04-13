@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preference</title>
+    <title>Preferences</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -253,105 +253,32 @@
     </div>
 
     <!-- main body -->
-    <div class="container-fluid p-0 main">
+    <div class="container-fluid main">
+        <div class="row account">
+            <div class="d-flex picture-container">
+                <div class="picture">
+                    <img src="" alt="" class="pic">
+                </div>
+                <span>Jane Doe</span>
+            </div>
 
-        <div class="settings">
-            <form class="row g-3 needs-validation" novalidate>
-
-                <div class="settings-container col-lg-4 col-md-6 mt-5">
-                    <h3 class="mb-2">General</h3>
-                    <h5 class="mb-0">Preferences</h5>
-
-                    <div class="d-flex justify-content-center mb-4">
-                        <select class="form-select mt-4 option-container" aria-label="Default select example">
-                            <option selected>Language</option>
-                            <option value="1">English</option>
-                            <option value="2">Spanish</option>
-                            <option value="3">French</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex justify-content-center mb-4">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Who can see your profile</option>
-                            <option value="1">No one</option>
-                            <option value="2">Your connections</option>
-                            <option value="3">Everyone</option>
-                        </select>
-                    </div>
-
-                    <div class="d-flex justify-content-center mb-4">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Who can connect with you</option>
-                            <option value="1">No one</option>
-                            <option value="2">Your connections</option>
-                            <option value="3">Everyone</option>
-                        </select>
-                    </div>
-
-                    <!-- button -->
-                    <div class="setting-btn mb-4">
-                        <button type="submit" class="btn form-control secondary-blue">Save</button>
-                    </div>
-
-                    <h3 class="mb-2">Visibility</h3>
-
-                    <p class="mb-0 bold">Connection visibility</p>
-                    <p class="mb-0">Should users be able to view your connection list?</p>
-                    <div class="d-flex justify-content-center mb-3">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Select</option>
-                            <option value="1">English</option>
-                            <option value="2">Spanish</option>
-                            <option value="3">French</option>
-                        </select>
-                    </div>
-
-                    <p class="mb-0 bold">Active status</p>
-                    <p class="mb-0">Who should be able to see that you are online?</p>
-                    <div class="d-flex justify-content-center mb-3">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Select</option>
-                            <option value="1">English</option>
-                            <option value="2">Spanish</option>
-                            <option value="3">French</option>
-                        </select>
-                    </div>
-
-                    <p class="mb-0 bold">Followers</p>
-                    <p class="mb-0">Who can follow you?</p>
-                    <div class="d-flex justify-content-center mb-3">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Select</option>
-                            <option value="1">English</option>
-                            <option value="2">Spanish</option>
-                            <option value="3">French</option>
-                        </select>
-                    </div>
-
-                    <!-- button -->
-                    <div class="setting-btn mb-4">
-                        <button type="submit" class="btn form-control secondary-blue">Save</button>
-                    </div>
-
-                    <h3 class="mb-2">Display Mode</h3>
-
-                    <div class="form-check mb-2 mode">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label mode-item" for="flexCheckChecked">Light mode</label>
-                    </div>
-
-                    <div class="form-check mb-2 mode">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label mode-item" for="flexCheckChecked">Dark mode</label>
-                    </div>
-
-                    <div class="form-check mb-2 mode">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                        <label class="form-check-label mode-item" for="flexCheckChecked">Device settings</label>
+            <div class="col-8">
+                <div class="row">
+                    <div class="col tab-title active">
+                        <ul class="nav">
+                            <li class="nav-item text-center active">
+                                <a class="nav-link active" href="">Genaral and Language</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="">Theme</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" href="">Visibility</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
