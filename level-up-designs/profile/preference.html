@@ -255,27 +255,137 @@
     <!-- main body -->
     <div class="container-fluid main">
         <div class="row account">
-            <div class="d-flex picture-container">
-                <div class="picture">
-                    <img src="" alt="" class="pic">
-                </div>
-                <span>Jane Doe</span>
-            </div>
-
             <div class="col-8">
                 <div class="row">
-                    <div class="col tab-title active">
-                        <ul class="nav">
+                    <div class="col tab-title">
+                        <ul class="nav nav-underline" id="nav-tab" role="tablist">
                             <li class="nav-item text-center active">
-                                <a class="nav-link active" href="">Genaral and Language</a>
+                                <a class="nav-link active" id="genaral-and-language-tab" data-bs-toggle="tab" data-bs-target="#genaral-and-language-tab-pane" role="tab" aria-controls="genaral-and-language-tab-pane" aria-selected="true">Genaral and Language</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="">Theme</a>
+                                <a class="nav-link" id="theme-tab" data-bs-toggle="tab" data-bs-target="#theme-tab-pane" role="tab" aria-controls="theme-tab-pane" aria-selected="false">Theme</a>
                             </li>
                             <li class="nav-item text-center">
-                                <a class="nav-link" href="">Visibility</a>
+                                <a class="nav-link" id="visibility-tab" data-bs-toggle="tab" data-bs-target="#visibility-tab-pane" role="tab" aria-controls="visibility-tab-pane" aria-selected="false">Visibility</a>
                             </li>
                         </ul>
+
+                        <div class="tab-content" id="navTabContent">
+                            <div class="tab-pane fade show active" id="genaral-and-language-tab-pane" role="tabpanel" aria-labelledby="genaral-and-language-tab" tabindex="0">
+                                <div class="settings">
+                                    <div class="settings-container col-lg-6 mt-5">
+                                        <h3 class="mb-2 blue">General</h3>
+                                        <h5 class="mb-0 blue">Preferences</h5>
+
+                                        <div class="d-flex justify-content-center mb-4">
+                                            <select class="form-select mt-4 option-container" aria-label="Default select example">
+                                                <option selected>Language</option>
+                                                <option value="1">English</option>
+                                                <option value="2">Spanish</option>
+                                                <option value="3">French</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mb-4">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Who can see your profile</option>
+                                                <option value="1">No one</option>
+                                                <option value="2">Your connections</option>
+                                                <option value="3">Everyone</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="d-flex justify-content-center mb-4">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Who can connect with you</option>
+                                                <option value="1">No one</option>
+                                                <option value="2">Your connections</option>
+                                                <option value="3">Everyone</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- button -->
+                                        <div class="setting-btn mb-4">
+                                            <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="theme-tab-pane" role="tabpanel" aria-labelledby="theme-tab" tabindex="0">
+                                <div class="settings">
+                                    <div class="settings-container col-lg-6 mt-5">
+                                        <h3 class="mb-2">Display Mode</h3>
+
+                                        <div class="form-check mb-2 mode">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                            <label class="form-check-label mode-item" for="flexCheckChecked">Light mode</label>
+                                        </div>
+
+                                        <div class="form-check mb-2 mode">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                            <label class="form-check-label mode-item" for="flexCheckChecked">Dark mode</label>
+                                        </div>
+
+                                        <div class="form-check mb-2 mode">
+                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                            <label class="form-check-label mode-item" for="flexCheckChecked">Device settings</label>
+                                        </div>
+
+                                        <!-- button -->
+                                        <div class="setting-btn mb-4">
+                                            <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="visibility-tab-pane" role="tabpanel" aria-labelledby="visibility-tab" tabindex="0">
+                                <div class="settings">
+                                    <div class="settings-container col-lg-6 mt-5">
+                                        <h3 class="mb-2">Visibility</h3>
+
+                                        <p class="mb-0 bold">Connection visibility</p>
+                                        <p class="mb-0">Should users be able to view your connection list?</p>
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Select</option>
+                                                <option value="1">English</option>
+                                                <option value="2">Spanish</option>
+                                                <option value="3">French</option>
+                                            </select>
+                                        </div>
+
+                                        <p class="mb-0 bold">Active status</p>
+                                        <p class="mb-0">Who should be able to see that you are online?</p>
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Select</option>
+                                                <option value="1">English</option>
+                                                <option value="2">Spanish</option>
+                                                <option value="3">French</option>
+                                            </select>
+                                        </div>
+
+                                        <p class="mb-0 bold">Followers</p>
+                                        <p class="mb-0">Who can follow you?</p>
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Select</option>
+                                                <option value="1">English</option>
+                                                <option value="2">Spanish</option>
+                                                <option value="3">French</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- button -->
+                                        <div class="setting-btn mb-4">
+                                            <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
