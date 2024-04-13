@@ -553,9 +553,6 @@ p {
     }
 }
 
-
-
-
 /* sidebar extended */
 .sidebar {
     height: 100%;
@@ -960,38 +957,58 @@ p {
 /* settings heading section */
 .setting-menu {
     height: 100%;
-    width: 250px;
+    width: 276px;
     padding: 10px 0px;
     background-color: #66CCEB45;
     transition: width .5s;
     flex-grow: 0;
     flex-shrink: 0;
 
+    .search {
+
+        [type=search] {
+            width: 243px;
+            background-color: var(--orange-10);
+            padding: 8px;
+        }
+    }
+
     &>* {
-        padding-left: 14px;
+        padding-left: 20px;
         padding-right: 14px;
     }
 
-    .active {
+    /* .active {
         background: #fff;
-    }
+    } */
 
-    h2 {}
+    .settings-menu-item {
+        cursor: pointer;
+        
+        &:hover {
+            background-color: var(--primary-blue);
 
-    .section-title {}
-
-    a {
-        display: inline-block;
-        padding: 5px 0px;
-
-        span {
-            font-size: 18px;
+            a {
+                color: #fff;
+            }
         }
 
-        i {
-            font-size: 18px;
+        a {
+            width: 100%;
+            display: inline-block;
+            padding: 10px 0px;
+
+            span {
+                font-size: 18px;
+            }
+
+            i {
+                font-size: 18px;
+                float: right;
+            }
         }
     }
+
 }
 
 .setting-btn {
