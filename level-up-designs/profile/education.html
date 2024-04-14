@@ -249,96 +249,200 @@
                 <i class="bi bi-chevron-right"></i>
             </a>
         </div>
-
     </div>
 
     <!-- main body -->
-    <div class="container-fluid p-0 main">
+    <div class="container-fluid main">
+        <div class="row tabs-container">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col tab-title">
+                        <ul class="nav nav-underline" id="nav-tab" role="tablist">
+                            <li class="nav-item text-center active">
+                                <a class="nav-link active" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" role="tab" aria-controls="education-tab-pane" aria-selected="true">Education</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" id="educational-publication-tab" data-bs-toggle="tab" data-bs-target="#educational-publication-tab-pane" role="tab" aria-controls="educational-publication-tab-pane" aria-selected="false">Educational Publication</a>
+                            </li>
+                            <li class="nav-item text-center">
+                                <a class="nav-link" id="project-tab" data-bs-toggle="tab" data-bs-target="#project-tab-pane" role="tab" aria-controls="project-tab-pane" aria-selected="false">Project</a>
+                            </li>
+                        </ul>
 
-        <div class="settings">
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="settings-container col-lg-4 col-md-6 mt-5">
-                    <h3 class="mb-4">Education</h3>
+                        <div class="tab-content" id="navTabContent">
+                            <div class="tab-pane fade show active" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+                                <div class="settings">
+                                    <div class="settings-container col-lg-6 mt-5">
+                                        <h3 class="mb-4">Education</h3>
 
-                    <div class="mb-2">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">School</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="NCU">
-                    </div>
+                                        <div class="mb-2">
+                                            <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">School</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="NCU">
+                                        </div>
 
-                    <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Degree type</label>
-                    <div class="d-flex justify-content-center mb-2">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Select</option>
-                            <option value="1">Bachelors</option>
-                            <option value="2">Masters</option>
-                            <option value="3">PhD</option>
-                        </select>
-                    </div>
+                                        <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Degree type</label>
+                                        <div class="d-flex justify-content-center mb-2">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Select</option>
+                                                <option value="1">Bachelors</option>
+                                                <option value="2">Masters</option>
+                                                <option value="3">PhD</option>
+                                            </select>
+                                        </div>
 
-                    <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Level</label>
-                    <div class="d-flex justify-content-center mb-3">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Select</option>
-                            <option value="1">Bachelors</option>
-                            <option value="2">Masters</option>
-                            <option value="3">PhD</option>
-                        </select>
-                    </div>
+                                        <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Level</label>
+                                        <div class="d-flex justify-content-center mb-3">
+                                            <select class="form-select option-container" aria-label="Default select example">
+                                                <option selected>Select</option>
+                                                <option value="1">Bachelors</option>
+                                                <option value="2">Masters</option>
+                                                <option value="3">PhD</option>
+                                            </select>
+                                        </div>
 
-                    <div class="row mb-3">
-                        <div class="col">
-                            <label for="start-month" class="">Starting from</label>
-                            <select class="form-select" aria-label="Default select example" id="start-month" name="start-month">
-                                <option selected>None</option>
-                                <option value="1">January</option>
-                                <option value="2">February</option>
-                                <option value="3">March</option>
-                                <option value="4">April</option>
-                                <option value="5">May</option>
-                                <option value="6">June</option>
-                                <option value="7">July</option>
-                                <option value="8">August</option>
-                                <option value="9">September</option>
-                                <option value="10">October</option>
-                                <option value="11">November</option>
-                                <option value="12">December</option>
-                            </select>
+                                        <div class="row mb-3">
+                                            <div class="col">
+                                                <label for="start-month" class="">Starting from</label>
+                                                <select class="form-select" aria-label="Default select example" id="start-month" name="start-month">
+                                                    <option selected>None</option>
+                                                    <option value="1">January</option>
+                                                    <option value="2">February</option>
+                                                    <option value="3">March</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">May</option>
+                                                    <option value="6">June</option>
+                                                    <option value="7">July</option>
+                                                    <option value="8">August</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col">
+                                                <label for="start-year" class=""></label>
+                                                <select class="form-select" aria-label="Default select example" id="start-year" name="start-year">
+                                                    <option selected>None</option>
+                                                    <option value="1">2000</option>
+                                                    <option value="2">2000</option>
+                                                    <option value="3">2000</option>
+                                                    <option value="4">2000</option>
+                                                    <option value="5">2000</option>
+                                                    <option value="6">2000</option>
+                                                    <option value="7">2000</option>
+                                                    <option value="8">2000</option>
+                                                    <option value="9">2000</option>
+                                                    <option value="10">2000</option>
+                                                    <option value="11">2000</option>
+                                                    <option value="12">2000</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col profile-description">
+                                                <label for="description" class="">Profile Description</label>
+                                                <p class="word-count">0 / 100</p>
+                                                <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- button -->
+                                        <div class="setting-btn">
+                                            <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="educational-publication-tab-pane" role="tabpanel" aria-labelledby="educational-publication-tab" tabindex="0">
+                                <div class="settings">
+                                    <div class="settings-container col-lg-6 mt-5">
+                                        <h3 class="mb-3">Educationalal Publication</h3>
+
+                                        <div class="">
+                                            <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                        </div>
+
+                                        <div class="">
+                                            <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Publisher</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Youtube / Newspaper / Blog">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Url</label>
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                        </div>
+
+                                        <label for="exampleFormControlInput1" class="form-label mb-0">Publication date </label>
+                                        <div class="mb-0">
+                                            <input class="form-control" type="date" placeholder="">
+                                        </div>
+
+                                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Other contributors?</label>
+                                        <div class="row mb-3 contributor d-flex justify-content-between">
+                                            <div class="col-10 ">
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Contributor name here">
+                                            </div>
+                                            <div class="col-2 ">
+                                                <a href="#"><i class="bi bi-plus"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                                            <div class="col profile-description">
+                                                <label for="description" class="">Description</label>
+                                                <p class="word-count">0 / 100</p>
+                                                <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <!-- button -->
+                                        <div class="setting-btn">
+                                            <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="project-tab-pane" role="tabpanel" aria-labelledby="project-tab" tabindex="0">
+                                <div class="settings">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="settings-container col-lg-6 mt-5">
+                                            <h3 class="mb-3">Project</h3>
+
+                                            <div class="mb-3">
+                                                <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                            </div>
+
+                                            <div class="row mb-4">
+                                                <div class="col profile-description">
+                                                    <label for="description" class="">Description</label>
+                                                    <p class="word-count">0 / 100</p>
+                                                    <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <!-- button -->
+                                            <div class="row project d-flex justify-content-between">
+                                                <div class="col-6">
+                                                    <a href="#" class="secondary-blue">Add another</a>
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="submit" class="btn">Remove</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-
-                        <div class="col">
-                            <label for="start-year" class=""></label>
-                            <select class="form-select" aria-label="Default select example" id="start-year" name="start-year">
-                                <option selected>None</option>
-                                <option value="1">2000</option>
-                                <option value="2">2000</option>
-                                <option value="3">2000</option>
-                                <option value="4">2000</option>
-                                <option value="5">2000</option>
-                                <option value="6">2000</option>
-                                <option value="7">2000</option>
-                                <option value="8">2000</option>
-                                <option value="9">2000</option>
-                                <option value="10">2000</option>
-                                <option value="11">2000</option>
-                                <option value="12">2000</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col profile-description">
-                            <label for="description" class="">Profile Description</label>
-                            <p class="word-count">0 / 100</p>
-                            <textarea class="form-control" name="description" id="description" rows="5"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- button -->
-                    <div class="setting-btn">
-                        <button type="submit" class="btn form-control secondary-blue">Save</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 

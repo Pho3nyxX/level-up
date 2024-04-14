@@ -1719,7 +1719,7 @@ p {
         }
     }
 
-    .account {
+    .tabs-container {
         padding-top: 50px;
         padding-left: 50px;
 
@@ -1758,6 +1758,7 @@ p {
 
                 li {
                     width: 310px;
+                    cursor: pointer;
 
                     a {
                         color: var(--black);
