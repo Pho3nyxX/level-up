@@ -39,7 +39,7 @@
 
             <div class="profile-picture-container align-items-center d-flex ">
                 <span>
-                    <img src="../images/profile-image.png" class="picture" alt="Profile">
+                    <img src="/images/profile-image.png" class="picture" alt="Profile">
                 </span>
 
                 <h6 class="text mt-2">
@@ -109,7 +109,7 @@
                 </div>
 
                 <div class="mentor-pic">
-                    <img src="../images/profile-image.png" class="picture" alt="Profile">
+                    <img src="/images/profile-image.png" class="picture" alt="Profile">
                 </div>
 
                 <div class="meeting-time">
@@ -125,7 +125,7 @@
         </div>
 
         <div class="picture narrow">
-            <img src="../images/profile-image.png" class="profile-picture" alt="Profile">
+            <img src="/images/profile-image.png" class="profile-picture" alt="Profile">
         </div>
 
         <div class="home narrow">
@@ -165,7 +165,7 @@
 
         <div class="account narrow">
             <a href="">
-                <img src="../images/account-settings-svgrepo-com.svg" alt="">
+                <img src="/images/account-settings-svgrepo-com.svg" alt="">
             </a>
             <div class="submenu shadow">
                 <a href="">Account</a>
@@ -176,7 +176,7 @@
 
         <div class="mentor narrow">
             <a href="">
-                <img src="../images/group-svgrepo-com.svg" alt="">
+                <img src="/images/group-svgrepo-com.svg" alt="">
             </a>
             <div class="submenu shadow">
                 <a href="">Mentor</a>
@@ -186,7 +186,7 @@
 
         <div class="skill narrow">
             <a href="">
-                <img src="../images/problem-solving-skill-svgrepo-com.svg" alt="">
+                <img src="/images/problem-solving-skill-svgrepo-com.svg" alt="">
             </a>
             <div class="submenu shadow">
                 <a href="">Skill</a>
@@ -253,58 +253,75 @@
     </div>
 
     <!-- main body -->
-    <div class="container-fluid p-0 main">
-        <div class="settings">
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="settings-container col-lg-4 col-md-6 mt-5">
-                    <h3 class="">Profile Picture</h3>
-                    <div class="mb-5 upload">
-                        <img src="../images/profile-image.png" alt="" class="picture">
-                        <input class="form-control upload-input" type="file" placeholder="Upload photo">
-                    </div>
+    <div class="container-fluid main">
+        <div class="row tabs-container">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col tab-title">
+                        <ul class="nav nav-underline" id="nav-tab" role="tablist">
+                            <li class="nav-item text-center active">
+                                <a class="nav-link active" id="general-information-tab" data-bs-toggle="tab" data-bs-target="#general-information-tab-pane" role="tab" aria-controls="general-information-tab-pane" aria-selected="true">General Information</a>
+                            </li>
+                        </ul>
 
-                    <h3 class="mb-0">General Information</h3>
-                    <div class="mb-2">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Firstname</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                    <div class="mb-2">
-                        <label for="exampleFormControlInput1" class="form-label mb-0">Lastname</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                    <div class="mb-2">
-                        <label for="exampleFormControlInput1" class="form-label mb-0">Headline</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
+                        <div class="tab-content" id="navTabContent">
+                            <div class="tab-pane fade show active" id="general-information-tab-pane" role="tabpanel" aria-labelledby="general-information-tab" tabindex="0">
+                                <div class="settings">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="settings-container col-lg-6 mt-5">
+                                            <h3 class="">Profile Picture</h3>
+                                            <div class="mb-5 upload">
+                                                <img src="../images/profile-image.png" alt="" class="picture">
+                                                <input class="form-control upload-input" type="file" placeholder="Upload photo">
+                                            </div>
 
-                    <p class="mb-0 bold">Location</p>
-                    <div class="row mb-2">
-                        <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label mb-0">Country/Region</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1">
+                                            <h3 class="mb-0">General Information</h3>
+                                            <div class="mb-2">
+                                                <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Firstname</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="exampleFormControlInput1" class="form-label mb-0">Lastname</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                                            </div>
+                                            <div class="mb-2">
+                                                <label for="exampleFormControlInput1" class="form-label mb-0">Headline</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1">
+                                            </div>
+
+                                            <p class="mb-0 bold">Location</p>
+                                            <div class="row mb-2">
+                                                <div class="col">
+                                                    <label for="exampleFormControlInput1" class="form-label mb-0">Country/Region</label>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                                                </div>
+                                                <div class="col">
+                                                    <label for="exampleFormControlInput1" class="form-label mb-0">City</label>
+                                                    <input type="text" class="form-control" id="exampleFormControlInput1">
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-4">
+                                                <div class="col profile-description">
+                                                    <label for="description" class="">Profile Description</label>
+                                                    <p class="word-count">0 / 100</p>
+                                                    <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <!-- button -->
+                                            <div class="setting-btn">
+                                                <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <label for="exampleFormControlInput1" class="form-label mb-0">City</label>
-                            <input type="text" class="form-control" id="exampleFormControlInput1">
-                        </div>
-                    </div>
-
-                    <div class="row mb-4">
-                        <div class="col profile-description">
-                            <label for="description" class="">Profile Description</label>
-                            <p class="word-count">0 / 100</p>
-                            <textarea class="form-control" name="description" id="description" rows="5"></textarea>
-                        </div>
-                    </div>
-
-                    <!-- button -->
-                    <div class="setting-btn">
-                        <button type="submit" class="btn form-control secondary-blue">Save</button>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-
     </div>
 
     <script src="../scripts/bootstrap.js"></script>
