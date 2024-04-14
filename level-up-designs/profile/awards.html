@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Award</title>
+    <title>Awards</title>
     <link rel="stylesheet" href="../styles/bootstrap.css">
     <link rel="stylesheet" href="../styles/bootstrap-icons.css">
     <link rel="stylesheet" href="../styles/styles.css">
@@ -253,47 +253,64 @@
     </div>
 
     <!-- main body -->
-    <div class="container-fluid p-0 main">
+    <div class="container-fluid main">
+        <div class="row tabs-container">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col tab-title">
+                        <ul class="nav nav-underline" id="nav-tab" role="tablist">
+                            <li class="nav-item text-center active">
+                                <a class="nav-link active" id="awards-tab" data-bs-toggle="tab" data-bs-target="#awards-tab-pane" role="tab" aria-controls="awards-tab-pane" aria-selected="true">Awards</a>
+                            </li>
+                        </ul>
 
-        <div class="settings">
-            <form class="row g-3 needs-validation" novalidate>
-                <div class="settings-container col-lg-4 col-md-6 mt-5">
-                    <h3 class="mb-3">Award</h3>
+                        <div class="tab-content" id="navTabContent">
+                            <div class="tab-pane fade show active" id="awards-tab-pane" role="tabpanel" aria-labelledby="awards-tab" tabindex="0">
+                                <div class="settings">
+                                    <form class="row g-3 needs-validation" novalidate>
+                                        <div class="settings-container col-lg-6 mt-5">
+                                            <h3 class="mb-3">Award</h3>
 
-                    <div class="mb-2">
-                        <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-                    </div>
+                                            <div class="mb-2">
+                                                <label for="exampleFormControlInput1" class="form-label mt-3 mb-0">Title</label>
+                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+                                            </div>
 
-                    <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Issuer</label>
-                    <div class="d-flex justify-content-center mb-3">
-                        <select class="form-select option-container" aria-label="Default select example">
-                            <option selected>Select</option>
-                            <option value="1">Bachelors</option>
-                            <option value="2">Masters</option>
-                            <option value="3">PhD</option>
-                        </select>
-                    </div>
+                                            <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Issuer</label>
+                                            <div class="d-flex justify-content-center mb-3">
+                                                <select class="form-select option-container" aria-label="Default select example">
+                                                    <option selected>Select</option>
+                                                    <option value="1">Bachelors</option>
+                                                    <option value="2">Masters</option>
+                                                    <option value="3">PhD</option>
+                                                </select>
+                                            </div>
 
-                    <label for="exampleFormControlInput1" class="form-label mb-0">Publication date </label>
-                    <div class="mb-3">
-                        <input class="form-control" type="date" placeholder="">
-                    </div>
+                                            <label for="exampleFormControlInput1" class="form-label mb-0">Publication date </label>
+                                            <div class="mb-3">
+                                                <input class="form-control" type="date" placeholder="">
+                                            </div>
 
-                    <div class="row mb-4">
-                        <div class="col profile-description">
-                            <label for="description" class="">Description</label>
-                            <p class="word-count">0 / 100</p>
-                            <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                                            <div class="row mb-4">
+                                                <div class="col profile-description">
+                                                    <label for="description" class="">Description</label>
+                                                    <p class="word-count">0 / 100</p>
+                                                    <textarea class="form-control" name="description" id="description" rows="5"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <!-- button -->
+                                            <div class="setting-btn">
+                                                <button type="submit" class="btn form-control secondary-blue">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- button -->
-                    <div class="setting-btn">
-                        <button type="submit" class="btn form-control secondary-blue">Save</button>
-                    </div>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 
