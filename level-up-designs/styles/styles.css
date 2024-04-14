@@ -1370,7 +1370,7 @@ p {
     }
 
     .filter-container {
-        border-bottom: 1px solid #525252;
+        margin-bottom: 20px;
         padding: 12px 12px;
         overflow: hidden;
         display: flex;
@@ -1391,7 +1391,6 @@ p {
         }
 
         .number {
-            line-height: 1;
             font-weight: bold;
             font-size: 20px;
         }
