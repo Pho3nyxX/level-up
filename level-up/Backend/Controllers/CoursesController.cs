@@ -34,7 +34,11 @@ namespace Backend.Controllers
             }
 
             var course = await _context.Courses
+                .Include(c => c.Modules)
+                .ThenInclude(m => m.Lessons)
+                .Include(c => c.Instructors)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (course == null)
             {
                 return NotFound();
@@ -54,7 +58,7 @@ namespace Backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Duration,Progress")] Course course)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Duration,Progress,Level,CreatedBy,Language,Topics,Syllabus")] Course course)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +90,7 @@ namespace Backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Duration,Progress")] Course course)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Duration,Progress,Level,CreatedBy,Language,Topics,Syllabus")] Course course)
         {
             if (id != course.Id)
             {

@@ -5,6 +5,730 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<!-- breadcrumb -->
+<div class="container mt-5 mb-5">
+    <div class="row mb-0">
+        <div class="col-8">
+            <div class="breadcrumb-container" aria-label="breadcrumb">
+                <div>
+                    <a href="../index.html">Home ></a>
+                    <a href="courses.html">Course ></a>
+                    <span>Introduction to HTML</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="course-intro-section">
+    <div class="container">
+        <div class="row gap-5">
+            <div class="col-8">
+                <h1 class="blue mt-5 title">@Html.DisplayFor(model => model.Title)</h1>
+                <p>@Html.DisplayFor(model => model.Description)</p>
+
+                <div class="d-flex ratings-container">
+                    <span class="me-3">4.5</span>
+                    <div class="ratings me-3">
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-fill"></i>
+                        <i class="bi bi-star-half"></i>
+                    </div>
+                    <span>
+                        <a href="#">700,206 ratings</a>
+                    </span>
+                </div>
+
+                <div class="created">
+                    <span>Created by: <a href="instructor-overview.html" class="orange-text me-2">@Html.DisplayFor(model => model.CreatedBy)</a></span> |
+                    <span class="ms-2">Taught in @Html.DisplayFor(model => model.Language)</span>
+                </div>
+
+                <div class="mb-4">
+                    <a href="lesson.html" class="start-now">Start Now <i class="bi bi-chevron-right"></i></a>
+                </div>
+
+                <div class="mb-3">
+                    <span><b>1500</b> students already started</span>
+                </div>
+            </div>
+
+            <div class="col-3 include-container">
+                <div class="include">
+                    <div class="mb-2">
+                        <span class="title">This course includes:</span>
+                    </div>
+                    <div class="mb-1">
+                        <i class="bi bi-cloud-download"></i>
+                        <span>10 articles</span>
+                    </div>
+                    <div class="mb-1">
+                        <i class="bi bi-laptop"></i>
+                        <span>Lifetime access</span>
+                    </div>
+                    <div class="mb-1">
+                        <i class="bi bi-caret-right-square"></i>
+                        <span>15 hours on-demand video</span>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                        <span class="title">@Html.DisplayFor(model => model.Level) level</span>
+                    </div>
+                    <span>No prior experience required</span>
+                </div>
+
+                <div class="mb-3">
+                    <div>
+                        <span class="title">5 months at 5 hours a week</span>
+                    </div>
+                    <span>An estimated duration</span>
+                </div>
+
+                <div class="mb-4">
+                    <div>
+                        <span class="title">Flexible schedule</span>
+                    </div>
+                    <span>Learn at your own pace</span>
+                </div>
+
+                <div class="d-flex justify-content-between mb-3 recommend-container">
+                    <a href="#" class="primary-blue-text">Recommend this course</a>
+                    <a href="#"><i class="bi bi-bookmark"></i></a>
+                </div>
+
+                <a href="#course-content" class="orange-text">View course content</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="container">
+    <div class="row gx-5">
+        <div class="col-7">
+            <div class="tabs">
+                <div class="tab-switch">
+                    <a href="#about">About</a>
+                    <a href="#course-content">Course content</a>
+                    <a href="#instructor">Instructor</a>
+                    <a href="#ratings">Ratings</a>
+                </div>
+            </div>
+
+            <div class="learn" id="about">
+                <h3 class="blue">What you will learn</h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                    
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                        <div class="item">
+                            <i class="bi bi-check-lg"></i>
+                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="course-content-container" id="course-content">
+                <h3 class="blue">
+                    Course content</h4>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span>@Model.Modules.Count sections - x lectures - 15h 18m total length </span>
+                        <a href="#" class="primary-blue-text">Expand all sections</a>
+                    </div>
+
+                    <div class="accordion" id="accordionExample">
+                        @foreach (Module module in Model.Modules)
+                        {
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <div>
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            @module.Name <span>(@module.Lessons.Count lectures - 20 mins)</span>
+                                        </button>
+                                    </div>
+                                </h2>
+                                <div  class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+
+                                    <div class="accordion-body">
+                                        @foreach (Lesson lesson in module.Lessons)
+                                        {
+                                            <div class="row mb-2">
+                                            <div class="col">
+                                                @lesson.Title
+                                            </div>
+                                            <div class="col text-end">
+                                            
+                                                    @{
+                                                        string duration = "";
+                                                        // checking that lesson is greater than an hour
+                                                        int hours = lesson.Duration / 3600;
+                                                        duration = duration + $"{hours.ToString("D2")}:";
+                                                   
+                                                        // checking the minutes                                       
+                                                        int minutes = (lesson.Duration % 3600) / 60;
+                                                        duration = duration + $"{minutes.ToString("D2")}:";
+
+                                                        // checking the seconds
+                                                        int seconds = (lesson.Duration % 3600) % 60;
+                                                        duration = duration + $"{seconds.ToString("D2")}";
+
+                                                    }
+                                                    @duration
+                                            </div>                                 
+                                        </div>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        
+                        </div>
+            </div>
+
+            <div class="instructor-container" id="instructor">
+                <h3 class="blue">Instructor</h3>
+                
+                @foreach(Instructor instructor in Model.Instructors)
+                {
+                    <div class="instructor-description-container d-flex mb-3">
+                        <div class="image-container">
+                            <div class="pic-container mb-2">
+                                <!-- <img src="" alt="">  -->
+                            </div>
+                            <div class="taught-by">
+                                <div><a href="instructor-overview.html" class="primary-blue-text">@instructor.Name</a></div>
+                                <div>@instructor.InstructorJobTitle</div>
+                            </div>
+                        </div>   
+                    </div>
+                }
+            </div>
+
+            <div class="ratings-container" id="ratings">
+                <h3 class="blue">Ratings</h3>
+                <div class="d-flex mb-4">
+                    <i class="bi bi-star-fill ratings me-2"></i>
+                    <span>4.6 course rating - 501k ratings</span>
+                </div>
+
+                <div class="row gap-5">
+                    <div class="col-5 item">
+                        <div class="head d-flex justify-content-between mb-3">
+                            <div>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div>
+                                <span>Jay Ramson</span>
+                                <div class="d-flex">
+                                    <div class="ratings me-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span>2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-5 item">
+                        <div class="head d-flex justify-content-between mb-3">
+                            <div>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div>
+                                <span>Jay Ramson</span>
+                                <div class="d-flex">
+                                    <div class="ratings me-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span>2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-5 item">
+                        <div class="head d-flex justify-content-between mb-3">
+                            <div>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div>
+                                <span>Jay Ramson</span>
+                                <div class="d-flex">
+                                    <div class="ratings me-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span>2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-5 item">
+                        <div class="head d-flex justify-content-between mb-3">
+                            <div>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                            <div>
+                                <span>Jay Ramson</span>
+                                <div class="d-flex">
+                                    <div class="ratings me-3">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span>2 weeks ago</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-5 more-courses-sec">
+            <h3>More courses by <a href="instructor-overview.html" class="primary-blue-text">Romeo Black</a></h3>
+            <div class="row">
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="item mb-5">
+                        <div class="image"></div>
+                        <h4 class="blue">Introduction to HTML</h4>
+                        <span>Romeo Black</span>
+                        <div class="d-flex ratings-container">
+                            <span class="me-2">4.5</span>
+                            <div class="ratings me-2">
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-fill"></i>
+                                <i class="bi bi-star-half"></i>
+                            </div>
+                            <span>
+                                <a href="#">(700,206)</a>
+                            </span>
+                        </div>
+                        <div>
+                            <span class="me-2">8 hours totals</span> |
+                            <span class="ms-2">83 lectures</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1>Details</h1>
 
 <div>
@@ -34,6 +758,36 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Progress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Level)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Level)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Language)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Language)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Topics)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Topics)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Syllabus)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Syllabus)
         </dd>
     </dl>
 </div>

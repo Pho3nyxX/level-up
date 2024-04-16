@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240409144649_InitialCreate")]
+    [Migration("20240416004931_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace Backend.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "8.0.4")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -96,18 +96,34 @@ namespace Backend.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Duration")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("Progress")
+                    b.Property<int>("Duration")
                         .HasColumnType("int");
+
+                    b.Property<string>("Language")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Progress")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Syllabus")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Topics")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -180,8 +196,11 @@ namespace Backend.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Image")
+                    b.Property<string>("Description")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("InstructorJobTitle")
@@ -205,11 +224,16 @@ namespace Backend.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ModuleId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Notes")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Progress")
+                    b.Property<int?>("Progress")
                         .HasColumnType("int");
 
                     b.Property<string>("Text")
@@ -221,7 +245,6 @@ namespace Backend.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Video")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("Watched")
@@ -229,7 +252,35 @@ namespace Backend.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ModuleId");
+
                     b.ToTable("Lessons");
+                });
+
+            modelBuilder.Entity("Backend.Models.Module", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.ToTable("Module");
                 });
 
             modelBuilder.Entity("Backend.Models.Roadmap", b =>
@@ -293,6 +344,21 @@ namespace Backend.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Testimonies");
+                });
+
+            modelBuilder.Entity("CourseInstructor", b =>
+                {
+                    b.Property<int>("CoursesId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InstructorsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CoursesId", "InstructorsId");
+
+                    b.HasIndex("InstructorsId");
+
+                    b.ToTable("CourseInstructor");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -497,6 +563,41 @@ namespace Backend.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("Backend.Models.Lesson", b =>
+                {
+                    b.HasOne("Backend.Models.Module", "Module")
+                        .WithMany("Lessons")
+                        .HasForeignKey("ModuleId");
+
+                    b.Navigation("Module");
+                });
+
+            modelBuilder.Entity("Backend.Models.Module", b =>
+                {
+                    b.HasOne("Backend.Models.Course", "Course")
+                        .WithMany("Modules")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("CourseInstructor", b =>
+                {
+                    b.HasOne("Backend.Models.Course", null)
+                        .WithMany()
+                        .HasForeignKey("CoursesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Instructor", null)
+                        .WithMany()
+                        .HasForeignKey("InstructorsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -546,6 +647,16 @@ namespace Backend.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Backend.Models.Course", b =>
+                {
+                    b.Navigation("Modules");
+                });
+
+            modelBuilder.Entity("Backend.Models.Module", b =>
+                {
+                    b.Navigation("Lessons");
                 });
 #pragma warning restore 612, 618
         }

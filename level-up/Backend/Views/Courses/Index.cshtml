@@ -25,6 +25,21 @@
             <th>
                 @Html.DisplayNameFor(model => model.Progress)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Language)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Topics)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Syllabus)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,6 +57,21 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Progress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedBy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Language)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Topics)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Syllabus)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
