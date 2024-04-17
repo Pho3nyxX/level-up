@@ -1191,147 +1191,6 @@ p {
         }
     }
 
-    /*.analytics-resources-container {
-         display: flex;
-        padding-top: 30px;
-        padding-bottom: 20px;
-        border-bottom: 1px solid #626262;
-
-        .analytics {
-
-            .performance-container {
-                background-color: #f3f3f3;
-                height: 388px;
-
-                .heading {
-                    border-bottom: 1px solid #525252;
-                    padding: 12px 12px;
-                    overflow: hidden;
-
-                    h5 {
-                        float: left;
-                        margin-bottom: 0;
-                    }
-
-                    .time-filter {
-                        float: right;
-                        padding: 5px 10px;
-                        border-radius: 6px;
-                        margin-right: 15px;
-                        border: none;
-                    }
-                }
-
-                .growth-item {
-
-                    .title {
-                        font-size: 20px;
-                    }
-
-                    .growth-bar {
-                        position: relative;
-                        top: 20px;
-                        height: 8px;
-                        width: 450px;
-                        background-color: var(--secondary-blue);
-                        border-radius: 10px;
-                        padding: 0;
-
-                        .circle {
-                            position: absolute;
-                            height: 18px;
-                            width: 18px;
-                            background-color: var(--primary-blue);
-                            border-radius: 50%;
-                        }
-
-                        .circle-1 {
-                            top: -5px;
-                            left: -9px;
-                        }
-
-                        .circle-2 {
-                            top: -5px;
-                            left: 80px;
-                        }
-
-                        .circle-3 {
-                            top: -5px;
-                            left: 170px;
-                        }
-
-                        .circle-4 {
-                            top: -5px;
-                            left: 270px;
-                        }
-
-                        .circle-5 {
-                            top: -5px;
-                            left: 370px;
-                        }
-                    }
-                }
-            }
-        }
-
-        .resources {
-
-            .resources-container {
-                display: flex;
-                height: 370px;
-
-                .resource-box {
-                    background-color: #f9f9f9;
-                    padding: 15px;
-
-                    >div {
-                        background-color: #f3f3f3;
-                        padding: 10px;
-                    }
-
-                    >div:not(:last-child) {
-                        margin-bottom: 18px;
-                    }
-
-                    .half {
-                        height: 140px;
-
-                        .items {
-                            display: flex;
-
-                            .picture {
-                                margin-right: 10px;
-
-                                img {
-                                    background: transparent;
-                                    width: 30px;
-                                    height: 30px;
-                                    border-radius: 50%;
-                                }
-                            }
-                        }
-                    }
-
-                    .courses {
-                        a {
-                            display: block;
-                            padding-top: 5px;
-                            padding-bottom: 5px;
-                        }
-
-                        a:first-child {
-                            margin-top: -10px;
-                        }
-                    }
-
-                    .activity-box {
-                        height: 353px;
-                    }
-                }
-            }
-        } 
-    }*/
-
     .levels {
         background-color: #f9f9f9;
         padding: 25px;
@@ -1865,13 +1724,11 @@ p {
                                 display: flex;
                             }
 
-                            >div:last-child{
-                                
-                            }
+                            >div:last-child {}
 
                         }
 
-                        .profile-modify-section{
+                        .profile-modify-section {
                             background-color: var(--blue-5);
                             padding: 25px;
                         }
@@ -1913,8 +1770,6 @@ p {
         }
     }
 }
-
-
 
 .modify-links {
 
