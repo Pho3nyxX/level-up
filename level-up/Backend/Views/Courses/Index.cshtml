@@ -5,6 +5,94 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<!-- breadcrumb -->
+<div class="container mt-5">
+    <div class="row mb-0">
+        <div class="col-8">
+            <div class="breadcrumb-container" aria-label="breadcrumb">
+                <div>
+                    <a href="../index.html">Home ></a>
+                    <span>Courses</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- course filter -->
+<div class="container course-filter-container">
+    <div class="row">
+        <div class="title-margin">
+            <h1 class="text-center primary-blue-text">Courses</h1>
+        </div>
+        <div class="col-7 course-filter justify-content-between">
+            <a href="" class="all filter">All</a>
+            <a href="" class="watched filter">Watched</a>
+            <div class="search">
+                <input type="search" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- courses -->
+<div class="container courses-container">
+        @foreach(var item in Model)
+        {
+            <div class="row course">
+                <div class="col-sm-12 col-md-4 col-lg-3 course-item">
+                    <div class="img-container">
+                        <img src="" alt="">
+                    </div>
+
+                    <div class="content">
+                        <!-- title -->
+                        <h4><a href="lesson.html"> @Html.DisplayFor(modelItem => item.Title)</a></h4>
+                        <p class="description">
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </p>
+                        <div class="duration d-flex justify-content-between">
+                            <span>Created by: <a href="instructor-overview.html">@Html.DisplayFor(modelItem => item.CreatedBy)</a></span>
+                            <span class="pe-3">@Html.DisplayFor(modelItem => item.Duration)</span>
+                        </div>
+                        <a href="lesson.html">View</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+        
+
+
+    <!-- pagination -->
+    <div class="pagination-container">
+        <a href="" class="page me-2"><i class="bi bi-chevron-left"></i></a>
+        <a href="" class="page me-2">1</a>
+        <a href="" class="page me-2">2</a>
+        <a href="" class="page me-2">3</a>
+        <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h1>Index</h1>
 
 <p>
