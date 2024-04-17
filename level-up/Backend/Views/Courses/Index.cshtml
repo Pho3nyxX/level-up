@@ -11,7 +11,7 @@
         <div class="col-8">
             <div class="breadcrumb-container" aria-label="breadcrumb">
                 <div>
-                    <a href="../index.html">Home ></a>
+                    <a asp-controller="Home" asp-action="Index">Home ></a>
                     <span>Courses</span>
                 </div>
             </div>
@@ -47,15 +47,15 @@
 
                     <div class="content">
                         <!-- title -->
-                        <h4><a href="lesson.html"> @Html.DisplayFor(modelItem => item.Title)</a></h4>
+                    <h4><a asp-area="" asp-controller="Courses" asp-action="Details" asp-route-id="@item.Id"> @Html.DisplayFor(modelItem => item.Title)</a></h4>
                         <p class="description">
                             @Html.DisplayFor(modelItem => item.Description)
                         </p>
                         <div class="duration d-flex justify-content-between">
-                            <span>Created by: <a href="instructor-overview.html">@Html.DisplayFor(modelItem => item.CreatedBy)</a></span>
+                            <span>Taught by: <a href="instructor-overview.html">@Html.DisplayFor(modelItem => item.CreatedBy)</a></span>
                             <span class="pe-3">@Html.DisplayFor(modelItem => item.Duration)</span>
                         </div>
-                        <a href="lesson.html">View</a>
+                    <a asp-area="" asp-controller="Courses" asp-action="Details" asp-route-id="@item.Id">View</a>
                     </div>
                 </div>
             </div>

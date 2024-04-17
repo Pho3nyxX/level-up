@@ -12,8 +12,8 @@
         <div class="col-8">
             <div class="breadcrumb-container" aria-label="breadcrumb">
                 <div>
-                    <a href="../index.html">Home ></a>
-                    <a href="courses.html">Course ></a>
+                    <a asp-controller="Home" asp-action="Index">Home ></a>
+                    <a asp-controller="Courses" asp-action="Index">Course ></a>
                     <span>Introduction to HTML</span>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                 </div>
 
                 <div class="created">
-                    <span>Created by: <a href="instructor-overview.html" class="orange-text me-2">@Html.DisplayFor(model => model.CreatedBy)</a></span> |
+                    <span>Created by: <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="orange-text me-2">@Html.DisplayFor(model => model.CreatedBy)</a></span> |
                     <span class="ms-2">Taught in @Html.DisplayFor(model => model.Language)</span>
                 </div>
 
@@ -214,7 +214,7 @@
                             </div>
                         }
                         
-                        </div>
+                    </div>
             </div>
 
             <div class="row instructor-container" id="instructor">
@@ -227,7 +227,7 @@
                                 <!-- <img src="" alt="">  -->
                             </div>
                             <div class="taught-by">
-                                <div><a href="instructor-overview.html" class="primary-blue-text">@instructor.Name</a></div>
+                                <div><a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@instructor.Id" class="primary-blue-text">@instructor.Name</a></div>
                                 <div>@instructor.InstructorJobTitle</div>
                             </div>
                         </div>   
@@ -351,7 +351,7 @@
         </div>
 
         <div class="col-5 more-courses-sec">
-            <h3>More courses by <a href="instructor-overview.html" class="primary-blue-text">Romeo Black</a></h3>
+            <h3>More courses by <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="primary-blue-text">Romeo Black</a></h3>
             <div class="row">
                 <div class="col">
                     <div class="item mb-5">
