@@ -1153,13 +1153,15 @@ p {
     }
 
     .about-container {
-        background-color: #f3f3f3;
+        background-color: var(--blue-5);
         padding-left: 75px;
         padding-top: 60px;
+        /* margin-bottom: 37px; */
 
         .icon {
             i {
-                font-size: 18px;
+                font-size: 15px;
+                color: var(--orange-50);
             }
         }
     }
@@ -1168,7 +1170,7 @@ p {
         background-color: #f9f9f9;
         display: flex;
         padding-left: 50px;
-        padding-top: 20px;
+        padding-top: 30px;
         padding-bottom: 30px;
 
         .profile-pic {
@@ -1189,8 +1191,8 @@ p {
         }
     }
 
-    .analytics-resources-container {
-        display: flex;
+    /*.analytics-resources-container {
+         display: flex;
         padding-top: 30px;
         padding-bottom: 20px;
         border-bottom: 1px solid #626262;
@@ -1327,8 +1329,8 @@ p {
                     }
                 }
             }
-        }
-    }
+        } 
+    }*/
 
     .levels {
         background-color: #f9f9f9;
@@ -1375,7 +1377,7 @@ p {
         overflow: hidden;
         display: flex;
 
-        .network-sort,
+        .sort,
         .goal-sort {
             float: left;
             height: 40px;
@@ -1722,6 +1724,11 @@ p {
         padding-top: 50px;
         padding-left: 50px;
 
+        &.profile-tabs-container {
+            padding-top: 40px;
+            padding-left: 0;
+        }
+
         .picture-container {
             margin-bottom: 70px;
 
@@ -1743,6 +1750,135 @@ p {
 
         .tab-title {
             margin-bottom: 30px;
+
+            &.profile-tab-title {
+                ul {
+                    li {
+                        width: 176px;
+                        /* width: 210px; */
+
+                        a:hover {
+                            color: var(--primary-blue);
+                        }
+                    }
+                }
+
+                .profile {
+                    .profile-container {
+
+                        .heading {
+                            margin-bottom: 40px;
+
+                            .time-filter {
+                                padding: 5px 30px;
+                                border-radius: 6px;
+                                background-color: var(--blue-10);
+                                border: none;
+                            }
+                        }
+
+                        .charts {
+                            column-gap: 180px;
+
+                            .goal,
+                            .course-track {
+                                background-color: var(--blue-10);
+
+                                .title {
+                                    padding-top: 15px;
+                                    padding-left: 21px;
+                                    padding-bottom: 15px;
+                                    border-bottom: 1px solid #E0E0E0;
+
+                                }
+
+                                .body {
+                                    padding-top: 45px;
+                                    padding-bottom: 45px;
+
+                                    i {
+                                        font-size: 170px;
+                                        color: var(--orange);
+                                    }
+                                }
+                            }
+                        }
+
+                        .network-container {
+
+                            .col {
+                                display: flex;
+                                border-right: 1px solid #eee;
+
+                                .picture-container {
+                                    height: 145px;
+                                    width: 145px;
+                                    border-radius: 50%;
+                                    background-color: #eee;
+                                    margin-right: 25px;
+                                }
+
+                                .content {
+                                    span:first-child {
+                                        font-size: 18px;
+                                        margin-top: 25px;
+                                    }
+
+                                    >span {
+                                        display: block;
+
+                                        a {
+                                            color: var(--primary-blue);
+                                        }
+                                    }
+
+                                    .modifier {
+                                        text-align: end;
+
+                                        a {
+                                            margin-right: 15px;
+
+                                            i {
+                                                font-size: 14px;
+                                                color: var(--orange-50);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .education-container {
+                            background-color: var(--blue-5);
+                            padding: 25px;
+                            display: flex;
+
+                            .logo-container {
+                                height: 107px;
+                                width: 107px;
+                                border-radius: 50%;
+                                background-color: #eee;
+                                margin-right: 25px;
+                            }
+
+                            span {
+                                display: flex;
+                            }
+
+                            >div:last-child{
+                                
+                            }
+
+                        }
+
+                        .profile-modify-section{
+                            background-color: var(--blue-5);
+                            padding: 25px;
+                        }
+
+                    }
+                }
+            }
 
             .nav-underline .nav-link.active {
                 font-weight: normal;
@@ -1768,11 +1904,16 @@ p {
                             background-color: var(--blue-10);
                         }
                     }
+
+                    a:hover {
+                        color: var(--primary-blue);
+                    }
                 }
             }
         }
     }
 }
+
 
 
 .modify-links {

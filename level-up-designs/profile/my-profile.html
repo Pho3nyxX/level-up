@@ -197,6 +197,61 @@
 
     </aside>
 
+    <!-- settings heading section -->
+    <div class="setting-menu">
+        <h2 class="section-title">Settings</h2>
+
+        <div class="public-information">
+            <a href="">
+                <span>Public information</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="private-information">
+            <a href="">
+                <span>Private information</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="notification">
+            <a href="">
+                <span>Notifications</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="education">
+            <a href="">
+                <span>Education</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="interest">
+            <a href="">
+                <span>Interest</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="account">
+            <a href="">
+                <span>Account</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+        <div class="skill">
+            <a href="">
+                <span>Skills</span>
+                <i class="bi bi-chevron-right"></i>
+            </a>
+        </div>
+
+    </div>
+
     <!-- main body -->
     <div class="container-fluid main">
         <div class="name-container">
@@ -205,7 +260,7 @@
             </div>
 
             <div class="profile-name">
-                <h3 class="mb-0">Jane Doe</h3>
+                <h3 class="mb-0 blue">Jane Doe</h3>
                 <p class="mb-0">Kinsgton, Jamaica</p>
                 <a href="">100 connections</a>
             </div>
@@ -214,7 +269,7 @@
         <div class="about-container">
             <div class="row justify-content-between">
                 <div class="col-1">
-                    <h5>About</h5>
+                    <h4 class="blue">About</h4>
                 </div>
 
                 <div class="col-1 icon">
@@ -231,344 +286,1140 @@
                         elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa
                         quis libero dapibus.
                     </p>
-                    <p class="text-end"><a href="">See more...</a></p>
+                    <p class="text-end"><a href="" class="orange-text">See more...</a></p>
                 </div>
             </div>
         </div>
 
-        <div class="row analytics-resources-container">
-            <div class="col-6 analytics ps-5">
-                <h4>Analytics</h4>
-                <div class="performance-container">
-                    <div class="heading justify-content-between">
-                        <h5 class="mt-2">Performance Growth</h5>
-                        <select class="time-filter" aria-label="Default select example">
-                            <option selected>Weekly</option>
-                            <option value="1">Monthly</option>
-                            <option value="2">Quartly</option>
-                            <option value="3">Yearly</option>
-                        </select>
-                    </div>
+        <div class="row profile-tabs-container tabs-container">
+            <div class="col tab-title profile-tab-title">
+                <ul class="nav nav-underline" id="nav-tab" role="tablist">
+                    <li class="nav-item text-center active">
+                        <a class="nav-link active" id="analytics-tab" data-bs-toggle="tab" data-bs-target="#analytics-tab-pane" role="tab" aria-controls="analytics-tab-pane" aria-selected="true">Analytics</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="network-tab" data-bs-toggle="tab" data-bs-target="#network-tab-pane" role="tab" aria-controls="network-tab-pane" aria-selected="false">Network</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="saved-items-tab" data-bs-toggle="tab" data-bs-target="#saved-items-tab-pane" role="tab" aria-controls="saved-items-tab-pane" aria-selected="false">Saved Items</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="activities-tab" data-bs-toggle="tab" data-bs-target="#activities-tab-pane" role="tab" aria-controls="activities-tab-pane" aria-selected="false">Activities</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" role="tab" aria-controls="education-tab-pane" aria-selected="false">Education</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="goals-tab" data-bs-toggle="tab" data-bs-target="#goals-tab-pane" role="tab" aria-controls="goals-tab-pane" aria-selected="false">Goals</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="career-paths-tab" data-bs-toggle="tab" data-bs-target="#career-paths-tab-pane" role="tab" aria-controls="career-paths-tab-pane" aria-selected="false">Career Paths</a>
+                    </li>
+                    <li class="nav-item text-center">
+                        <a class="nav-link" id="skills-and-interest-tab" data-bs-toggle="tab" data-bs-target="#skills-and-interest-tab-pane" role="tab" aria-controls="skills-and-interest-tab-pane" aria-selected="false">Skills and Interests</a>
+                    </li>
+                </ul>
 
-                    <div class="row growth-item mt-4 ms-3">
-                        <div class="col-3 mb-5">
-                            <p class="mb-0 title">Goals</p>
-                            <p>0% growth</p>
-                        </div>
-                        <div class="growth-bar">
-                            <div class="circle circle-1"></div>
-                            <div class="circle circle-2"></div>
-                            <div class="circle circle-3"></div>
-                            <div class="circle circle-4"></div>
-                            <div class="circle circle-5"></div>
-                        </div>
-                    </div>
-
-                    <div class="row growth-item ms-3">
-                        <div class="col-3">
-                            <p class="mb-0 title">Career paths</p>
-                            <p>0% growth</p>
-                        </div>
-                        <div class="col-7 progress-bar-2">
-                            <div class="growth-bar">
-                                <div class="circle circle-1"></div>
-                                <div class="circle circle-2"></div>
-                                <div class="circle circle-3"></div>
-                                <div class="circle circle-4"></div>
-                                <div class="circle circle-5"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-5 resources ps-5">
-                <div class="row resources-container">
-                    <div class="col-4">
-                        <h4>My Network</h4>
-                        <div class="resource-box">
-                            <h6>Top</h6>
-                            <div class="half">
-                                <div class="items">
-                                    <div class="picture">
-                                        <img src="../images/profile-image.png" alt="Picture">
+                <div class="tab-content" id="navTabContent">
+                    <div class="tab-pane fade show active" id="analytics-tab-pane" role="tabpanel" aria-labelledby="analytics-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="performance-container">
+                                    <div class="col-11 heading d-flex justify-content-between">
+                                        <h5 class="mt-2">Performance Growth</h5>
+                                        <select class="time-filter" aria-label="Default select example">
+                                            <option selected>Weekly</option>
+                                            <option value="1">Monthly</option>
+                                            <option value="2">Quartly</option>
+                                            <option value="3">Yearly</option>
+                                        </select>
                                     </div>
-                                    <p class=""><a href="">Jane Doe</a></p>
-                                </div>
-                                <div class="items">
-                                    <div class="picture">
-                                        <img src="../images/profile-image.png" alt="Picture">
-                                    </div>
-                                    <p class=""><a href="">Jane Doe</a></p>
-                                </div>
-                                <div class="items">
-                                    <div class="picture">
-                                        <img src="../images/profile-image.png" alt="Picture">
-                                    </div>
-                                    <p class=""><a href="">Jane Doe</a></p>
-                                </div>
-                            </div>
 
-                            <h6>Recent</h6>
-                            <div class="half">
-                                <div class="recent">
-                                    <div class="items">
-                                        <div class="picture">
-                                            <img src="../images/profile-image.png" alt="Picture">
+                                    <div class="row charts">
+                                        <div class="col-5">
+                                            <div class="goal">
+                                                <div class="title">
+                                                    <h3 class="blue">Goals</h3>
+                                                </div>
+                                                <div class="body d-flex justify-content-center">
+                                                    <i class="bi bi-bar-chart"></i>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p class=""><a href="">Jane Doe</a></p>
-                                    </div>
-                                    <div class="items">
-                                        <div class="picture">
-                                            <img src="../images/profile-image.png" alt="Picture">
+                                        <div class="col-5">
+                                            <div class="course-track">
+                                                <div class="title">
+                                                    <h3 class="blue">Course Track</h3>
+                                                </div>
+                                                <div class="body d-flex justify-content-center">
+                                                    <i class="bi bi-bar-chart"></i>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <p class=""><a href="">Jane Doe</a></p>
                                     </div>
-                                    <div class="items">
-                                        <div class="picture">
-                                            <img src="../images/profile-image.png" alt="Picture">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="tab-pane fade" id="network-tab-pane" role="tabpanel" aria-labelledby="network-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row filter-container">
+                                    <select class="col-3 sort" aria-label="Default select example">
+                                        <option selected>Sort</option>
+                                        <option value="1">Firstname</option>
+                                        <option value="2">Lastname</option>
+                                        <option value="3">Recently added</option>
+                                    </select>
+                                </div>
+
+                                <div class="row network-container">
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
                                         </div>
-                                        <p class=""><a href="">Jane Doe</a></p>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row network-container">
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row network-container">
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row network-container">
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col">
+                                        <div class="picture-container">
+                                            <!-- <img src="" alt=""> -->
+                                        </div>
+                                        <div class="content">
+                                            <span><a href="#">Jane Doe</a></span>
+                                            <span>Software Engineer Path</span>
+                                            <span>Connected 10 days ago</span>
+                                            <div class="modifier mt-2">
+                                                <a href="#"><i class="bi bi-chat-left-dots-fill message"></i></a>
+                                                <a href="#"><i class="bi bi-person-plus-fill follow"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill trash"></i></a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-4 ">
-                        <h4>My Activity</h4>
-                        <div class="resource-box">
-                            <div class="activity-box">
-                                <p>Lorem ipsum dolor sit amet elit elit cras cras consectetur cras cras adipiscing cursus, vitae</p>
-                                <a href="">See more...</a>
-                                <p>Lorem ipsum dolor sit amet elit elit cras cras consectetur cras cras adipiscing cursus, vitae</p>
-                                <a href="">See more...</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-4">
-                        <h4>My Items</h4>
-                        <div class="resource-box">
-                            <h6>Courses</h6>
-                            <div class="half courses">
-                                <a href="">Java start to end</a>
-                                <a href="">Python start to end</a>
-                                <a href="">Bash start to end</a>
-                                <a href="">See more..</a>
-                            </div>
-
-                            <h6>Saved posts</h6>
-                            <div class="half">
-                                <div class="items">
-                                    <div class="picture">
-                                        <img src="../images/profile-image.png" alt="Picture">
-                                    </div>
-                                    <p class=""><a href="">Jane Doe</a></p>
+                    <div class="tab-pane fade" id="saved-items-tab-pane" role="tabpanel" aria-labelledby="saved-items-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row filter-container">
+                                    <select class="col-3 sort" aria-label="Default select example">
+                                        <option selected>Sort</option>
+                                        <option value="1">In-progress</option>
+                                        <option value="2">Ended</option>
+                                    </select>
                                 </div>
-                                <p class="mb-1">Lorem ipsum dolor sit amet elit elit cras </p>
-                                <a href="">See more...</a>
+
+                                <div class="row mt-3">
+                                    <div class="col-5 course">
+                                        <div class="course-container mb-4">
+                                            <div class="course-image">
+                                                <img src="../images/java-4-logo-svgrepo-com.svg" alt="Java">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <a href="" class="course-title">Java Essential Training</a>
+                                                <p class="mb-0">By: Patricia Johnson</p>
+                                                <p class="mb-0">Duration: 4h 30m</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col links">
+                                                <a href="" class="orange-text">Go to course<i class="bi bi-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 course offset-md-1">
+                                        <div class="course-container mb-4">
+                                            <div class="course-image">
+                                                <img src="../images/database-svgrepo-com.svg" alt="Java">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <a href="" class="course-title">Database Essential Training</a>
+                                                <p class="mb-0">By: Patricia Johnson</p>
+                                                <p class="mb-0">Duration: 4h 30m</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col links">
+                                                <a href="" class="orange-text">Go to course<i class="bi bi-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-5 mb-4 course">
+                                        <div class="course-container mb-4">
+                                            <div class="course-image">
+                                                <img src="../images/css-svgrepo-com.svg" alt="Java">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <a href="" class="course-title">CSS Essential Training</a>
+                                                <p class="mb-0">By: Patricia Johnson</p>
+                                                <p class="mb-0">Duration: 4h 30m</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col links">
+                                                <a href="" class="orange-text">Go to course<i class="bi bi-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 mb-4 course offset-md-1">
+                                        <div class="course-container mb-4">
+                                            <div class="course-image">
+                                                <img src="../images/python-svgrepo-com.svg" alt="Java">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <a href="" class="course-title">Python Essential Training</a>
+                                                <p class="mb-0">By: Patricia Johnson</p>
+                                                <p class="mb-0">Duration: 4h 30m</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col links">
+                                                <a href="" class="orange-text">Go to course<i class="bi bi-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <a href="#" class="orange-text">See more...</a>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row ps-5">
-            <div class="col-9">
-                <div class="row mb-4 mt-4">
-                    <div class="col levels">
-                        <h5>Education</h5>
-                        <div class="levels-container">
-                            <div class="school-logo">
-                            </div>
-                            <div class="details">
-                                <p class="mb-0">University of Harvard, Jamaica</p>
-                                <p class="mb-0">Bachelor of Science - BS, Computer Science</p>
-                                <p class="mb-0">2000 - 2004</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
+                    <div class="tab-pane fade" id="activities-tab-pane" role="tabpanel" aria-labelledby="activities-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row filter-container">
+                                    <select class="col-3 sort" aria-label="Default select example">
+                                        <option selected>Sort</option>
+                                        <option value="1">Posts</option>
+                                        <option value="2">Comments</option>
+                                        <option value="3">Reactions</option>
+                                    </select>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-5 activity">
+                                        <div class="activity-container mb-5">
+                                            <div class="profile-pic">
+                                                <img src="../images/profile-image.png" alt="" class="picture-1">
+                                                <img src="../images/profile-image.png" alt="" class="picture-2">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <p class="mb-0">You posted on <a href="">John Doe's post</a>.</p>
+                                                <p class="mb-0">Posted 10 months ago.</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col reaction ms-3">
+                                                <a href="#"><i class="bi bi-hand-thumbs-up"></i></a>
+                                                <a href="#"><img src="../images/clap-svgrepo-com.svg" alt="Clap"></a>
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                                <p class="mb-0">10</p>
+                                            </div>
+
+                                            <div class="col links">
+                                                <a href="">See more...</a>
+                                                <a href="">10 comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 activity offset-md-1">
+                                        <div class="activity-container mb-5">
+                                            <div class="profile-pic mt-2">
+                                                <img src="../images/profile-image.png" alt="" class="picture-1">
+                                                <img src="../images/profile-image.png" alt="" class="picture-2">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <p class="mb-0">You posted on <a href="">John Doe's post</a>.</p>
+                                                <p class="mb-0">Posted 10 months ago.</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col reaction ms-3">
+                                                <a href="#"><i class="bi bi-hand-thumbs-up"></i></a>
+                                                <a href="#"><img src="../images/clap-svgrepo-com.svg" alt="Clap"></a>
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                                <p class="mb-0">10</p>
+                                            </div>
+
+                                            <div class="col links">
+                                                <a href="">See more...</a>
+                                                <a href="">10 comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 activity">
+                                        <div class="activity-container mb-5">
+                                            <div class="profile-pic">
+                                                <img src="../images/profile-image.png" alt="" class="picture-1">
+                                                <img src="../images/profile-image.png" alt="" class="picture-2">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <p class="mb-0">You posted on <a href="">John Doe's post</a>.</p>
+                                                <p class="mb-0">Posted 10 months ago.</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col reaction ms-3">
+                                                <a href="#"><i class="bi bi-hand-thumbs-up"></i></a>
+                                                <a href="#"><img src="../images/clap-svgrepo-com.svg" alt="Clap"></a>
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                                <p class="mb-0">10</p>
+                                            </div>
+
+                                            <div class="col links">
+                                                <a href="">See more...</a>
+                                                <a href="">10 comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 activity offset-md-1">
+                                        <div class="activity-container mb-5">
+                                            <div class="profile-pic mt-2">
+                                                <img src="../images/profile-image.png" alt="" class="picture-1">
+                                                <img src="../images/profile-image.png" alt="" class="picture-2">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <p class="mb-0">You posted on <a href="">John Doe's post</a>.</p>
+                                                <p class="mb-0">Posted 10 months ago.</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col reaction ms-3">
+                                                <a href="#"><i class="bi bi-hand-thumbs-up"></i></a>
+                                                <a href="#"><img src="../images/clap-svgrepo-com.svg" alt="Clap"></a>
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                                <p class="mb-0">10</p>
+                                            </div>
+
+                                            <div class="col links">
+                                                <a href="">See more...</a>
+                                                <a href="">10 comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 activity mb-4">
+                                        <div class="activity-container mb-5">
+                                            <div class="profile-pic">
+                                                <img src="../images/profile-image.png" alt="" class="picture-1">
+                                                <img src="../images/profile-image.png" alt="" class="picture-2">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <p class="mb-0">You posted on <a href="">John Doe's post</a>.</p>
+                                                <p class="mb-0">Posted 10 months ago.</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col reaction ms-3">
+                                                <a href="#"><i class="bi bi-hand-thumbs-up"></i></a>
+                                                <a href="#"><img src="../images/clap-svgrepo-com.svg" alt="Clap"></a>
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                                <p class="mb-0">10</p>
+                                            </div>
+
+                                            <div class="col links">
+                                                <a href="">See more...</a>
+                                                <a href="">10 comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 activity offset-md-1 mb-4">
+                                        <div class="activity-container mb-5">
+                                            <div class="profile-pic mt-2">
+                                                <img src="../images/profile-image.png" alt="" class="picture-1">
+                                                <img src="../images/profile-image.png" alt="" class="picture-2">
+                                            </div>
+                                            <div class="details mt-4">
+                                                <p class="mb-0">You posted on <a href="">John Doe's post</a>.</p>
+                                                <p class="mb-0">Posted 10 months ago.</p>
+                                            </div>
+                                            <div class="modify-links mt-3">
+                                                <a href="#"><i class="bi bi-bookmark-fill"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                <a href="#"><i class="bi bi-trash-fill"></i></a>
+                                            </div>
+                                        </div>
+
+                                        <div class="row justify-content-between mb-4">
+                                            <div class="col-12">
+                                                <p class="ms-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras cursus, elit vitae molestie feugiat, leo elit iaculis nisl, Praesent pretium massa quis libero dapibus. </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col reaction ms-3">
+                                                <a href="#"><i class="bi bi-hand-thumbs-up"></i></a>
+                                                <a href="#"><img src="../images/clap-svgrepo-com.svg" alt="Clap"></a>
+                                                <a href="#"><i class="bi bi-heart"></i></a>
+                                                <p class="mb-0">10</p>
+                                            </div>
+
+                                            <div class="col links">
+                                                <a href="">See more...</a>
+                                                <a href="">10 comments</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="" class="orange-text">See more...</a>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row mb-4">
-                    <div class="col levels">
-                        <h5>Goals</h5>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Learn software engineer in 1 year.</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
+                    <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row">
+                                    <div class="col-7 mb-3">
+                                        <div class="education-container justify-content-between">
+                                            <div class="d-flex">
+                                                <div class="logo-container">
+                                                    <!-- <img src="" alt=""> -->
+                                                </div>
 
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Learn software engineer in 1 year.</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
+                                                <div class="mt-4">
+                                                    <span>University of Harvard, Jamaica</span>
+                                                    <span>Bachelor of Science - BS, Computer Science</span>
+                                                    <span>2000 - 2004</span>
+                                                </div>
+                                            </div>
 
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Learn software engineer in 1 year.</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
+                                            <div class="modify-links mt-4">
+                                                <a href="#"><i class="bi bi-plus"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Learn software engineer in 1 year.</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
+                                    <div class="col-7 mb-3">
+                                        <div class="education-container justify-content-between">
+                                            <div class="d-flex">
+                                                <div class="logo-container">
+                                                    <!-- <img src="" alt=""> -->
+                                                </div>
 
+                                                <div class="mt-4">
+                                                    <span>University of Harvard, Jamaica</span>
+                                                    <span>Bachelor of Science - BS, Computer Science</span>
+                                                    <span>2000 - 2004</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="modify-links mt-4">
+                                                <a href="#"><i class="bi bi-plus"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-7 mb-3">
+                                        <div class="education-container justify-content-between">
+                                            <div class="d-flex">
+                                                <div class="logo-container">
+                                                    <!-- <img src="" alt=""> -->
+                                                </div>
+
+                                                <div class="mt-4">
+                                                    <span>University of Harvard, Jamaica</span>
+                                                    <span>Bachelor of Science - BS, Computer Science</span>
+                                                    <span>2000 - 2004</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="modify-links mt-4">
+                                                <a href="#"><i class="bi bi-plus"></i></a>
+                                                <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="row mb-4">
-                    <div class="col levels">
-                        <h5>Career Paths</h5>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Devops engineer path</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Software engineer path</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
+                    <div class="tab-pane fade" id="goals-tab-pane" role="tabpanel" aria-labelledby="goals-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="profile-modify-section">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Learn software engineer in 1 year.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Learn software engineer in 1 year.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Learn software engineer in 1 year.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Learn software engineer in 1 year.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Learn software engineer in 1 year.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Learn software engineer in 1 year.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="col-3 ps-5 pe-5">
-                <div class="row mt-4 mb-4">
-                    <div class="col levels">
-                        <h5>Skills</h5>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">HTML</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
+                    <div class="tab-pane fade" id="career-paths-tab-pane" role="tabpanel" aria-labelledby="career-paths-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row">
+                                    <div class="col-7">
+                                        <div class="profile-modify-section">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Software engineer path.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Devops engineer path.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Software engineer path.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Devops engineer path.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Software engineer path.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Devops engineer path.</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">CSS</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">JavaScript</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Python</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Communication</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <a href="">See more...</a>
                     </div>
-                </div>
 
-                <div class="row">
-                    <div class="col levels">
-                        <h5>Interest</h5>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Carpentry</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
+                    <div class="tab-pane fade" id="skills-and-interest-tab-pane" role="tabpanel" aria-labelledby="skills-and-interest-tab" tabindex="0">
+                        <div class="profile">
+                            <div class="profile-container col-lg-12 mt-5">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <div class="profile-modify-section">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>HTML</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>CSS</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>JavaScript</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Python</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Communication</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>HTML</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>CSS</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>JavaScript</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Python</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Communication</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-5 offset-md-1">
+                                        <div class="profile-modify-section">
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>HTML</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>CSS</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>JavaScript</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Python</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Communication</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>HTML</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>CSS</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>JavaScript</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Python</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-flex justify-content-between mb-3">
+                                                <div>
+                                                    <span>Communication</span>
+                                                </div>
+
+                                                <div class="modify-links">
+                                                    <a href="#"><i class="bi bi-plus"></i></a>
+                                                    <a href="#"><i class="bi bi-pencil-fill"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Electrical Engineer</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Baking</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Public Speaking</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <div class="levels-container">
-                            <div class="details">
-                                <p class="">Teaching</p>
-                            </div>
-                            <div class="modify">
-                                <a href=""><i class="bi bi-plus add"></i></a>   
-                                <a href=""><i class="bi bi-pencil-fill edit"></i></a>           
-                            </div>
-                        </div>
-                        <a href="">See more...</a>
                     </div>
                 </div>
             </div>
