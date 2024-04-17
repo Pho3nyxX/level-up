@@ -1,0 +1,112 @@
+﻿@model Backend.Models.Instructor
+
+@{
+    ViewData["Title"] = "Instructor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- breadcrumb -->
+<div class="container mt-3 mb-5">
+    <div class="row mb-0">
+        <div class="col-8">
+            <div class="breadcrumb-container" aria-label="breadcrumb">
+                <div>
+                    <a href="../index.html">Home ></a>
+                    <a href="courses.html">Courses ></a>
+                    <span>Instructor Overview</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container instructor-overview">
+    <div class="container ps-0">
+        <div class="row mb-5">
+            <h1 class="blue title">Instructor Overview</h1>
+
+            <div class="col-5 mb-5">
+                <div class="name-title mt-5 mb-3">
+                    <span>@Html.DisplayFor(model => model.Name)</span> <br>
+                    <span>@Html.DisplayFor(model => model.InstructorJobTitle)</span>
+                </div>
+
+                <div class="div d-flex total">
+                    <div>
+                        <span>Total students</span> <br>
+                        <span>5,321,489</span>
+                    </div>
+
+                    <div>
+                        <span>Total reviews</span> <br>
+                        <span>1,001,489</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-5 mb-5">
+                <div class="pic-container mb-3">
+                    <!-- <img src="" alt="" class="pic"> -->
+                </div>
+
+                <div class="ps-3 socials">
+                    <a href=""><i class="bi bi-facebook blue-icon"></i></a>
+                    <a href=""><i class="bi bi-instagram blue-icon"></i></a>
+                    <a href=""><i class="bi bi-twitter-x blue-icon"></i></a>
+                    <a href=""><i class="bi bi-youtube blue-icon"></i></a>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <h3 class="blue">About Me</h3>
+                <p>
+                    @Html.DisplayFor(model => model.Description)
+                </p>
+            </div>
+
+            <div class="col-9 more-courses-sec">
+                <h3 class="blue">My Courses</h3>
+                
+                @foreach(var item in Model.Courses)
+                {
+                    <div class="row">
+                        <div class="col-4">
+                            <div class="item mb-5">
+                                <div class="image"></div>
+                                <h4> <a href="#" class="primary-blue-text">@Html.DisplayFor(modelItem => item.Title)</a></h4>
+                                <span>@Html.DisplayFor(modelItem => item.CreatedBy)</span>
+                                <div class="d-flex ratings-container">
+                                    <span class="me-2">4.5</span>
+                                    <div class="ratings me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span>
+                                        <a href="#">(700,206)</a>
+                                    </span>
+                                </div>
+                                <div>
+                                    <span class="me-2">8 hours totals</span> |
+                                    <span class="ms-2">83 lectures</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- pagination -->
+        <div class="pagination-container">
+            <a href="" class="page me-2"><i class="bi bi-chevron-left"></i></a>
+            <a href="" class="page me-2">1</a>
+            <a href="" class="page me-2">2</a>
+            <a href="" class="page me-2">3</a>
+            <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
+        </div>
+    </div>
+</div>

@@ -120,6 +120,26 @@ namespace Backend.Controllers
             return View(course);
         }
 
+        // GET: Courses/Details/5
+        public async Task<IActionResult> Instructor(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var instructor = await _context.Instrutors
+                .Include(c => c.Courses)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (instructor == null)
+            {
+                return NotFound();
+            }
+
+            return View(instructor);
+        }
+
         // GET: Courses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
