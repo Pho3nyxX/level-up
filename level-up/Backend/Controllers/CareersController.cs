@@ -34,7 +34,12 @@ namespace Backend.Controllers
             }
 
             var career = await _context.Careers
+                .Include(c => c.Companies)
+                .Include(c => c.Industries)
+                .Include(c => c.Testimonies)
+                .Include(c => c.Skills)
                 .FirstOrDefaultAsync(m => m.Id == id);
+
             if (career == null)
             {
                 return NotFound();
@@ -54,7 +59,7 @@ namespace Backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,PathName,Description,CourseDuration,TotalNumberAccepted,AverageSalary,Knowledge,Duties,Abilities")] Career career)
+        public async Task<IActionResult> Create([Bind("Id,PathName,Description,AverageSalary,Knowledge,Duties,Abilities")] Career career)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +91,7 @@ namespace Backend.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,PathName,Description,CourseDuration,TotalNumberAccepted,AverageSalary,Knowledge,Duties,Abilities")] Career career)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,PathName,Description,AverageSalary,Knowledge,Duties,Abilities")] Career career)
         {
             if (id != career.Id)
             {

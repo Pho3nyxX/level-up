@@ -8,18 +8,15 @@ namespace Backend.Models
         public string PathName { get; set; }
         public string Description { get; set; }
 
-        [Display(Name = "Course Duration")]
-        [DataType(DataType.Date)]
-        public DateTime CourseDuration { get; set; }
-
-        [Display(Name = "Total Number Accepted")]
-        public int TotalNumberAccepted { get; set; }
-
         [Display(Name = "Average Salary")]
         public double AverageSalary { get; set; }
 
         public string Knowledge { get; set; }
         public string Duties { get; set; }
         public string Abilities { get; set; }
+        public List<Company> Companies { get; set; } = new List<Company>();
+        public List<Industry> Industries { get; set; } = new List<Industry>();
+        public List<Testimony> Testimonies { get; set; } = new List<Testimony>();
+        public List<Skill> Skills { get; set; } = new List<Skill>();
     }
 }

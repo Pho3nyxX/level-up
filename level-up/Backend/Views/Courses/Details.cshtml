@@ -14,7 +14,7 @@
                 <div>
                     <a asp-controller="Home" asp-action="Index">Home ></a>
                     <a asp-controller="Courses" asp-action="Index">Course ></a>
-                    <span>Introduction to HTML</span>
+                    <span>@Html.DisplayFor(model => model.Title)</span>
                 </div>
             </div>
         </div>

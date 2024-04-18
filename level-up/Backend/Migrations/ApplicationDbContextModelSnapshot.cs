@@ -37,9 +37,6 @@ namespace Backend.Data.Migrations
                     b.Property<double>("AverageSalary")
                         .HasColumnType("float");
 
-                    b.Property<DateTime>("CourseDuration")
-                        .HasColumnType("datetime2");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -55,9 +52,6 @@ namespace Backend.Data.Migrations
                     b.Property<string>("PathName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("TotalNumberAccepted")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -343,6 +337,66 @@ namespace Backend.Data.Migrations
                     b.ToTable("Testimonies");
                 });
 
+            modelBuilder.Entity("CareerCompany", b =>
+                {
+                    b.Property<int>("CareersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CompaniesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CareersId", "CompaniesId");
+
+                    b.HasIndex("CompaniesId");
+
+                    b.ToTable("CareerCompany");
+                });
+
+            modelBuilder.Entity("CareerIndustry", b =>
+                {
+                    b.Property<int>("CareersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IndustriesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CareersId", "IndustriesId");
+
+                    b.HasIndex("IndustriesId");
+
+                    b.ToTable("CareerIndustry");
+                });
+
+            modelBuilder.Entity("CareerSkill", b =>
+                {
+                    b.Property<int>("CareersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SkillsId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CareersId", "SkillsId");
+
+                    b.HasIndex("SkillsId");
+
+                    b.ToTable("CareerSkill");
+                });
+
+            modelBuilder.Entity("CareerTestimony", b =>
+                {
+                    b.Property<int>("CareersId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TestimoniesId")
+                        .HasColumnType("int");
+
+                    b.HasKey("CareersId", "TestimoniesId");
+
+                    b.HasIndex("TestimoniesId");
+
+                    b.ToTable("CareerTestimony");
+                });
+
             modelBuilder.Entity("CourseInstructor", b =>
                 {
                     b.Property<int>("CoursesId")
@@ -578,6 +632,66 @@ namespace Backend.Data.Migrations
                         .IsRequired();
 
                     b.Navigation("Course");
+                });
+
+            modelBuilder.Entity("CareerCompany", b =>
+                {
+                    b.HasOne("Backend.Models.Career", null)
+                        .WithMany()
+                        .HasForeignKey("CareersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Company", null)
+                        .WithMany()
+                        .HasForeignKey("CompaniesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CareerIndustry", b =>
+                {
+                    b.HasOne("Backend.Models.Career", null)
+                        .WithMany()
+                        .HasForeignKey("CareersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Industry", null)
+                        .WithMany()
+                        .HasForeignKey("IndustriesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CareerSkill", b =>
+                {
+                    b.HasOne("Backend.Models.Career", null)
+                        .WithMany()
+                        .HasForeignKey("CareersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Skill", null)
+                        .WithMany()
+                        .HasForeignKey("SkillsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("CareerTestimony", b =>
+                {
+                    b.HasOne("Backend.Models.Career", null)
+                        .WithMany()
+                        .HasForeignKey("CareersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Testimony", null)
+                        .WithMany()
+                        .HasForeignKey("TestimoniesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("CourseInstructor", b =>

@@ -1896,7 +1896,7 @@ p {
             padding: 13px;
             text-transform: uppercase;
             background-color: var(--secondary-blue);
-            margin-top: 50px;
+            margin-top: 30px;
         }
     }
 }
@@ -1929,6 +1929,10 @@ p {
         /* font-size: 53px; */
         color: var(--primary-blue);
         margin-bottom: 30px;
+    }
+
+    p {
+        margin-bottom: 24px;
     }
 
     .intro-picture {
@@ -2000,6 +2004,10 @@ p {
 
     .abilities {
 
+        p{
+            margin-bottom: 24px;
+        }
+    
         .abilities-picture {
             width: 35%;
         }

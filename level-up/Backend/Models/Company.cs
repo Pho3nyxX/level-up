@@ -9,5 +9,6 @@ namespace Backend.Models
 
         [Display(Name = "Company Information")]
         public string CompanyInformation { get; set; }
+        public List<Career> Careers { get; set; } = new List<Career>();
     }
 }
