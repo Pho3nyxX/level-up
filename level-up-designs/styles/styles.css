@@ -2848,7 +2848,7 @@ p {
                 }
 
                 a {
-                    background-color: var(--blue-25);
+                    background-color: var(--secondary-blue);
                     border: none;
                     border-radius: 8px;
                     padding: 8px 30px;
@@ -3114,7 +3114,7 @@ p {
 
     .filters {
         border-right: 2px solid var(--black-5);
-        padding-left: 97px;
+        padding-left: 89px;
 
         .filter-item {
             border-top: none;
