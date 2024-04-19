@@ -20,9 +20,20 @@ namespace Backend.Controllers
         }
 
         // GET: Courses
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string SearchTerm)
         {
-            return View(await _context.Courses.ToListAsync());
+            if(_context.Courses == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
+            }
+            var courses = from c in _context.Courses select c;
+            if (!String.IsNullOrEmpty(SearchTerm))
+            {
+                courses = courses.Where(c => 
+                (c.Title!.ToLower().Contains(SearchTerm.ToLower())) 
+                || c.ShortDescription!.Contains(SearchTerm));
+            }
+            return View(await courses.ToListAsync());
         }
 
         // GET: Courses/Details/5

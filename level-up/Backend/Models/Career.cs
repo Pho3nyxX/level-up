@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Models
 {
@@ -7,6 +8,11 @@ namespace Backend.Models
         public int Id { get; set; }
         public string PathName { get; set; }
         public string Description { get; set; }
+
+        [Display(Name = "Short Description")]
+        [Column(TypeName = "nvarchar(100)")]
+        public string? ShortDescription { get; set; }
+
 
         [Display(Name = "Average Salary")]
         public double AverageSalary { get; set; }

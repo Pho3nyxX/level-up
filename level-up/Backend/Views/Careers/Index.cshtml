@@ -296,36 +296,38 @@
 
 <!-- main body -->
 <div class="container main-section">
-    <div class="search">
-        <input type="search" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search by name">
-    </div>
+    <form asp-controller="Careers" asp-action="Index" method="get">
+        <div class="search">
+            <input type="text" name="SearchTerm" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search by name">
+        </div>
+    </form>
 
-    @foreach(var item in Model)
-    { 
-        <div class="row">
-            <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card mt-5">
-                    <div class="overlay-container">
-                        <a href="">
-                            <img src="../images/software-engineer.jpg" alt="software engineer">
-                        </a>
-                    </div>
-
-                    <div class="card-body detail">
-                        <div class="">
-                            <h5>
-                                <a asp-area="" asp-controller="Careers" asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.PathName)</a>
-                            </h5>
+    <div class="row">
+        @foreach(var item in Model)
+        { 
+                <div class="col-sm-12 col-md-4 col-lg-3">
+                    <div class="card mt-5">
+                        <div class="overlay-container">
+                            <a href="">
+                                <img src="../images/software-engineer.jpg" alt="software engineer">
+                            </a>
                         </div>
 
-                        <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                        <div class="card-body detail">
+                            <div class="">
+                                <h5>
+                                    <a asp-area="" asp-controller="Careers" asp-action="Details" asp-route-id="@item.Id">@Html.DisplayFor(modelItem => item.PathName)</a>
+                                </h5>
+                            </div>
 
-                        <a asp-area="" asp-controller="Careers" asp-action="Details" asp-route-id="@item.Id" class="more">See more <i class="bi bi-chevron-right"></i></a>
+                            <p>@Html.DisplayFor(modelItem => item.Description)</p>
+
+                            <a asp-area="" asp-controller="Careers" asp-action="Details" asp-route-id="@item.Id" class="more">See more <i class="bi bi-chevron-right"></i></a>
+                        </div>
                     </div>
-                </div>
-            </div>      
-        </div>
-    }
+                </div>      
+        }
+    </div>
 
     <!-- pagination -->
     <div class="pagination-container mt-5">

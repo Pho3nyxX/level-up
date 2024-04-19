@@ -1,0 +1,84 @@
+﻿@model Backend.Models.Roadmap
+
+@{
+    ViewData["Title"] = "Roadmap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid main roadmap-container">
+        <!-- breadcrumb -->
+        <div class="container mt-5">
+            <div class="row mb-0">
+                <div class="col-8">
+                    <div class="breadcrumb-container" aria-label="breadcrumb">
+                        <div>
+                            <a asp-controller="Home" asp-action="Index">Home ></a>
+                            <a asp-controller="Careers" asp-action="Index">Career Paths ></a>
+                            <span>Roadmap</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- roadmap -->
+        <div class="row">
+            <div class="title-margin">
+                <h1 class="text-center blue">Software Engineer Roadmap</h1>
+            </div>
+            <div class="timeline">
+                <!-- left -->
+                <div class="timeline-container left">
+                    <div class="content">
+                        <div class="d-flex justify-content-between mb-3">
+                        <h4 class="blue">@Html.DisplayFor(model => model.Title)</h4>
+                            <a href="#"><i class="bi bi-box-arrow-in-up-right orange-icon"></i></a>
+                        </div>
+                        <p>@Html.DisplayFor(model => model.Description)</p>
+                        <a href="" class="link">Start</a>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="timeline-container right">
+                    <div class="content">
+                        <div class="d-flex justify-content-between mb-3">
+                        <h4><a href="">@Html.DisplayFor(model => model.Title)</a></h4>
+                            <a href="#"><i class="bi bi-box-arrow-in-up-right orange-icon"></i></a>
+                        </div>
+                        <p>@Html.DisplayFor(model => model.Description)</p>
+                        <a href="" class="link">Start</a>
+                    </div>
+                </div>
+
+                <!-- left -->
+                <div class="timeline-container left">
+                    <div class="content">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h4><a href="">Frontend</a></h4>
+                            <a href="#"><i class="bi bi-box-arrow-in-up-right orange-icon"></i></a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
+                            voluptua dignissim per, habeo iusto primis ea eam.</p>
+                        <a href="" class="link">Start</a>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="timeline-container right">
+                    <div class="content">
+                        <div class="d-flex justify-content-between mb-3">
+                            <h4><a href="">Backend</a></h4>
+                            <a href="#"><i class="bi bi-box-arrow-in-up-right orange-icon"></i></a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                            mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit
+                            voluptua dignissim per, habeo iusto primis ea eam.</p>
+                        <a href="" class="link">Start</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   </div>

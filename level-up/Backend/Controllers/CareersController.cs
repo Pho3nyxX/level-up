@@ -20,9 +20,20 @@ namespace Backend.Controllers
         }
 
         // GET: Careers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string SearchTerm)
         {
-            return View(await _context.Careers.ToListAsync());
+            if (_context.Careers == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
+            }
+            var careers = from c in _context.Careers select c;
+            if (!String.IsNullOrEmpty(SearchTerm))
+            {
+                careers = careers.Where(c =>
+                (c.PathName!.ToLower().Contains(SearchTerm.ToLower()))
+                || c.ShortDescription!.Contains(SearchTerm));
+            }
+            return View(await careers.ToListAsync());
         }
 
         // GET: Careers/Details/5
@@ -119,6 +130,26 @@ namespace Backend.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(career);
+        }
+
+
+        // GET: Careers/Details/5
+        public async Task<IActionResult> Roadmap(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var roadmap = await _context.Roadmaps
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (roadmap == null)
+            {
+                return NotFound();
+            }
+
+            return View(roadmap);
         }
 
         // GET: Careers/Delete/5
