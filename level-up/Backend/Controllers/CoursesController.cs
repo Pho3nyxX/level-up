@@ -165,12 +165,32 @@ namespace Backend.Controllers
             // get the id of the currently logged in user
             var userId = _userManager.GetUserId(User);
             //get the user with their courses
-            var user = _context.Users
+            var user = await _context.Users
                 .Include(u => u.Courses)
                 .Where(u => u.Id == userId)
-                .FirstOrDefault();
+                .FirstOrDefaultAsync();
 
             return View(user.Courses);
+        }
+
+        public async Task<IActionResult> Lesson(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var course = await _context.Courses
+                .Include(c => c.Modules)
+                .ThenInclude(l => l.Lessons)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            return View(course);
         }
 
         // GET: Courses/Register/5

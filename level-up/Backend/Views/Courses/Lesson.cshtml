@@ -1,0 +1,93 @@
+﻿@model Backend.Models.Course
+
+@{
+    ViewData["Title"] = "Lesson";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid content-section main">
+    <div class="row me-0">
+        <!-- breadcrumb -->
+        <div class="container ps-4 mt-5 mb-5 text-center">
+            <div class="row mb-0">
+                <div class="col-12">
+                    <div class="row justify-content-between">
+                        <div class="col-3 me-0 ms-0 pe-0 ps-0 container">
+                            <div class="breadcrumb-container text-start" aria-label="breadcrumb">
+                                <div>
+                                    <a asp-controller="Home" asp-action="Index">Home ></a>
+                                    <a asp-controller="Courses" asp-action="Index">Courses ></a>
+                                    <span>Introduction to HTML</span>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <div class="col-1 bookmark-container">
+                            <a href="">
+                                <i class="bi bi-bookmark"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- course menu -->
+        <div class="col-3 course-track-container">
+            <h1 class="blue">@Html.DisplayFor(model => model.Title)</h1>
+            
+            @foreach(var module in Model.Modules)
+            {  
+                <div class="course-track">
+                    <div class="title">
+                        <h5>@module.Name</h5>
+                    </div>
+
+                @foreach(var lesson in module.Lessons)
+                {
+                        <div class="content">
+                            <div class="image"></div>
+                            <div class="details">
+                                <span><a href="#">@lesson.Title</a></span> <br>
+                                <span>@(Course.SecondsToString(lesson.Duration))</span>
+                            </div>
+                        </div>
+                }
+                </div>
+            }
+
+        </div>
+        <!-- content -->
+        <div class="col-9 ">
+            <!-- video  preview -->
+            <div class="row">
+                <div class="col video-container">
+                    <video src=""></video>
+                    <div class="video-controls justify-content-between">
+                        <!-- progress -->
+                        <div class="scrub-container">
+                            <div class="scrub-bar">
+                                <div class="scrub-progress"></div>
+                                <div class="scrub-circle"></div>
+                            </div>
+                        </div>
+
+                        <div class="controls">
+                            <a href="#"><i class="bi bi-play-fill"></i></a>
+                            <a href="#"><i class="bi bi-rewind"></i></a>
+                            <a href="#"><i class="bi bi-fast-forward"></i></a>
+                            <span>10:01 / 15:43</span>
+                        </div>
+
+                        <div class="controls">
+                            <a href="#"><i class="bi bi-badge-cc"></i></a>
+                            <a href="#"><i class="bi bi-gear-fill"></i></a>
+                            <a href="#"><i class="bi bi-arrows-fullscreen"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

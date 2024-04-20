@@ -32,5 +32,17 @@ namespace Backend.Models
         public List<Instructor> Instructors { get; set; } = new List<Instructor>(); 
 
         public List<ApplicationUser> ApplicationUsers { get; set; } = new List<ApplicationUser>();
+
+        public static string SecondsToString(int seconds)
+        {
+            TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
+            string result = string.Format("{0:D2}:{1:D2}:{2:D2}",
+            timeSpan.Hours,
+            timeSpan.Minutes,
+            timeSpan.Seconds,
+            timeSpan.Milliseconds);
+            return result;
+        }
     }
+
 }
