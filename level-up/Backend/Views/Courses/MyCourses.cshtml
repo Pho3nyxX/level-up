@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Backend.Models.Course>
+
+@{
+    ViewData["Title"] = "MyCourses";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid my-course main">
+    <!-- breadcrumb -->
+    <div class="container ms-0 mt-3 mb-5">
+        <div class="row mb-0">
+            <div class="col-8">
+                <div class="breadcrumb-container" aria-label="breadcrumb">
+                    <div>
+                        <a asp-controller="Home" asp-action="Index">Home ></a>
+                        <a asp-controller="Courses" asp-action="Index">Courses ></a>
+                        <span>My Courses</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="blue">My Courses</h1>
+
+    <!--tabs-->
+    <div class="tab-switch">
+        <a href="#">In progress</a>
+        <a href="#">Completed</a>
+    </div>
+
+    <!--content-->
+    <div class="content-container">
+            @foreach(var item in Model)
+            {
+                <div class="row justify-content-between">
+                    <div class="col-7 text">
+                    <h3 class="blue"><a href="lesson.html">@Html.DisplayFor(modelItem => item.Title)</a></h3>
+                    <p>@Html.DisplayFor(modelItem => item.Description)...</p>
+                    </div>
+
+                    <div class="col-5 links">
+                        <div class="">
+                            <a asp-area="" asp-controller="Courses" asp-action="Details" asp-route-id="@item.Id">Overview</a>
+                            <a href="lesson.html">Resume
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="progress-section">
+                    <div class="course-progress-bar">
+                        <div class="course-progress"></div>
+                    </div>
+                    <span>25% Completed</span>
+                </div>
+            }
+    </div>
+
+    <!-- pagination -->
+    <div class="pagination-container">
+        <a href="" class="page me-2"><i class="bi bi-chevron-left"></i></a>
+        <a href="" class="page me-2">1</a>
+        <a href="" class="page me-2">2</a>
+        <a href="" class="page me-2">3</a>
+        <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
+    </div>
+
+</div>

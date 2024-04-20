@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Backend.Data;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Backend.Models
@@ -29,5 +30,7 @@ namespace Backend.Models
         //public List<Lesson>? Lessons { get; set; }
         public List<Module> Modules {  get; set; } 
         public List<Instructor> Instructors { get; set; } = new List<Instructor>(); 
+
+        public List<ApplicationUser> ApplicationUsers { get; set; } = new List<ApplicationUser>();
     }
 }

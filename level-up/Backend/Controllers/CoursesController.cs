@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Backend.Controllers
 {
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public CoursesController(ApplicationDbContext context)
+        public CoursesController(ApplicationDbContext context,
+            UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Courses
@@ -27,11 +31,11 @@ namespace Backend.Controllers
                 return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
             }
             var courses = from c in _context.Courses select c;
-            if (!String.IsNullOrEmpty(SearchTerm))
+            if (!(String.IsNullOrEmpty(SearchTerm)))
             {
                 courses = courses.Where(c => 
                 (c.Title!.ToLower().Contains(SearchTerm.ToLower())) 
-                || c.ShortDescription!.Contains(SearchTerm));
+                || c.Description!.ToLower().Contains(SearchTerm));
             }
             return View(await courses.ToListAsync());
         }
@@ -149,6 +153,56 @@ namespace Backend.Controllers
             }
 
             return View(instructor);
+        }
+
+        public async Task<IActionResult> MyCourses(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            // get the id of the currently logged in user
+            var userId = _userManager.GetUserId(User);
+            //get the user with their courses
+            var user = _context.Users
+                .Include(u => u.Courses)
+                .Where(u => u.Id == userId)
+                .FirstOrDefault();
+
+            return View(user.Courses);
+        }
+
+        // GET: Courses/Register/5
+        public async Task<IActionResult> Register(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var course = await _context.Courses
+                .FirstOrDefaultAsync(c => c.Id == id);
+
+            // get the id of the currently logged in user
+            var userId = _userManager.GetUserId(User);
+            //get the user with their courses
+            var user = _context.Users
+                .Include(u => u.Courses)
+                .Where(u => u.Id == userId)
+                .FirstOrDefault();
+
+            if (user == null || course == null)
+            {
+                //return NotFound();
+            }
+            else
+            {
+                user.Courses.Add(course);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Details), "Courses", new {id = course.Id});
         }
 
         // GET: Courses/Delete/5

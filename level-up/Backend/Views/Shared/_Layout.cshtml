@@ -18,12 +18,12 @@
             <div class="collapse navbar-collapse justify-content-between menu-container">
                 <!-- brand name -->
                 <div class="brand-name">
-                    <h3 class="mb-0"><a href="">Level<span>Up</span></a></h3>
+                    <h3 class="mb-0"><a asp-controller="Home" asp-action="Index">Level<span>Up</span></a></h3>
                 </div>
 
                 <!-- menus -->
                 <div class="menus">
-                    <a href="career-details.html">Career Paths</a>
+                    <a asp-area="" asp-controller="Careers" asp-action="Index">Career Paths</a>
                     <a asp-area="" asp-controller="Courses" asp-action="Index">Courses</a>
                     <a href="../skill/my-skills.html">Assessment</a>
                     <a href="../mentor/mentors.html">Mentors</a>

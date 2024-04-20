@@ -2004,10 +2004,10 @@ p {
 
     .abilities {
 
-        p{
+        p {
             margin-bottom: 24px;
         }
-    
+
         .abilities-picture {
             width: 35%;
         }
@@ -2397,6 +2397,14 @@ p {
 
         &:hover {
             background-color: var(--blue-10);
+
+            .links {
+                >div {
+                    >a:first-child {
+                        background-color: #fff;
+                    }
+                }
+            }
         }
 
         >.row {
@@ -2434,13 +2442,6 @@ p {
                     color: var(--orange);
                     font-size: 18px;
                     border: 2px solid var(--orange-25);
-                }
-
-                >a:first-child {
-
-                    &:hover {
-                        background-color: #fff;
-                    }
                 }
 
                 >a:last-child {

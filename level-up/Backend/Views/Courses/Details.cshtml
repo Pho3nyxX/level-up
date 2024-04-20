@@ -43,12 +43,12 @@
                 </div>
 
                 <div class="created">
-                    <span>Created by: <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="orange-text me-2">@Html.DisplayFor(model => model.CreatedBy)</a></span> |
+                    <span>Taught by: <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="orange-text me-2">@Html.DisplayFor(model => model.CreatedBy)</a></span> |
                     <span class="ms-2">Taught in @Html.DisplayFor(model => model.Language)</span>
                 </div>
 
                 <div class="mb-4">
-                    <a href="lesson.html" class="start-now">Start Now <i class="bi bi-chevron-right"></i></a>
+                    <a asp-controller="Courses" asp-action="Register" asp-route-id="@Model.Id" class="start-now">Start Now <i class="bi bi-chevron-right"></i></a>
                 </div>
 
                 <div class="mb-3">
