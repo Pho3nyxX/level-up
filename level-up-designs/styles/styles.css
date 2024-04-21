@@ -1,6 +1,10 @@
 /* Level Up Website*/
 /* Author: Abi Matthews-Gordon */
 
+/* @import url('/bootstrap.css');
+@import url('bootstrap-icons.css');
+@import url('fonts.css'); */
+
 /* --------------------------------- */
 /*          1. General */
 /* --------------------------------- */
@@ -2272,9 +2276,7 @@ p {
 
     .video-container {
         background-color: #eee;
-        height: 1237px;
-        /* height: 820px; */
-        /* margin-bottom: 52px; */
+        height: 1148px;
         position: relative;
         overflow: hidden;
 

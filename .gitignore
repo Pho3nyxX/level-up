@@ -532,6 +532,9 @@ dist
 .pnp.*
 
 
+wwwroot/uploads/
+
+
 # Cypress
 allure-results/
 

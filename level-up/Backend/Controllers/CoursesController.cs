@@ -155,13 +155,8 @@ namespace Backend.Controllers
             return View(instructor);
         }
 
-        public async Task<IActionResult> MyCourses(int? id)
+        public async Task<IActionResult> MyCourses()
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
             // get the id of the currently logged in user
             var userId = _userManager.GetUserId(User);
             //get the user with their courses
@@ -180,17 +175,23 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
+            var lesson = await _context.Lessons
+                .Include(l => l.Module)
+                .ThenInclude(c => c.Course)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
             var course = await _context.Courses
                 .Include(c => c.Modules)
                 .ThenInclude(l => l.Lessons)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.Id == lesson.Module.Course.Id);
 
             if (course == null)
             {
                 return NotFound();
             }
+            ViewData["Modules"] = course;
 
-            return View(course);
+            return View(lesson);
         }
 
         // GET: Courses/Register/5
@@ -222,6 +223,7 @@ namespace Backend.Controllers
             }
 
             await _context.SaveChangesAsync();
+            //ViewBag.Message = "Successfully registered for " + course.Title;
             return RedirectToAction(nameof(Details), "Courses", new {id = course.Id});
         }
 

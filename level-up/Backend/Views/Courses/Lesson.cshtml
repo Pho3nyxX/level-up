@@ -1,68 +1,80 @@
-﻿@model Backend.Models.Course
+﻿@model Backend.Models.Lesson
 
 @{
     ViewData["Title"] = "Lesson";
+    Course course = ViewData["Modules"] as Course;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
 <div class="container-fluid content-section main">
     <div class="row me-0">
-        <!-- breadcrumb -->
-        <div class="container ps-4 mt-5 mb-5 text-center">
-            <div class="row mb-0">
-                <div class="col-12">
-                    <div class="row justify-content-between">
-                        <div class="col-3 me-0 ms-0 pe-0 ps-0 container">
-                            <div class="breadcrumb-container text-start" aria-label="breadcrumb">
-                                <div>
-                                    <a asp-controller="Home" asp-action="Index">Home ></a>
-                                    <a asp-controller="Courses" asp-action="Index">Courses ></a>
-                                    <span>Introduction to HTML</span>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div class="col-1 bookmark-container">
-                            <a href="">
-                                <i class="bi bi-bookmark"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
         <!-- course menu -->
         <div class="col-3 course-track-container">
-            <h1 class="blue">@Html.DisplayFor(model => model.Title)</h1>
-            
-            @foreach(var module in Model.Modules)
-            {  
+            <h1 class="blue">@course.Title</h1>
+
+            @foreach (var module in course.Modules)
+            {
                 <div class="course-track">
                     <div class="title">
                         <h5>@module.Name</h5>
                     </div>
 
-                @foreach(var lesson in module.Lessons)
-                {
+                    @foreach (var lesson in module.Lessons)
+                    {
                         <div class="content">
                             <div class="image"></div>
                             <div class="details">
-                                <span><a href="#">@lesson.Title</a></span> <br>
+                                <span><a asp-controller="Courses" asp-action="Lesson" asp-route-id="@lesson.Id">@lesson.Title</a></span> <br>
                                 <span>@(Course.SecondsToString(lesson.Duration))</span>
                             </div>
                         </div>
-                }
+                    }
                 </div>
             }
-
         </div>
+
+
         <!-- content -->
         <div class="col-9 ">
+
+            <!-- breadcrumb -->
+            <div class="container ps-0 ms-0 mb-4 text-center">
+                <div class="row mb-0">
+                    <div class="col-12">
+                        <div class="row justify-content-between">
+                            <div class="col-6 me-0 ms-0 pe-0 ps-0 container">
+                                <div class="breadcrumb-container text-start" aria-label="breadcrumb">
+                                    <div>
+                                        <a asp-controller="Home" asp-action="Index">Home ></a>
+                                        <a asp-controller="Courses" asp-action="Index">Courses ></a>
+                                        <a asp-controller="Courses" asp-action="Details">Introduction to HTML ></a>
+                                        <a href="#">Introduction ></a>
+                                        <span>Introduction</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-1 bookmark-container">
+                                <a href="">
+                                    <i class="bi bi-bookmark"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- current lesson -->
+            <div class="mb-3">
+                <h3 class="blue">@Model.Title</h3>
+            </div>
+
             <!-- video  preview -->
             <div class="row">
                 <div class="col video-container">
-                    <video src=""></video>
+                    <video src="~/uploads/@Model.Video"></video>
                     <div class="video-controls justify-content-between">
                         <!-- progress -->
                         <div class="scrub-container">
@@ -89,5 +101,4 @@
             </div>
         </div>
     </div>
-
 </div>
