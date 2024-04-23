@@ -958,7 +958,14 @@ p {
     }
 }
 
-/* settings heading section */
+/* settings section collapsed */
+.setting-menu.collapsed {
+    width: 0px;
+    /* display: none !important; */
+    overflow: hidden;
+}
+
+/* settings section */
 .setting-menu {
     height: 100%;
     width: 276px;
@@ -981,10 +988,6 @@ p {
         padding-left: 20px;
         padding-right: 14px;
     }
-
-    /* .active {
-        background: #fff;
-    } */
 
     .settings-menu-item {
         cursor: pointer;

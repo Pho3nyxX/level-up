@@ -175,15 +175,16 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
-            var lesson = await _context.Lessons
-                .Include(l => l.Module)
-                .ThenInclude(c => c.Course)
-                .FirstOrDefaultAsync(m => m.Id == id);
 
             var course = await _context.Courses
                 .Include(c => c.Modules)
                 .ThenInclude(l => l.Lessons)
-                .FirstOrDefaultAsync(m => m.Id == lesson.Module.Course.Id);
+                .FirstOrDefaultAsync(m => m.Id == 1);
+
+            var lesson = await _context.Lessons
+                .Include(l => l.Module)
+                .ThenInclude(c => c.Course)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (course == null)
             {

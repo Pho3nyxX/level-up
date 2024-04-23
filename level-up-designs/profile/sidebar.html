@@ -179,16 +179,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="account menu-item">
-                    <a href="#">
-                        <i class="bi bi-person-gear"></i>
-                    </a>
-                    <div class="submenu shadow">
-                        <a href="#">Account</a>
-                        <a href="#">About</a>
-                    </div>
-                </div> -->
-
                 <div class="mentor menu-item">
                     <a href="../mentor/mentors.html">
                         <i class="bi bi-people"></i>
@@ -210,7 +200,7 @@
                 </div>
 
                 <div class="settings menu-item">
-                    <a href="#">
+                    <a href="#" class="toggle2">
                         <i class="bi bi-gear"></i>
                         <span>Settings</span>
                     </a>
@@ -311,17 +301,30 @@
         document.addEventListener("DOMContentLoaded", (event) => {
             // load the aside div
             // load the <a> with the toggle class
+            // set a click listener on the <a>
+            // show collapsed sidebar
             const asideContainer = document.querySelector(".sidebar");
             const toggleLink = document.querySelector("a.toggle")
 
-            // set a click listener on the <a>
-            // show collapsed sidebar
             toggleLink.addEventListener("click", (e) => {
                 // console.log("clicked");
                 e.preventDefault();
                 asideContainer.classList.toggle("collapsed");
             });
-        });  
+        
+
+            const asideContainer2 = document.querySelector(".sidebar");
+            const menu = document.querySelector(".menu");
+            const settingMenu = document.querySelector(".setting-menu");
+            const settings = document.querySelector(".settings");
+            const toggleLink2 = document.querySelector("a.toggle2")
+
+            toggleLink2.addEventListener("click", (e) => {
+                // console.log("clicked");
+                settingMenu.classList.toggle("collapsed");
+            })
+
+        });
     </script>
 </body>
 
