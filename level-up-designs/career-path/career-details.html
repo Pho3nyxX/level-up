@@ -45,8 +45,9 @@
             <div class="row">
                 <div class="col-12 ps-0 category-container">
                     <div class="filter-menu-toggle">
-                        <a href="" class="">Filter by Category</a>
-                        <a href=""><i class="bi bi-list"></i></a>
+                        <a href="#" class="">Filter by Category
+                            <i class="bi bi-list"></i>
+                        </a>
                     </div>
 
                     <div class="categories hide">
@@ -468,7 +469,7 @@
             <div class="row abilities">
                 <div class="col-12">
                     <h4>Abilities</h4>
-                    <img src="/images/software-engineer.jpg" alt="" class="abilities-picture pic mb-4">
+                    <!-- <img src="/images/software-engineer.jpg" alt="" class="abilities-picture pic mb-4"> -->
 
                     <p class="mb-4">Some quick example text to build on the card title and make up the bulk of the card's
                         content. Some quick example text to build on the card title and make up the bulk of the
@@ -606,6 +607,10 @@
         </div>
     </section>
 
+    <button class="scrollToTop hide" type="button">
+        <i class="bi bi-arrow-up"></i>
+    </button>
+
     <!-- footer -->
     <footer class="footer">
         <div class="container">
@@ -642,37 +647,64 @@
     <script src="../scripts/bootstrap.js"></script>
     <script src="../scripts/site.js"></script>
     <script>
+        let scrollToTopBtn;
+        let filterLink;
+        let categoriesContainer;
+        let categoryDropdown;
+
         document.addEventListener("DOMContentLoaded", (event) => {
-            // load categories div
-            // load filter toggle div
-            const categoriesContainer = document.querySelectorAll(".categories");
-            const filterLink = document.querySelector(".filter-menu-toggle a");
+            // categoriesContainer.addEventListener("click", (e) => {
+            //     e.preventDefault();
+            //     const categoryDropdown = document.querySelector(".category-dropdown");
+            //     if (e.target.tagName.toLowerCase() == "a") {
+            //         const categoryName = e.target.dataset.category;
+            //         const categoryDiv = categoriesContainer.querySelector(`div[data-category='${categoryName}']`);
+            //         categoryDiv.classList.toggle("hide");
+            //     }
 
-            // set click listener on filter
-            // show categories div
-            filterLink.addEventListener("click", (e) => {
-                e.preventDefault();
-                // console.log(categoriesContainer);
-                categoriesContainer.classList.toggle("hide");
-            });
+            //     categoryDropdown.classList.toggle("show");
+            // });
 
-            // set click listener on categories div
-            // check if its a link that was click & which link
-            // get category of clicked link
-            // show category           
-            categoriesContainer.addEventListener("click", (e) => {
-                e.preventDefault();
-                const categoryDropdown = document.querySelector(".category-dropdown");
-                if (e.target.tagName.toLowerCase() == "a") {
-                    const categoryName = e.target.dataset.category;
-                    const categoryDiv = categoriesContainer.querySelector(`div[data-category='${categoryName}']`);
-                    categoryDiv.classList.toggle("hide");
-                }
-
-                // toggle/switch the show class
-                categoryDropdown.classList.toggle("show");
-            });
+            setUpEvents();
         });
+
+
+        // show/hide the scroll button
+        function toggleScrollBtn(event) {
+            if (window.scrollY > 20) {
+                scrollToTopBtn.classList.remove("hide");
+            } else {
+                scrollToTopBtn.classList.add("hide");
+            }
+        }
+
+        // scroll back to the top of the page
+        function scrollToTop(event) {
+            window.scrollTo(0, 0);
+        }
+
+
+
+        // show/hide the categories
+        function toggleFilterContainer(e) {
+            e.preventDefault();
+            categoriesContainer.classList.toggle("hide");
+        }
+
+        
+        
+        // loading and event listeners
+        function setUpEvents() {
+            scrollToTopBtn = document.querySelector(".scrollToTop");
+            filterLink = document.querySelector(".filter-menu-toggle a");
+            categoriesContainer = document.querySelector(".categories");
+            categoryDropdown = document.querySelector(".category-dropdown");
+
+
+            filterLink.addEventListener("click", toggleFilterContainer);
+            document.addEventListener("scroll", toggleScrollBtn);
+            scrollToTopBtn.addEventListener("click", scrollToTop);
+        }
     </script>
 </body>
 

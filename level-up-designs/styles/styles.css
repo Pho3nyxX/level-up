@@ -55,7 +55,9 @@ a {
     color: #000;
 }
 
-body {}
+body {
+    position: relative;
+}
 
 body.full-page {
     width: 100%;
@@ -413,6 +415,24 @@ body.full-page {
                 }
             }
         }
+    }
+}
+
+/* scroll back to top */
+.scrollToTop {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--orange);
+    color: #fff;
+    font-size: 20px;
+    position: fixed;
+    bottom: 90px;
+    right: 90px;
+
+    &:hover {
+        box-shadow: -1px 2px 8px 12px var(--orange-50);
     }
 }
 
@@ -1824,18 +1844,17 @@ p {
         display: flex;
 
         .filter-menu-toggle {
-            display: flex;
+            /* display: flex; */
             padding: 10px 22px;
             width: 210px;
             margin-right: 90px;
             background-color: var(--blue-20);
             border-right: 4px solid var(--primary-blue);
 
-            a:first-child {
+            /* a:first-child {
                 color: var(--primary-blue);
                 margin-right: 5px;
             }
-
             a:last-child {
                 width: 30px;
                 height: 30px;
@@ -1847,10 +1866,34 @@ p {
                     font-size: 25px;
                     line-height: 30px;
                 }
+            } */
+
+            >a {
+                display: flex;
+                color: var(--primary-blue);
+                margin-right: 5px;
+
+                i {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background-color: var(--primary-blue);
+                    color: #fff;
+                    font-size: 23px;
+                    line-height: 30px;
+                    text-align: center;
+                }
+
+                /* &.active {
+                    .categories {
+                        display: block;
+                    }
+                } */
             }
         }
 
         .categories {
+            /* display: none; */
 
             .category-title {
                 margin-right: 65px;
