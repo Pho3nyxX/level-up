@@ -30,13 +30,14 @@ namespace Backend.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
             }
-            var courses = from c in _context.Courses select c;
+            var courses = from c in _context.Courses.Include(c => c.Instructors) select c;
             if (!(String.IsNullOrEmpty(SearchTerm)))
             {
                 courses = courses.Where(c => 
                 (c.Title!.ToLower().Contains(SearchTerm.ToLower())) 
                 || c.Description!.ToLower().Contains(SearchTerm));
             }
+            //courses.Include(c => c.Instructors);
             return View(await courses.ToListAsync());
         }
 
@@ -143,7 +144,7 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
-            var instructor = await _context.Instrutors
+            var instructor = await _context.Instructors
                 .Include(c => c.Courses)
                 .FirstOrDefaultAsync(m => m.Id == id);
 

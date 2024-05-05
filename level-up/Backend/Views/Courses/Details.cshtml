@@ -42,8 +42,17 @@
                 </div>
 
                 <div class="created">
-                    <span>Taught by: <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="orange-text me-2">@Html.DisplayFor(model => model.CreatedBy)</a></span> |
-                    <span class="ms-2">Taught in @Html.DisplayFor(model => model.Language)</span>
+                    <span>Taught by:
+                        @for(int i = 0; i < Model.Instructors.Count; i++){
+                            var separater = "";
+                            @if (Model.Instructors.Count > 1 && i+1 < Model.Instructors.Count)
+                            {
+                                separater = ",";
+                            }
+                            <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="orange-text">@Html.DisplayFor(model => model.Instructors[i].Name)</a>@separater
+                        }
+                    </span>
+                    | <span class="ms-2">Taught in @Html.DisplayFor(model => model.Language)</span>
                 </div>
 
                 <div class="mb-4">

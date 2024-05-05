@@ -55,7 +55,7 @@
                             <div class="collapse navbar-collapse">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link category-title" data-category="Information Technology" href="">Information Technology
+                                        <a class="nav-link category-title" data-category="Information Technology" href="#">Information Technology
                                             <i class="bi bi-chevron-down"></i>
                                         </a>
                                     </li>
@@ -683,14 +683,27 @@
             window.scrollTo(0, 0);
         }
 
-
-
         // show/hide the categories
         function toggleFilterContainer(e) {
             e.preventDefault();
             categoriesContainer.classList.toggle("hide");
         }
 
+
+        // show/hide category dropdown
+        function toggleCategoryDropdown(e) {
+            e.preventDefault();
+            
+            if (e.target.tagName.toLowerCase() == "a") {
+                const categoryName = e.target.dataset.category;
+                const categoryDiv = categoriesContainer.querySelector(`div[data-category='${categoryName}']`);
+                console.log(categoryDiv);
+                categoryDropdown.classList.toggle("show");
+            }
+            // categoryDiv.classList.toggle("hide");
+            
+        }
+        
         
         
         // loading and event listeners
@@ -699,8 +712,9 @@
             filterLink = document.querySelector(".filter-menu-toggle a");
             categoriesContainer = document.querySelector(".categories");
             categoryDropdown = document.querySelector(".category-dropdown");
-
-
+            
+            categoryDropdown.addEventListener("click", toggleCategoryDropdown);
+            // console.log("clicked");
             filterLink.addEventListener("click", toggleFilterContainer);
             document.addEventListener("scroll", toggleScrollBtn);
             scrollToTopBtn.addEventListener("click", scrollToTop);

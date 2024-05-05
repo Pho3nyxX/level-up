@@ -1851,23 +1851,6 @@ p {
             background-color: var(--blue-20);
             border-right: 4px solid var(--primary-blue);
 
-            /* a:first-child {
-                color: var(--primary-blue);
-                margin-right: 5px;
-            }
-            a:last-child {
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                background-color: var(--primary-blue);
-
-                i {
-                    color: #fff;
-                    font-size: 25px;
-                    line-height: 30px;
-                }
-            } */
-
             >a {
                 display: flex;
                 color: var(--primary-blue);
@@ -1883,18 +1866,10 @@ p {
                     line-height: 30px;
                     text-align: center;
                 }
-
-                /* &.active {
-                    .categories {
-                        display: block;
-                    }
-                } */
             }
         }
 
         .categories {
-            /* display: none; */
-
             .category-title {
                 margin-right: 65px;
             }

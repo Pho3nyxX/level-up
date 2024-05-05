@@ -54,7 +54,10 @@
                                 @Html.DisplayFor(modelItem => item.Description)
                             </p>
                             <div class="duration d-flex justify-content-between">
-                                <span>Taught by: <a href="instructor-overview.html">@Html.DisplayFor(modelItem => item.CreatedBy)</a></span>
+                                @if(item.Instructors.Count > 0){
+                                    <span>Taught by: <a href="instructor-overview.html">@Html.DisplayFor(modelItem => item.Instructors[0].Name)</a></span>
+                                }
+                                
                                 <span class="pe-3">@Html.DisplayFor(modelItem => item.Duration)</span>
                             </div>
                             <a asp-area="" asp-controller="Courses" asp-action="Details" asp-route-id="@item.Id">View</a>
