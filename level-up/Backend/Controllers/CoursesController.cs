@@ -24,21 +24,45 @@ namespace Backend.Controllers
         }
 
         // GET: Courses
-        public async Task<IActionResult> Index(string SearchTerm)
+        public async Task<IActionResult> Index(string SearchTerm, int page, int pageSize)
         {
             if(_context.Courses == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
             }
-            var courses = from c in _context.Courses.Include(c => c.Instructors) select c;
+            if (page == null || page < 1) {
+                page = 1;
+            }
+            if (pageSize == null || pageSize < 3)
+            {
+                pageSize = 3;
+            }
+
+            var position = (page - 1) * pageSize;
+            var count = await _context.Courses.CountAsync();
+            var lastPageNumber = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
+            if (page > lastPageNumber )
+            {
+                return RedirectPermanent("~/Courses/");
+            }
+            var courses = from c in _context.Courses
+                     .OrderBy(c => c.Id)
+                     .Include(c => c.Instructors)
+                     .Skip(position)
+                     .Take(pageSize)
+                      select c;
+
             if (!(String.IsNullOrEmpty(SearchTerm)))
             {
                 courses = courses.Where(c => 
                 (c.Title!.ToLower().Contains(SearchTerm.ToLower())) 
                 || c.Description!.ToLower().Contains(SearchTerm));
             }
+            var courseList = await courses.ToListAsync();
+            ViewData["pageNumber"] = page;
+            ViewData["lastPageNumber"] = lastPageNumber;
             //courses.Include(c => c.Instructors);
-            return View(await courses.ToListAsync());
+            return View(courseList);
         }
 
         // GET: Courses/Details/5
