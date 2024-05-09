@@ -3,6 +3,7 @@
 @{
     ViewData["Title"] = "CourseReview";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var course = (Course)ViewData["course"];
 }
 
 <div class="container mt-5">
@@ -43,16 +44,15 @@
                         </div>
                     </div>
                 }
-                </div>
-               
+                </div>            
 
                 <div class="col-4 reviewed-course">
                     <div class="content">
-                        <h2 class="blue">Introduction to HTML</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                        <h2 class="blue">@course.Title</h2>
+                        <p>@course.Description</p>
 
                         <div class="created mb-4">
-                            <span>Created by: <a href="instructor-overview.html" class="orange-text">Romeo Black</a></span> |
+                            <span>Taught by: <a asp-controller="Courses" asp-action="Instructor" asp-route-id="@course.Id" class="orange-text">@course.Instructors[0].Name</a></span> |
                             <span class="ms-2">Taught in English</span>
                         </div>
 
@@ -100,85 +100,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>CourseReview</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Stars)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Comment)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateCreated)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateModified)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Stars)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Comment)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateCreated)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateModified)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>

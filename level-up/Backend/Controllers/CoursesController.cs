@@ -243,7 +243,13 @@ namespace Backend.Controllers
 
             var review = await _context.Reviews
                 .Include(r => r.User)
-                .Where(c => c.Course.Id == id).ToListAsync();                
+                .Where(c => c.Course.Id == id)
+                .ToListAsync();                
+
+            var course = await _context.Courses
+               .Include(i => i.Instructors)
+               .FirstOrDefaultAsync(c => c.Id == id);
+            ViewData["course"] = course;
 
             if (review == null)
             {
