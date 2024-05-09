@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Backend.Models;
 
 namespace Backend.Data
 {
@@ -19,5 +20,6 @@ namespace Backend.Data
         public DbSet<Backend.Models.Roadmap> Roadmaps { get; set; }
         public DbSet<Backend.Models.Skill> Skills { get; set; }
         public DbSet<Backend.Models.Testimony> Testimonies { get; set; }
+        public DbSet<Backend.Models.Review> Reviews { get; set; } //= default!;
     }
 }

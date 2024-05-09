@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <link rel="stylesheet" href="../styles/bootstrap.css">
+    <link rel="stylesheet" href="../styles/bootstrap-icons.css">
+    <link rel="stylesheet" href="../styles/styles.css">
+</head>
+
+<body class="">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-4">
+                <form class="row g-3 needs-validation" novalidate>
+                    <h1 class="blue">Leave a review</h1>
+
+                    <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Choose review</label>
+                    <div class="d-flex justify-content-center mt-0 mb-3">
+                        <select class="form-select option-container bgc-orange-10" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <label for="exampleFormControlInput1" class="form-label mt-0 mb-0">Description</label>
+                    <div class="mt-0">
+                        <textarea class="form-control bgc-orange-10" name="description" id="description" rows="5"></textarea>
+                    </div>
+
+                    <div class="btns mt-4">
+                        <button type="submit" class="btn link">Save</button>
+                        <button type="submit" class="btn">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../scripts/bootstrap.js"></script>
+    <script src="../scripts/site.js"></script>
+
+</body>
+
+</html>

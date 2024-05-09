@@ -15,5 +15,6 @@ namespace Backend.Data
         public string LastName { get; set; }
 
         public List<Course> Courses { get; set; } = new List<Course>();
+        public List<Review> Reviews { get; set; }
     }
 }

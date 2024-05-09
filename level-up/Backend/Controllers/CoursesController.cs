@@ -65,6 +65,7 @@ namespace Backend.Controllers
             return View(courseList);
         }
 
+
         // GET: Courses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -180,6 +181,7 @@ namespace Backend.Controllers
             return View(instructor);
         }
 
+        // GET: Courses/MyCourses/5
         public async Task<IActionResult> MyCourses()
         {
             // get the id of the currently logged in user
@@ -193,13 +195,72 @@ namespace Backend.Controllers
             return View(user.Courses);
         }
 
-        public async Task<IActionResult> Lesson(int? id)
+
+        // GET: Courses/Review/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Review(int id, [Bind("Stars,Comment")] Review review)
+        {
+            var userId = _userManager.GetUserId(User);
+            var user = await _context.Users
+                .Include(u => u.Courses)
+                .Where(u => u.Id == userId)
+                .FirstOrDefaultAsync();
+
+            var course = await _context.Courses
+                .Where(c => c.Id == id)
+                .FirstOrDefaultAsync();
+
+            if (course == null)
+            {
+                return NotFound();
+            }
+
+            review.User = user;
+            review.Course = course;
+            review.DateCreated = DateTime.Now;
+            //ModelState.Clear();
+            //TryValidateModel(review);
+            if (ModelState.IsValid)
+            {
+                _context.Add(review);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+
+            //TODO: verify that user is registered for course
+            return View(user.Courses);
+        }
+
+
+        // GET: Courses/Review/5
+        public async Task<IActionResult> CourseReview(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
+            var review = await _context.Reviews
+                .Include(r => r.User)
+                .Where(c => c.Course.Id == id).ToListAsync();                
+
+            if (review == null)
+            {
+                return NotFound();
+            }
+
+            return View(review);
+        }
+
+
+        // GET: Courses/Lesson/5
+        public async Task<IActionResult> Lesson(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
             var course = await _context.Courses
                 .Include(c => c.Modules)
@@ -216,6 +277,7 @@ namespace Backend.Controllers
                 return NotFound();
             }
             ViewData["Modules"] = course;
+            ViewData["courseId"] = course.Id;
 
             return View(lesson);
         }

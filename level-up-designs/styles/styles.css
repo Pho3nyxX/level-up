@@ -442,6 +442,36 @@ body.full-page {
     }
 }
 
+/* buttons */
+.btns {
+
+    .link {
+        padding: 8px 25px;
+        background-color: var(--secondary-blue);
+        margin-right: 20px;
+        border: none;
+        border-radius: 6px;
+    }
+
+    .link-2 {
+        color: var(--black);
+        padding: 5px 25px;
+        border: 2px solid var(--secondary-blue);
+        border-radius: 6px;
+    }
+
+    [type=submit] {
+        color: var(--black);
+        padding: 5px 25px;
+        border: 2px solid var(--secondary-blue);
+        margin-right: 20px;
+
+        &.skill-btn-2 {
+            background-color: #fff;
+        }
+    }
+}
+
 /* --------------------------------- */
 /*              Typography */
 /* --------------------------------- */
@@ -2602,6 +2632,24 @@ p {
     }
 }
 
+.reviewed-course {
+    background-color: var(--blue-10);
+    height: 650px;
+    /* margin-left: 50px; */
+
+    .content {
+        padding: 20px 15px;
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        .title {
+            font-weight: 500;
+        }
+    }
+}
+
 .tabs {
     margin-bottom: 58px;
 }
@@ -2681,8 +2729,22 @@ p {
                 width: 50px;
                 border-radius: 50%;
                 background-color: #eee;
+
+                &.pic-container {
+                    height: 60px;
+                    width: 60px;
+                    margin-right: 20px;
+                }
             }
         }
+
+        .comment {
+            >p {
+                padding-bottom: 20px;
+                border-bottom: 1px solid #cecece;
+            }
+        }
+
     }
 }
 
@@ -3428,35 +3490,6 @@ p {
 /* --------------------------------- */
 /*           6. SKILL PAGE */
 /* --------------------------------- */
-.skill-btn {
-
-    .link {
-        padding: 8px 25px;
-        background-color: var(--secondary-blue);
-        margin-right: 20px;
-        border: none;
-        border-radius: 6px;
-    }
-
-    .link-2 {
-        color: var(--black);
-        padding: 5px 25px;
-        border: 2px solid var(--secondary-blue);
-        border-radius: 6px;
-    }
-
-    [type=submit] {
-        color: var(--black);
-        padding: 5px 25px;
-        border: 2px solid var(--secondary-blue);
-        margin-right: 20px;
-
-        &.skill-btn-2 {
-            background-color: #fff;
-        }
-    }
-}
-
 .suggested {
     max-width: 601px;
     background-color: var(--blue-10);

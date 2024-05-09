@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240505203151_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20240508203438_initialCreate")]
+    partial class initialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -371,6 +371,42 @@ namespace Backend.Data.Migrations
                     b.ToTable("Module");
                 });
 
+            modelBuilder.Entity("Backend.Models.Review", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Comment")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DateModified")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Stars")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Reviews");
+                });
+
             modelBuilder.Entity("Backend.Models.Roadmap", b =>
                 {
                     b.Property<int>("Id")
@@ -687,6 +723,21 @@ namespace Backend.Data.Migrations
                     b.Navigation("Course");
                 });
 
+            modelBuilder.Entity("Backend.Models.Review", b =>
+                {
+                    b.HasOne("Backend.Models.Course", "Course")
+                        .WithMany("Reviews")
+                        .HasForeignKey("CourseId");
+
+                    b.HasOne("Backend.Data.ApplicationUser", "User")
+                        .WithMany("Reviews")
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Course");
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("CareerCompany", b =>
                 {
                     b.HasOne("Backend.Models.Career", null)
@@ -813,9 +864,16 @@ namespace Backend.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Backend.Data.ApplicationUser", b =>
+                {
+                    b.Navigation("Reviews");
+                });
+
             modelBuilder.Entity("Backend.Models.Course", b =>
                 {
                     b.Navigation("Modules");
+
+                    b.Navigation("Reviews");
                 });
 
             modelBuilder.Entity("Backend.Models.Module", b =>

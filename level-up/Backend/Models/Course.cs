@@ -33,6 +33,8 @@ namespace Backend.Models
 
         public List<ApplicationUser> ApplicationUsers { get; set; } = new List<ApplicationUser>();
 
+        public List<Review> Reviews { get; set; }
+
         public static string SecondsToString(int seconds)
         {
             TimeSpan timeSpan = TimeSpan.FromSeconds(seconds);
