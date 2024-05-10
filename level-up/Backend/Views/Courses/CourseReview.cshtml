@@ -10,9 +10,11 @@
     <div class="row">
         <div class="col">
             <h1 class="blue mb-4">Reviews</h1>
-            <div class="search mb-4">
-                <input type="search" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search by description">
-            </div>
+            <form asp-controller="Courses" asp-action="CourseReview" method="get">
+                <div class="search mb-4">
+                    <input type="search" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search by description">
+                </div>
+            </form>
 
             <div class="row ratings-container grid gap-5">
                 <div class="col-6">

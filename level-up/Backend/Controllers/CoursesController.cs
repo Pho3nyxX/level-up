@@ -234,17 +234,16 @@ namespace Backend.Controllers
 
 
         // GET: Courses/Review/5
-        public async Task<IActionResult> CourseReview(int? id)
+        public async Task<IActionResult> CourseReview(int? id, string SearchTerm)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var review = await _context.Reviews
+            var review =  _context.Reviews
                 .Include(r => r.User)
-                .Where(c => c.Course.Id == id)
-                .ToListAsync();                
+                .Where(c => c.Course.Id == id);                
 
             var course = await _context.Courses
                .Include(i => i.Instructors)
@@ -256,7 +255,12 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
-            return View(review);
+            if (!(String.IsNullOrEmpty(SearchTerm)))
+            {
+                review = review.Where(r => r.Comment!.ToLower().Contains(SearchTerm));
+            }
+        
+            return View(await review.ToListAsync());
         }
 
 
