@@ -36,7 +36,9 @@
                 <div class="row justify-content-between">
                     <div class="col-7 text">
                     <h3 class="blue"><a href="lesson.html">@Html.DisplayFor(modelItem => item.Title)</a></h3>
-                    <p>@Html.DisplayFor(modelItem => item.Description)...</p>
+                    <p>@Html.DisplayFor(modelItem => item.Description)...
+                        &nbsp &nbsp <a href="#" data-bs-toggle="modal" data-bs-target="#leaveReviewModal" class="orange-text">Leave a review</a>
+                    </p>
                     </div>
 
                     <div class="col-5 links">
@@ -66,4 +68,16 @@
         <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
     </div>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="leaveReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- head -->
+            <!-- body -->
+            <partial name="_Review" model="new Backend.Models.Review()" />
+            <!-- foot -->
+        </div>
+    </div>
 </div>

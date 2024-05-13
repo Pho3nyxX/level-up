@@ -222,11 +222,13 @@
             <div class="row justify-content-between">
                 <div class="col-7 text">
                     <h3 class="blue"><a href="lesson.html">Introduction to HTML</a></h3>
-                    <p>Some quick example text to build on the card title and make
+                    <p class="">Some quick example text to build on the card title and make
                         up the bulk of the card's content. Some quick example text
                         to build on the card title and make up the bulk of the
                         card's content. Some quick example text to build on the
-                        card title and make up the bulk of the card's content...</p>
+                        card title and make up the bulk of the card's content...
+                        &nbsp &nbsp <a href="#" class="orange-text" data-bs-toggle="modal" data-bs-target="#leaveReviewModal">Leave a review</a>
+                    </p>
                 </div>
 
                 <div class="col-5 links">
@@ -251,11 +253,13 @@
             <div class="row justify-content-between">
                 <div class="col-7 text">
                     <h3 class="blue"><a href="lesson.html">Introduction to HTML</a></h3>
-                    <p>Some quick example text to build on the card title and make
+                    <p class="">Some quick example text to build on the card title and make
                         up the bulk of the card's content. Some quick example text
                         to build on the card title and make up the bulk of the
                         card's content. Some quick example text to build on the
-                        card title and make up the bulk of the card's content...</p>
+                        card title and make up the bulk of the card's content...
+                        &nbsp &nbsp <a href="#" class="orange-text" data-bs-toggle="modal" data-bs-target="#leaveReviewModal">Leave a review</a>
+                    </p>
                 </div>
 
                 <div class="col-5 links">
@@ -280,11 +284,13 @@
             <div class="row justify-content-between">
                 <div class="col-7 text">
                     <h3 class="blue"><a href="lesson.html">Introduction to HTML</a></h3>
-                    <p>Some quick example text to build on the card title and make
+                    <p class="">Some quick example text to build on the card title and make
                         up the bulk of the card's content. Some quick example text
                         to build on the card title and make up the bulk of the
                         card's content. Some quick example text to build on the
-                        card title and make up the bulk of the card's content...</p>
+                        card title and make up the bulk of the card's content...
+                        &nbsp &nbsp <a href="#" class="orange-text" data-bs-toggle="modal" data-bs-target="#leaveReviewModal">Leave a review</a>
+                    </p>
                 </div>
 
                 <div class="col-5 links">
@@ -305,15 +311,17 @@
             </div>
         </div>
 
-        <div class="content-container last">
+        <div class="content-container">
             <div class="row justify-content-between">
                 <div class="col-7 text">
                     <h3 class="blue"><a href="lesson.html">Introduction to HTML</a></h3>
-                    <p>Some quick example text to build on the card title and make
+                    <p class="">Some quick example text to build on the card title and make
                         up the bulk of the card's content. Some quick example text
                         to build on the card title and make up the bulk of the
                         card's content. Some quick example text to build on the
-                        card title and make up the bulk of the card's content...</p>
+                        card title and make up the bulk of the card's content...
+                        &nbsp &nbsp <a href="#" class="orange-text" data-bs-toggle="modal" data-bs-target="#leaveReviewModal">Leave a review</a>
+                    </p>
                 </div>
 
                 <div class="col-5 links">
@@ -375,6 +383,45 @@
                 <p>@2024 All rights reserved.</p>
             </div>
         </footer>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="leaveReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- head -->
+                <div class="modal-header">
+                    <h1 class="modal-title blue" id="exampleModalLabel">Leave a review</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- body -->
+                <div class="modal-body">
+                    <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Choose reviews</label>
+                    <div class="d-flex justify-content-center mt-0 mb-3">
+                        <select class="form-select option-container bgc-orange-10" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <label for="exampleFormControlInput1" class="form-label mt-0 mb-0">Description</label>
+                    <div class="mt-0">
+                        <textarea class="form-control bgc-orange-10" name="description" id="description" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <!-- foot -->
+                <div class="modal-footer btns mt-4 justify-content-start">
+                    <button type="submit" class="btn link" data-bs-dismiss="modal">Save</button>
+                    <button type="submit" class="btn" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="../scripts/bootstrap.js"></script>

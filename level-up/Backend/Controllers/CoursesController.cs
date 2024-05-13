@@ -199,7 +199,6 @@ namespace Backend.Controllers
             return View(user.Courses);
         }
 
-
         // GET: Courses/Review/5
         [HttpPost]
         [ValidateAntiForgeryToken]
