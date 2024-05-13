@@ -357,7 +357,12 @@
                     </div>
                 </div>
 
-                <a asp-action="CourseReview" asp-route-id="@Model.Id" class="orange-text">View all reviews</a>
+                <div class="row">
+                    <div class="col-10 d-flex justify-content-between">
+                        <a asp-action="CourseReview" asp-route-id="@Model.Id" class="orange-text">View all reviews</a>
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#leaveReviewModal" class="orange-text">Leave a review</a>
+                    </div>
+                </div>               
             </div>
         </div>
 
@@ -719,6 +724,17 @@
 </div>
 
 
+<!-- Modal -->
+<div class="modal fade" id="leaveReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- head -->
+            <!-- body -->
+            <partial name="_Review" model="new Backend.Models.Review()" />
+            <!-- foot -->
+        </div>
+    </div>
+</div>
 
 
 

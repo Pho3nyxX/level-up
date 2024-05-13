@@ -172,7 +172,7 @@
                                 <i class="bi bi-check-lg"></i>
                                 <span>Lorem ipsum dolor sit amet, consectetur adipiscing.</span>
                             </div>
-                        <!-- </div>
+                            <!-- </div>
 
                         <div class="col"> -->
                             <div class="item">
@@ -978,8 +978,13 @@
                             </div>
                         </div>
                     </div>
- 
-                    <a href="#" class="orange-text">View all reviews</a>
+
+                    <div class="row">
+                        <div class="col-10 d-flex justify-content-between">
+                            <a href="#" class="orange-text">View all reviews</a>
+                            <a href="#" class="orange-text" data-bs-toggle="modal" data-bs-target="#leaveReviewModal">Leave a review</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1373,6 +1378,44 @@
         </div>
     </footer>
 
+    <!-- Modal -->
+    <div class="modal fade" id="leaveReviewModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <!-- head -->
+                <div class="modal-header">
+                    <h1 class="modal-title blue" id="exampleModalLabel">Leave a review</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!-- body -->
+                <div class="modal-body">
+                    <label for="exampleFormControlInput1" class="form-label mt-2 mb-0">Choose reviews</label>
+                    <div class="d-flex justify-content-center mt-0 mb-3">
+                        <select class="form-select option-container bgc-orange-10" aria-label="Default select example">
+                            <option selected>Select</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+
+                    <label for="exampleFormControlInput1" class="form-label mt-0 mb-0">Description</label>
+                    <div class="mt-0">
+                        <textarea class="form-control bgc-orange-10" name="description" id="description" rows="5"></textarea>
+                    </div>
+                </div>
+
+                <!-- foot -->
+                <div class="modal-footer btns mt-4 justify-content-start">
+                    <button type="submit" class="btn link" data-bs-dismiss="modal">Save</button>
+                    <button type="submit" class="btn" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../scripts/bootstrap.js"></script>
     <script src="../scripts/site.js"></script>
 
