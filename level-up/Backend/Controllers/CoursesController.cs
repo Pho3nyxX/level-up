@@ -85,6 +85,10 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
+            var count = await _context.Reviews
+                .Where(r => r.Course.Id == id)
+                .CountAsync();
+            ViewBag.Count = count;
             return View(course);
         }
 
@@ -224,7 +228,7 @@ namespace Backend.Controllers
             if (ModelState.IsValid)
             {
                 _context.Add(review);
-                await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();        
                 return RedirectToAction(nameof(Index));
             }
 
