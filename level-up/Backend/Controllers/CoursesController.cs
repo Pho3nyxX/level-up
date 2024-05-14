@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Data;
 using Backend.Models;
 using Microsoft.AspNetCore.Identity;
+using System.Drawing.Printing;
 
 namespace Backend.Controllers
 {
@@ -30,7 +31,8 @@ namespace Backend.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
             }
-            if (page == null || page < 1) {
+            if (page == null || page < 1) 
+            {
                 page = 1;
             }
             if (pageSize == null || pageSize < 3)
@@ -67,12 +69,14 @@ namespace Backend.Controllers
 
 
         // GET: Courses/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int? id, int reviewSize)
         {
             if (id == null)
             {
                 return NotFound();
             }
+
+            reviewSize = 4;
 
             var course = await _context.Courses
                 .Include(c => c.Modules)
@@ -88,7 +92,14 @@ namespace Backend.Controllers
             var count = await _context.Reviews
                 .Where(r => r.Course.Id == id)
                 .CountAsync();
+
+            var reviews = _context.Reviews
+                 .Include(u => u.User)
+                 .Take(reviewSize)
+                 .ToListAsync();
+                          
             ViewBag.Count = count;
+            ViewBag.Reviews = reviews;
             return View(course);
         }
 

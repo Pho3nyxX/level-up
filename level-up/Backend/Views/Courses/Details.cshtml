@@ -252,110 +252,35 @@
                 </div>
 
                 <div class="row gap-5">
-                    <div class="col-5 item">
-                        <div class="head d-flex justify-content-between mb-3">
-                            <div>
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div>
-                                <span>Jay Ramson</span>
-                                <div class="d-flex">
-                                    <div class="ratings me-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                    </div>
-                                    <span>2 weeks ago</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
-                            </p>
-                        </div>
-                    </div>
 
-                    <div class="col-5 item">
-                        <div class="head d-flex justify-content-between mb-3">
-                            <div>
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div>
-                                <span>Jay Ramson</span>
-                                <div class="d-flex">
-                                    <div class="ratings me-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
+                    @foreach(Review review in Model.Reviews)
+                    {                    
+                        <div class="col-5 item">
+                            <div class="head d-flex justify-content-between mb-3">
+                                <div>
+                                    <!-- <img src="" alt=""> -->
+                                </div>
+                                <div>
+                                    <span>@review.User</span>
+                                    <div class="d-flex">
+                                         @for(int i = 0; i <= review.Stars; i++)
+                                            {
+                                                <div class="ratings">
+                                                    <i class="bi bi-star-fill"></i>
+                                                </div>
+                                            }
+                                                @review.Stars
+                                        <span>@review.DateCreated</span>
                                     </div>
-                                    <span>2 weeks ago</span>
                                 </div>
                             </div>
-                        </div>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-5 item">
-                        <div class="head d-flex justify-content-between mb-3">
                             <div>
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div>
-                                <span>Jay Ramson</span>
-                                <div class="d-flex">
-                                    <div class="ratings me-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                    </div>
-                                    <span>2 weeks ago</span>
-                                </div>
+                                <p>
+                                    @review.Comment
+                                </p>
                             </div>
                         </div>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="col-5 item">
-                        <div class="head d-flex justify-content-between mb-3">
-                            <div>
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div>
-                                <span>Jay Ramson</span>
-                                <div class="d-flex">
-                                    <div class="ratings me-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
-                                    </div>
-                                    <span>2 weeks ago</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis iaculis non nunc sit amet convallis. Praesent mattis tempus tempor. Aenean congue rhoncus risus nec feugiat. Sed hendrerit tristique ex.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                    }
 
                 <div class="row">
                     <div class="col-10 d-flex justify-content-between">
@@ -365,7 +290,7 @@
                 </div>               
             </div>
         </div>
-
+        </div>
         <div class="col-5 more-courses-sec">
             <h3>More courses by <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="primary-blue-text">Romeo Black</a></h3>
             <div class="row">
