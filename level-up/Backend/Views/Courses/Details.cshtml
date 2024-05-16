@@ -253,24 +253,24 @@
 
                 <div class="row gap-5">
 
-                    @foreach(Review review in Model.Reviews)
+                    @foreach(Review review in ViewBag.Reviews)
                     {                    
                         <div class="col-5 item">
-                            <div class="head d-flex justify-content-between mb-3">
-                                <div>
+                            <div class="head d-flex mb-3">
+                                <div class="me-5">
                                     <!-- <img src="" alt=""> -->
                                 </div>
+
                                 <div>
-                                    <span>@review.User</span>
+                                    <span>@review.User.FirstName @review.User.LastName</span>
                                     <div class="d-flex">
                                          @for(int i = 0; i <= review.Stars; i++)
                                             {
                                                 <div class="ratings">
                                                     <i class="bi bi-star-fill"></i>
                                                 </div>
-                                            }
-                                                @review.Stars
-                                        <span>@review.DateCreated</span>
+                                            }                                        
+                                        <span class="ms-3"> @review.DateCreated.ToString("d")</span>
                                     </div>
                                 </div>
                             </div>
@@ -281,6 +281,7 @@
                             </div>
                         </div>
                     }
+                </div>
 
                 <div class="row">
                     <div class="col-10 d-flex justify-content-between">
@@ -289,7 +290,6 @@
                     </div>
                 </div>               
             </div>
-        </div>
         </div>
         <div class="col-5 more-courses-sec">
             <h3>More courses by <a asp-area="" asp-controller="Courses" asp-action="Instructor" asp-route-id="@Model.Id" class="primary-blue-text">Romeo Black</a></h3>

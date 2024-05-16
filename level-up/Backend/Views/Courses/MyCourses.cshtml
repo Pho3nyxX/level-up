@@ -30,15 +30,15 @@
     </div>
 
     <!--content-->
-    <div class="content-container">
-            @foreach(var item in Model)
-            {
+        @foreach(var item in Model)
+        {
+            <div class="content-container">
                 <div class="row justify-content-between">
                     <div class="col-7 text">
-                    <h3 class="blue"><a href="lesson.html">@Html.DisplayFor(modelItem => item.Title)</a></h3>
-                    <p>@Html.DisplayFor(modelItem => item.Description)...
-                        &nbsp &nbsp <a href="#" data-bs-toggle="modal" data-bs-target="#leaveReviewModal" class="orange-text">Leave a review</a>
-                    </p>
+                        <h3 class="blue"><a href="lesson.html">@Html.DisplayFor(modelItem => item.Title)</a></h3>
+                        <p>@Html.DisplayFor(modelItem => item.Description)...
+                            &nbsp &nbsp <a href="#" data-bs-toggle="modal" data-bs-target="#leaveReviewModal" class="orange-text">Leave a review</a>
+                        </p>
                     </div>
 
                     <div class="col-5 links">
@@ -56,18 +56,13 @@
                     </div>
                     <span>25% Completed</span>
                 </div>
-            }
-    </div>
-
-    <!-- pagination -->
-    <div class="pagination-container">
-        <a href="" class="page me-2"><i class="bi bi-chevron-left"></i></a>
-        <a href="" class="page me-2">1</a>
-        <a href="" class="page me-2">2</a>
-        <a href="" class="page me-2">3</a>
-        <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
-    </div>
-
+            </div>
+        }
+            
+    @if (ViewBag.LastPageNumber > 1)
+    {
+        <partial name="_PaginationPartial" />
+    }
 </div>
 
 <!-- Modal -->

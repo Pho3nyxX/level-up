@@ -9,6 +9,7 @@ using Backend.Data;
 using Backend.Models;
 using Microsoft.AspNetCore.Identity;
 using System.Drawing.Printing;
+using Microsoft.CodeAnalysis.Elfie.Diagnostics;
 
 namespace Backend.Controllers
 {
@@ -24,6 +25,7 @@ namespace Backend.Controllers
             _userManager = userManager;
         }
 
+
         // GET: Courses
         public async Task<IActionResult> Index(string SearchTerm, int page, int pageSize)
         {
@@ -31,13 +33,13 @@ namespace Backend.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
             }
-            if (page == null || page < 1) 
+            if (page < 1) 
             {
                 page = 1;
             }
-            if (pageSize == null || pageSize < 3)
+            if (pageSize < 9)
             {
-                pageSize = 3;
+                pageSize = 9;
             }
 
             var position = (page - 1) * pageSize;
@@ -61,8 +63,8 @@ namespace Backend.Controllers
                 || c.Description!.ToLower().Contains(SearchTerm));
             }
             var courseList = await courses.ToListAsync();
-            ViewData["pageNumber"] = page;
-            ViewData["lastPageNumber"] = lastPageNumber;
+            ViewBag.PageNumber = page;
+            ViewBag.LastPageNumber = lastPageNumber;
             //courses.Include(c => c.Instructors);
             return View(courseList);
         }
@@ -93,8 +95,9 @@ namespace Backend.Controllers
                 .Where(r => r.Course.Id == id)
                 .CountAsync();
 
-            var reviews = _context.Reviews
+            var reviews = await _context.Reviews
                  .Include(u => u.User)
+                 .Where(r => r.Course.Id == id)
                  .Take(reviewSize)
                  .ToListAsync();
                           
@@ -103,11 +106,13 @@ namespace Backend.Controllers
             return View(course);
         }
 
+
         // GET: Courses/Create
         public IActionResult Create()
         {
             return View();
         }
+
 
         // POST: Courses/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -125,6 +130,7 @@ namespace Backend.Controllers
             return View(course);
         }
 
+
         // GET: Courses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -140,6 +146,7 @@ namespace Backend.Controllers
             }
             return View(course);
         }
+
 
         // POST: Courses/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -176,16 +183,39 @@ namespace Backend.Controllers
             return View(course);
         }
 
+
         // GET: Courses/Details/5
-        public async Task<IActionResult> Instructor(int? id)
+        public async Task<IActionResult> Instructor(int? id, int page, int pageSize)
         {
+            
             if (id == null)
             {
                 return NotFound();
             }
+            if (page < 1)
+            {
+                page = 1;
+            }
+            if (pageSize < 9)
+            {
+                pageSize = 9;
+            }
+            var position = (page - 1) * pageSize;
+            //counting the courses associated with the instructor
+            var count = await _context.Instructors
+                .Where(i => i.Id == id)
+                .Include(i => i.Courses)
+                .SelectMany(i => i.Courses)
+                .CountAsync();
+
+            var lastPageNumber = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
+            if (page > lastPageNumber)
+            {
+                return RedirectPermanent("~/Instructors/");
+            }
 
             var instructor = await _context.Instructors
-                .Include(c => c.Courses)
+                //.Include(c => c.Courses)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (instructor == null)
@@ -193,22 +223,59 @@ namespace Backend.Controllers
                 return NotFound();
             }
 
+            var courses = await _context.Instructors
+               .Where(u => u.Id == id)
+               .Include(u => u.Courses)
+               .SelectMany(u => u.Courses.Skip(position).Take(pageSize))
+               .ToListAsync();
+
+            ViewBag.PageNumber = page;
+            ViewBag.LastPageNumber = lastPageNumber;
+            ViewBag.Courses = courses;
             return View(instructor);
         }
 
+
         // GET: Courses/MyCourses/5
-        public async Task<IActionResult> MyCourses()
+        public async Task<IActionResult> MyCourses(int page, int pageSize)
         {
+            if (page < 1)
+            {
+                page = 1;
+            }
+            if (pageSize < 4)
+            {
+                pageSize = 4;
+            }
+
             // get the id of the currently logged in user
             var userId = _userManager.GetUserId(User);
-            //get the user with their courses
-            var user = await _context.Users
-                .Include(u => u.Courses)
-                .Where(u => u.Id == userId)
-                .FirstOrDefaultAsync();
+            var position = (page - 1) * pageSize;
 
-            return View(user.Courses);
+            var count = await _context.Users
+                .Where(u => u.Id == userId)
+                .Include(u => u.Courses)
+                .SelectMany(u => u.Courses)
+                .CountAsync();
+
+            var lastPageNumber = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
+            if (page > lastPageNumber)
+            {
+                return RedirectPermanent("~/MyCourses/");
+            }
+
+            //get the user with their courses
+            var courses = await _context.Users
+                .Where(u => u.Id == userId)
+                .Include(u => u.Courses)
+                .SelectMany(u => u.Courses.Skip(position).Take(pageSize))
+                .ToListAsync();
+
+            ViewBag.PageNumber = page;
+            ViewBag.LastPageNumber = lastPageNumber;
+            return View(courses);
         }
+
 
         // GET: Courses/Review/5
         [HttpPost]
@@ -306,6 +373,7 @@ namespace Backend.Controllers
             return View(lesson);
         }
 
+
         // GET: Courses/Register/5
         public async Task<IActionResult> Register(int? id)
         {
@@ -339,6 +407,7 @@ namespace Backend.Controllers
             return RedirectToAction(nameof(Details), "Courses", new {id = course.Id});
         }
 
+
         // GET: Courses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -356,6 +425,7 @@ namespace Backend.Controllers
 
             return View(course);
         }
+
 
         // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]

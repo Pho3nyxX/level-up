@@ -2,31 +2,30 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    var pageNumber = (int)ViewData["pageNumber"];
-    var lastPageNumber = (int)ViewData["lastPageNumber"];
+
 
 }
 
 
 
 <div class="pagination-container">
-    <a href="?page=@(pageNumber - 1)" class="page me-2"><i class="bi bi-chevron-left"></i></a>
-    @if (pageNumber > 1)
+    <a href="?page=@(ViewBag.PageNumber - 1)" class="page me-2"><i class="bi bi-chevron-left"></i></a>
+    @if (ViewBag.PageNumber > 1)
     {
-        @if (pageNumber > 2)
+        @if (ViewBag.PageNumber > 2)
         {
-            <a href="?page=@(pageNumber - 1)" class="page me-2">@(pageNumber - 2)</a>
+            <a href="?page=@(ViewBag.PageNumber - 1)" class="page me-2">@(ViewBag.PageNumber - 2)</a>
         }
-        <a href="?page=@(pageNumber - 1)" class="page me-2">@(pageNumber - 1)</a>
+        <a href="?page=@(ViewBag.PageNumber - 1)" class="page me-2">@(ViewBag.PageNumber - 1)</a>
     }
-    <a href="#" class="page me-2 current" disabled>@pageNumber</a>
-    @if (lastPageNumber > pageNumber)
+    <a href="#" class="page me-2 current" disabled>@ViewBag.PageNumber</a>
+    @if (ViewBag.LastPageNumber > ViewBag.PageNumber)
     {
-        <a href="?page=@(pageNumber + 1)" class="page me-2">@(pageNumber + 1)</a>
-        @if (lastPageNumber > pageNumber + 1)
+        <a href="?page=@(ViewBag.PageNumber + 1)" class="page me-2">@(ViewBag.PageNumber + 1)</a>
+        @if (ViewBag.LastPageNumber > ViewBag.PageNumber + 1)
         {
-            <a href="?page=@(pageNumber + 2)" class="page me-2">@(pageNumber + 2)</a> 
+            <a href="?page=@(ViewBag.PageNumber + 2)" class="page me-2">@(ViewBag.PageNumber + 2)</a> 
         }
-        <a href="?page=@(pageNumber + 1)" class="page me-2"><i class="bi bi-chevron-right"></i></a>
+        <a href="?page=@(ViewBag.PageNumber + 1)" class="page me-2"><i class="bi bi-chevron-right"></i></a>
     }
 </div>

@@ -1,8 +1,11 @@
 ﻿@model Backend.Models.Review
 
-<h1 class="blue text-center mb-0 mt-2">Leave a review</h1>
-<hr />
-<div class="container">
+<div class="modal-header pb-2">
+    <h1 class="blue" id="exampleModalLabel">Leave a review</h1>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="container pt-4">
     <div class="row">
         <div class="col">
             <form asp-action="Review" asp-route-id=@ViewData["courseId"] class="row g-3 needs-validation" novalidate>

@@ -3,8 +3,6 @@
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var pageNumber = (int)ViewData["pageNumber"];
-    var lastPageNumber = (int)ViewData["lastPageNumber"];
 }
 
 <!-- breadcrumb -->
@@ -69,7 +67,7 @@
         </div>
 
     <!-- pagination -->
-    @if (lastPageNumber > 1)
+    @if (ViewBag.LastPageNumber > 1)
     {  
         <partial name="_PaginationPartial" />
     }

@@ -18,34 +18,35 @@
 
             <div class="row ratings-container grid gap-5">
                 <div class="col-6">
-                @foreach(Review review in Model)
-                {                                 
-                    <div class="col item mb-2">
-                        <div class="head d-flex mb-3">
-                            <div class="pic-container">
-                                <!-- <img src="" alt=""> -->
-                            </div>
-                            <div>
-                                <span>@review.User</span>
-                                <div class="d-flex">
-                                    <div class="ratings me-3">
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-fill"></i>
-                                        <i class="bi bi-star-half"></i>
+                    @foreach(Review review in Model)
+                    {                                 
+                        <div class="col item mb-2">
+                            <div class="head d-flex mb-3">
+                                <div class="pic-container">
+                                    <!-- <img src="" alt=""> -->
+                                </div>
+                                <div>
+                                    <span>@review.User</span>
+                                    <div class="d-flex">
+                                        <div class="ratings me-3">
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-fill"></i>
+                                            <i class="bi bi-star-half"></i>
+                                        </div>
+                                        <span>@review.DateCreated</span>
                                     </div>
-                                    <span>@review.DateCreated</span>
                                 </div>
                             </div>
+                            <div class="comment">
+                                <p>
+                                    @review.Comment 
+                                </p>
+                            </div>
                         </div>
-                        <div class="comment">
-                            <p>
-                                @review.Comment 
-                            </p>
-                        </div>
-                    </div>
-                }
+                    }
+                    <a href="#" class="orange-text">Load more reviews...</a>
                 </div>            
 
                 <div class="col-4 reviewed-course">
@@ -98,6 +99,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

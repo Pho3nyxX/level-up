@@ -68,14 +68,13 @@
             <div class="col-9 more-courses-sec">
                 <h3 class="blue">My Courses</h3>
                 
-                @foreach(var item in Model.Courses)
-                {
-                    <div class="row">
+                <div class="row">
+                    @foreach(var item in ViewBag.Courses)
+                    {
                         <div class="col-4">
                             <div class="item mb-5">
                                 <div class="image"></div>
-                                <h4> <a href="#" class="primary-blue-text">@Html.DisplayFor(modelItem => item.Title)</a></h4>
-                                <span>@Html.DisplayFor(modelItem => item.CreatedBy)</span>
+                                <h4> <a asp-area="" asp-controller="Courses" asp-action="Details" asp-route-id="@item.Id" class="primary-blue-text">@item.Title</a></h4>
                                 <div class="d-flex ratings-container">
                                     <span class="me-2">4.5</span>
                                     <div class="ratings me-2">
@@ -95,18 +94,15 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                }
+                    }
+                </div>
             </div>
         </div>
 
         <!-- pagination -->
-        <div class="pagination-container">
-            <a href="" class="page me-2"><i class="bi bi-chevron-left"></i></a>
-            <a href="" class="page me-2">1</a>
-            <a href="" class="page me-2">2</a>
-            <a href="" class="page me-2">3</a>
-            <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
-        </div>
+        @if (ViewBag.LastPageNumber > 1)
+        {
+            <partial name="_PaginationPartial" />
+        }
     </div>
 </div>
