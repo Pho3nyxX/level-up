@@ -2337,6 +2337,10 @@ p {
         position: relative;
         overflow: hidden;
 
+        .video {
+            width: 100%;
+        }
+
         .scrub-container {
             position: absolute;
             width: 100%;
@@ -2374,23 +2378,39 @@ p {
             bottom: 0px;
             left: 0;
             width: 100%;
-            padding: 15px;
+            /* padding: 15px; */
+            padding: 10px;
             background: #0001;
 
 
             .controls {
 
-                a {
+                button {
+                    border: none;
+                    background: transparent;
                     color: var(--primary-blue);
                 }
 
                 i {
-                    font-size: 25px;
+                    font-size: 30px;
                     margin-right: 10px;
                 }
 
                 span {
                     color: #000;
+                    line-height: 25px;
+                }
+
+                &.right {
+                    i {
+                        font-size: 25px;
+                    }
+
+                    .full-screen-btn {
+                        i {
+                            font-size: 20px;
+                        }
+                    }
                 }
             }
         }

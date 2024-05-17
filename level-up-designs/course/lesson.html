@@ -313,8 +313,10 @@
 
                 <!-- video  preview -->
                 <div class="row">
-                    <div class="col video-container">
-                        <video src=""></video>
+                    <div class="col video-container" id="videoContainer">
+
+                        <video class="video" controls src="/level-up-designs/video/lesson1.mp4"></video>
+
                         <div class="video-controls justify-content-between">
                             <!-- progress -->
                             <div class="scrub-container">
@@ -325,16 +327,15 @@
                             </div>
 
                             <div class="controls">
-                                <a href="#"><i class="bi bi-play-fill"></i></a>
-                                <a href="#"><i class="bi bi-rewind"></i></a>
-                                <a href="#"><i class="bi bi-fast-forward"></i></a>
+                                <button class="play-pause-btn"><i class="bi bi-play-fill"></i></button>
+                                <button class="volumn-btn"><i class="bi bi-volume-up-fill"></i></button>
                                 <span>10:01 / 15:43</span>
                             </div>
 
-                            <div class="controls">
-                                <a href="#"><i class="bi bi-badge-cc"></i></a>
-                                <a href="#"><i class="bi bi-gear-fill"></i></a>
-                                <a href="#"><i class="bi bi-arrows-fullscreen"></i></a>
+                            <div class="controls right">
+                                <button class="caption-btn"><i class="bi bi-badge-cc-fill"></i></button>
+                                <button class="settings-btn"><i class="bi bi-gear-fill"></i></button>
+                                <button class="full-screen-btn"><i class="bi bi-arrows-fullscreen"></i></button>
                             </div>
                         </div>
                     </div>
@@ -416,7 +417,7 @@
     </div>
 
     <script src="../scripts/bootstrap.js"></script>
-    <script src="../scripts/site.js"></script>
+    <script type="module" src="../scripts/site.js" ></script>
 
 </body>
 
