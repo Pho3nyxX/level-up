@@ -5,6 +5,7 @@ class VideoPlayer {
         this.videoElement = ".video";
         this.playBtn = ".play-pause-btn";
         this.fullScreenBtn = ".full-screen-btn";
+        this.volumeBtn = ".volumn-btn";
 
         this.setUpEvents();
     }
@@ -50,15 +51,28 @@ class VideoPlayer {
         if (btn) {
             this._fullScreenBtn = btn;
         } else {
-            console.error("Full screen not found");
+            console.error("Cannot enter full screen.");
+        }
+    }
+
+    get volumeBtn(){
+        return this._volumnBtn;
+    }
+
+    set volumeBtn(selector){
+        let btn = this.videoContainer.querySelector(selector);
+        if(btn){
+            this._volumnBtn = btn;
+        }else{
+            console.log("cannot mute video");
         }
     }
 
     // methods
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
-
         this.fullScreenBtn.addEventListener("click", this.FullExit);
+        this.volumeBtn.addEventListener("click", this.MuteUnmute);
     }
 
     playPause = (e) => {
@@ -93,6 +107,28 @@ class VideoPlayer {
         } else if (this.videoContainer.fullscreenElement) {
             document.exitFullscreen();
         }
+    }
+
+    MuteUnmute = (e) => {
+        if (this.videoElement.muted) {
+            this.unmute();
+        } else {
+            this.mute();
+        }
+    }
+
+    mute() {
+        let volumeBtnIcon = this.volumeBtn.querySelector("i");
+        volumeBtnIcon.classList.remove("bi-volume-up-fill");
+        volumeBtnIcon.classList.add("bi-volume-mute-fill");
+        this.videoElement.muted = true;
+    }
+
+    unmute() {
+        let volumeBtnIcon = this.volumeBtn.querySelector("i");
+        volumeBtnIcon.classList.remove("bi-volume-mute-fill");
+        volumeBtnIcon.classList.add("bi-volume-up-fill");
+        this.videoElement.muted = false;
     }
 
 }
