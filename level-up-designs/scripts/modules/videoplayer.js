@@ -64,7 +64,7 @@ class VideoPlayer {
         if(btn){
             this._volumnBtn = btn;
         }else{
-            console.log("cannot mute video");
+            console.log("Cannot mute video");
         }
     }
 
@@ -102,11 +102,12 @@ class VideoPlayer {
     }
 
     toggleFullScreen() {
-        if (!this.videoContainer.fullscreenElement) {
-            this.videoContainer.requestFullscreen();
-        } else if (this.videoContainer.fullscreenElement) {
+        if (document.fullscreenElement) {
             document.exitFullscreen();
+        } else if (document.exitFullscreen) {
+            this.videoContainer.requestFullscreen();
         }
+
     }
 
     MuteUnmute = (e) => {
