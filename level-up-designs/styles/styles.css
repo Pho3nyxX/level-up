@@ -1869,7 +1869,7 @@ p {
 
 /* toggle */
 .hide {
-    display: none;
+    display: none !important;
 }
 
 /* category filter */
@@ -2378,10 +2378,8 @@ p {
             bottom: 0px;
             left: 0;
             width: 100%;
-            /* padding: 15px; */
             padding: 10px;
             background: #0001;
-
 
             .controls {
 
@@ -2389,6 +2387,10 @@ p {
                     border: none;
                     background: transparent;
                     color: var(--primary-blue);
+
+                    &.hover{
+                        
+                    }
                 }
 
                 i {
@@ -2411,6 +2413,111 @@ p {
                             font-size: 20px;
                         }
                     }
+                }
+            }
+        }
+
+        .settings-menu {
+            display: none;
+            position: absolute;
+            bottom: 75px;
+            right: 15px;
+            width: 250px;
+            background-color: #bfbfbf;
+            border-radius: 8px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+
+            >.menu-item {
+                display: block;
+                width: 100%;
+                position: relative;
+
+                >a {
+                    i.bi-chevron-left {
+                        display: none;
+                    }
+
+                    i.bi-play-circle {
+                        display: inline;
+                    }
+                }
+
+                a {
+                    display: block;
+                    padding: 10px;
+
+                    span:first-child {
+                        i {
+                            margin-right: 5px;
+                        }
+                    }
+
+                    span:last-child {
+                        float: right;
+                    }
+
+                    &:hover {
+                        background-color: #93b7c1;
+                    }
+                }
+
+                &.active {
+
+                    >a {
+                        font-size: 18px;
+                        border-bottom: 1px solid #999;
+
+                        i.bi-chevron-left {
+                            display: inline;
+                        }
+
+                        i.bi-play-circle, i.bi-sliders2,
+                        span:last-child {
+                            display: none;
+                        }
+                    }
+
+                    .sub-menu {
+                        display: block;
+                    }
+                }
+
+                .sub-menu {
+                    display: none;
+                    margin-bottom: 0;
+                    list-style: none;
+                    padding: 0;
+                    background: #ccc;
+                    border-bottom: 1px solid #999;
+
+                    li {
+                        padding-left: 28px;
+                        padding-right: 28px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #93b7c1;
+                        }
+                    }
+                }
+            }
+
+            &.active {
+                display: block;
+            }
+        }
+
+        &.fullscreen {
+            button {
+                i {
+                    color: #fff;
+                }
+            }
+
+            .controls {
+                span {
+                    color: #fff;
                 }
             }
         }
