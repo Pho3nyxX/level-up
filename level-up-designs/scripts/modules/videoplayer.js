@@ -258,19 +258,13 @@ class VideoPlayer {
     }
 
     updatedPlaybackSpeedMenu(newSpeed) {
-        // check if speed changed
         if (this.playbackSpeed !== newSpeed) {
-            // find menu item for current speed
             let currentSpeedEl = this.videoContainer.querySelector("a[data-value='" + this.playbackSpeed + "']");
-            // remove tick from it
             currentSpeedEl.innerHTML = this.playbackSpeed;
-            // find menu item for new speed
             let newSpeedEl = this.videoContainer.querySelector("a[data-value='" + newSpeed + "']")
-            // console.log(newSpeedEl);
-            // add tick to it    
+  
             newSpeedEl.innerHTML = "<i class='bi bi-check-lg'></i>" + newSpeed;
         }
-        // this.videoElement.playbackRate = this.playbackSpeed; 
     }
 
     clickedSpeed = (e) => {
