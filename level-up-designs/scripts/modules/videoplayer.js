@@ -11,7 +11,10 @@ class VideoPlayer {
         this.playbackSpeedMenu = "#playbackSpeedMenu";
         this.qualityMenu = "#qualityMenu";
         this._playbackSpeed = 1;
+        this.currentTimeElement = ".video-current-time";
+        this.videoDurationElement = ".video-duration";
 
+        this.videoDurationElement.innerHTML = this.convertSecondsToString(this.videoElement.duration);
 
         this.setUpEvents();
     }
@@ -118,7 +121,6 @@ class VideoPlayer {
 
     set playbackSpeedMenu(selector) {
         let playbackMenu = this.videoContainer.querySelector(selector);
-        // console.log(playbackMenu);
 
         if (playbackMenu) {
             this._playbackSpeedMenu = playbackMenu;
@@ -133,12 +135,39 @@ class VideoPlayer {
 
     set qualityMenu(selector) {
         let quality = this.videoContainer.querySelector(selector);
-        // console.log(quality);
 
         if (quality) {
             this._qualityMenu = quality;
         } else {
             console.error("Cannot open quality menu");
+        }
+    }
+
+    get videoDurationElement() {
+        return this._videoDurationElement;
+    }
+
+    set videoDurationElement(selector) {
+        let vidTime = this.videoContainer.querySelector(selector);
+
+        if (vidTime) {
+            this._videoDurationElement = vidTime;
+        } else {
+            console.error("Cannot view video time");
+        }
+    }
+
+    get currentTimeElement() {
+        return this._currentTimeElement;
+    }
+
+    set currentTimeElement(selector) {
+        let vidTime = this.videoContainer.querySelector(selector);
+
+        if (vidTime) {
+            this._currentTimeElement = vidTime;
+        } else {
+            console.error("Cannot view video current time");
         }
     }
 
@@ -151,6 +180,8 @@ class VideoPlayer {
         this.settingsBtn.addEventListener("click", this.toggleSettingBtn);
         this.settingsMenu.addEventListener("click", this.toggleMenuItem);
         this.playbackSpeedMenu.addEventListener("click", this.clickedSpeed);
+        this.videoElement.addEventListener("play", this.videoPlay);
+        this.videoElement.addEventListener("pause", this.videoPause);
     }
 
     playPause = (e) => {
@@ -193,9 +224,6 @@ class VideoPlayer {
 
     FullExit = (e) => {
         this.toggleFullScreen();
-        // let fullscreenBtnIcon = this.fullScreenBtn.querySelector("i");
-        // fullscreenBtnIcon.classList.remove("bi-arrows-fullscreen");
-        // fullscreenBtnIcon.classList.add("bi-fullscreen-exit");
     }
 
     toggleFullScreen() {
@@ -262,22 +290,44 @@ class VideoPlayer {
             let currentSpeedEl = this.videoContainer.querySelector("a[data-value='" + this.playbackSpeed + "']");
             currentSpeedEl.innerHTML = this.playbackSpeed;
             let newSpeedEl = this.videoContainer.querySelector("a[data-value='" + newSpeed + "']")
-  
+
             newSpeedEl.innerHTML = "<i class='bi bi-check-lg'></i>" + newSpeed;
         }
     }
 
     clickedSpeed = (e) => {
-        // load the a
         if (e.target.tagName.toLowerCase() == "a") {
-            // take the speed from the a
             let newSpeed = e.target.dataset.value;
-            // change the video speed to newSpeed
-            // update the ui
             this.playbackSpeed = newSpeed;
         }
     }
 
+    convertSecondsToString(givenSeconds) {
+        let dateObj = new Date(parseInt(givenSeconds * 1000));
+        let hours = dateObj.getUTCHours();
+        let minutes = dateObj.getUTCMinutes();
+        let seconds = dateObj.getSeconds();
+        let timeString = hours.toString().padStart(2, '0') + ':' +
+            minutes.toString().padStart(2, '0') + ':' +
+            seconds.toString().padStart(2, '0');
+
+        return timeString;
+    }
+
+    updateCurrentTime(self) {
+        if (!self) {
+            self = this;
+        };
+        self.currentTimeElement.innerHTML = self.convertSecondsToString(self.videoElement.currentTime);
+    }
+
+    videoPlay = (e) => {
+        this.currentTimeInterval = setInterval(this.updateCurrentTime, 1000, this);
+    }
+
+    videoPause = (e) => {
+        clearInterval(this.currentTimeInterval);
+    }
+
 }
 export { VideoPlayer };
-
