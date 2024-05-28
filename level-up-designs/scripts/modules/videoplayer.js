@@ -13,13 +13,15 @@ class VideoPlayer {
         this._playbackSpeed = 1;
         this.currentTimeElement = ".video-current-time";
         this.videoDurationElement = ".video-duration";
+        this.progressBar = ".scrub-progress";
+        this.progressHandle = ".scrub-circle";
+
 
         this.videoDurationElement.innerHTML = this.convertSecondsToString(this.videoElement.duration);
 
         this.setUpEvents();
     }
 
-    // getters/setters
     get videoContainer() {
         return this._videoContainer;
     }
@@ -171,8 +173,35 @@ class VideoPlayer {
         }
     }
 
+    get progressBar() {
+        return this._progressBar;
+    }
 
-    // methods
+    set progressBar(selector) {
+        let proBar = this.videoContainer.querySelector(selector);
+
+        if (proBar) {
+            this._progressBar = proBar;
+        } else {
+            console.error("Cannot view progress bar");
+        }
+    }
+
+    get progressHandle() {
+        return this._progressHandle;
+    }
+
+    set progressHandle(selector) {
+        let proHandle = this.videoContainer.querySelector(selector);
+
+        if (proHandle) {
+            this._progressHandle = proHandle;
+        } else {
+            console.error("Cannot view progress handle");
+        }
+    }
+
+
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
         this.fullScreenBtn.addEventListener("click", this.FullExit);
@@ -182,6 +211,7 @@ class VideoPlayer {
         this.playbackSpeedMenu.addEventListener("click", this.clickedSpeed);
         this.videoElement.addEventListener("play", this.videoPlay);
         this.videoElement.addEventListener("pause", this.videoPause);
+
     }
 
     playPause = (e) => {
@@ -206,16 +236,16 @@ class VideoPlayer {
         playBtnIcon.classList.add("bi-play-fill");
     }
 
-    full() {
-        this.videoContainer.classList.toggle("fullscreen");
+    fullsreen() {
+        this.videoContainer.classList.add("fullscreen");
         this.videoContainer.requestFullscreen();
         let fullscreenBtnIcon = this.fullScreenBtn.querySelector("i");
         fullscreenBtnIcon.classList.add("bi-fullscreen-exit");
         fullscreenBtnIcon.classList.remove("bi-arrows-fullscreen");
     }
 
-    exit() {
-        this.videoContainer.classList.toggle("fullscreen");
+    exitFullscreen() {
+        this.videoContainer.classList.remove("fullscreen");
         document.exitFullscreen()
         let fullscreenBtnIcon = this.fullScreenBtn.querySelector("i");
         fullscreenBtnIcon.classList.add("bi-arrows-fullscreen");
@@ -228,9 +258,9 @@ class VideoPlayer {
 
     toggleFullScreen() {
         if (document.fullscreenElement) {
-            this.exit();
+            this.exitFullscreen();
         } else {
-            this.full();
+            this.fullsreen();
         }
     }
 
@@ -274,7 +304,7 @@ class VideoPlayer {
                 })
             }
         }
-    };
+    }
 
     playbackSpeedClick = (e) => {
         let newSpeed = e.target.dataset.value;
@@ -303,12 +333,16 @@ class VideoPlayer {
     }
 
     convertSecondsToString(givenSeconds) {
-        let dateObj = new Date(parseInt(givenSeconds * 1000));
-        let hours = dateObj.getUTCHours();
-        let minutes = dateObj.getUTCMinutes();
-        let seconds = dateObj.getSeconds();
-        let timeString = hours.toString().padStart(2, '0') + ':' +
-            minutes.toString().padStart(2, '0') + ':' +
+        let date = new Date(parseInt(givenSeconds * 1000));
+        let hours = date.getUTCHours();
+        let minutes = date.getUTCMinutes();
+        let seconds = date.getSeconds();
+        let timeString = "";
+        if (hours > 0) {
+            timeString = hours.toString().padStart(2, '0') + ':';
+        }
+
+        timeString = minutes.toString().padStart(2, '0') + ':' +
             seconds.toString().padStart(2, '0');
 
         return timeString;
@@ -323,10 +357,21 @@ class VideoPlayer {
 
     videoPlay = (e) => {
         this.currentTimeInterval = setInterval(this.updateCurrentTime, 1000, this);
+        let scrollBarTimer = setInterval(this.updateProgressBar, 16, this);
     }
 
     videoPause = (e) => {
         clearInterval(this.currentTimeInterval);
+        clearInterval(this.scrollBarTimer);
+    }
+
+    updateProgressBar(self) {
+        let currentVideoTime = self.videoElement.currentTime;
+        let videoDuration = self.videoElement.duration;
+        let percentageTime = (currentVideoTime / videoDuration) * 100;
+
+        self.progressBar.style.width = percentageTime + "%";
+        self.progressHandle.style.left = percentageTime + "%";
     }
 
 }

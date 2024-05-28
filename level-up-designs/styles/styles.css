@@ -2357,13 +2357,13 @@ p {
                 .scrub-progress {
                     background-color: var(--primary-blue);
                     height: 3px;
-                    width: 40%;
+                    width: 0%;
                 }
 
                 .scrub-circle {
                     position: absolute;
                     top: -3px;
-                    left: 40%;
+                    left: 0%;
                     border-radius: 50%;
                     width: 10px;
                     height: 10px;
@@ -2518,6 +2518,12 @@ p {
             .controls {
                 span {
                     color: #fff;
+                }
+            }
+
+            .scrub-container{
+                .scrub-bar{
+                    background-color: #fff;
                 }
             }
         }
