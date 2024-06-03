@@ -212,7 +212,6 @@ class VideoPlayer {
         this.videoElement.addEventListener("play", this.videoPlay);
         this.videoElement.addEventListener("pause", this.videoPause);
         this.videoElement.addEventListener("click", this.playPause);
-
         document .addEventListener("keydown", this.keyShortcuts);
 
     }
@@ -221,6 +220,10 @@ class VideoPlayer {
         if(e.code == 'Space'){
             e.preventDefault();
             this.playPause(e);
+        }
+        if(e.code == 'KeyF'){
+            e.preventDefault();
+            this.FullExit(e);
         }
     }
 
