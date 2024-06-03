@@ -204,8 +204,6 @@ class VideoPlayer {
 
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
-        this.videoElement.addEventListener("click", this.playPause);
-
         this.fullScreenBtn.addEventListener("click", this.FullExit);
         this.volumeBtn.addEventListener("click", this.MuteUnmute);
         this.settingsBtn.addEventListener("click", this.toggleSettingBtn);
@@ -213,14 +211,24 @@ class VideoPlayer {
         this.playbackSpeedMenu.addEventListener("click", this.clickedSpeed);
         this.videoElement.addEventListener("play", this.videoPlay);
         this.videoElement.addEventListener("pause", this.videoPause);
+        this.videoElement.addEventListener("click", this.playPause);
 
+        document .addEventListener("keydown", this.keyShortcuts);
+
+    }
+
+    keyShortcuts = (e) => {
+        if(e.code == 'Space'){
+            e.preventDefault();
+            this.playPause(e);
+        }
     }
 
     playPause = (e) => {
         if (this.videoElement.paused) {
             this.play();
         } else {
-            this.pause();
+            this.pause(); 
         }
     }
 
