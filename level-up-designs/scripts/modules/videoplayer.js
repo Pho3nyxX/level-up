@@ -221,6 +221,10 @@ class VideoPlayer {
             e.preventDefault();
             this.playPause(e);
         }
+        if(e.code == 'KeyK'){
+            e.preventDefault();
+            this.playPause(e);
+        }
         if(e.code == 'KeyF'){
             e.preventDefault();
             this.FullExit(e);
