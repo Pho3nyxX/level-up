@@ -204,6 +204,8 @@ class VideoPlayer {
 
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
+        this.videoElement.addEventListener("click", this.playPause);
+
         this.fullScreenBtn.addEventListener("click", this.FullExit);
         this.volumeBtn.addEventListener("click", this.MuteUnmute);
         this.settingsBtn.addEventListener("click", this.toggleSettingBtn);
