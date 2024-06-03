@@ -225,6 +225,10 @@ class VideoPlayer {
             e.preventDefault();
             this.FullExit(e);
         }
+        if(e.code == 'KeyM'){
+            e.preventDefault();
+            this.MuteUnmute(e);
+        }
     }
 
     playPause = (e) => {
