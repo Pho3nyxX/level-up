@@ -204,7 +204,7 @@ class VideoPlayer {
 
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
-        this.fullScreenBtn.addEventListener("click", this.FullExit);
+        this.fullScreenBtn.addEventListener("click", this.FullExitScreen);
         this.volumeBtn.addEventListener("click", this.MuteUnmute);
         this.settingsBtn.addEventListener("click", this.toggleSettingBtn);
         this.settingsMenu.addEventListener("click", this.toggleMenuItem);
@@ -212,27 +212,8 @@ class VideoPlayer {
         this.videoElement.addEventListener("play", this.videoPlay);
         this.videoElement.addEventListener("pause", this.videoPause);
         this.videoElement.addEventListener("click", this.playPause);
-        document .addEventListener("keydown", this.keyShortcuts);
+        document .addEventListener("keydown", this.keyboardShortcuts);
 
-    }
-
-    keyShortcuts = (e) => {
-        if(e.code == 'Space'){
-            e.preventDefault();
-            this.playPause(e);
-        }
-        if(e.code == 'KeyK'){
-            e.preventDefault();
-            this.playPause(e);
-        }
-        if(e.code == 'KeyF'){
-            e.preventDefault();
-            this.FullExit(e);
-        }
-        if(e.code == 'KeyM'){
-            e.preventDefault();
-            this.MuteUnmute(e);
-        }
     }
 
     playPause = (e) => {
@@ -273,7 +254,7 @@ class VideoPlayer {
         fullscreenBtnIcon.classList.remove("bi-fullscreen-exit");
     }
 
-    FullExit = (e) => {
+    FullExitScreen = (e) => {
         this.toggleFullScreen();
     }
 
@@ -393,6 +374,33 @@ class VideoPlayer {
 
         self.progressBar.style.width = percentageTime + "%";
         self.progressHandle.style.left = percentageTime + "%";
+    }
+
+    keyboardShortcuts = (e) => {
+        if(e.code == 'Space'){
+            e.preventDefault();
+            this.playPause(e);
+        }
+        if(e.code == 'KeyK'){
+            e.preventDefault();
+            this.playPause(e);
+        }
+        if(e.code == 'KeyF'){
+            e.preventDefault();
+            this.FullExitScreen(e);
+        }
+        if(e.code == 'KeyM'){
+            e.preventDefault();
+            this.MuteUnmute(e);
+        }
+
+
+        if(e.code == 'ArrowRight'){
+            e.preventDefault();
+            this.videoElement.currentTime = this.videoElement.currentTime + 5;
+            this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
+
+        }
     }
 
 }
