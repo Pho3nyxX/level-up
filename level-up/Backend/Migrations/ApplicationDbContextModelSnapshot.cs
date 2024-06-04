@@ -110,6 +110,24 @@ namespace Backend.Data.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("Backend.Models.ApplicationUserLesson", b =>
+                {
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("LessonId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("Watched")
+                        .HasColumnType("bit");
+
+                    b.HasKey("ApplicationUserId", "LessonId");
+
+                    b.HasIndex("LessonId");
+
+                    b.ToTable("ApplicationUserLessons");
+                });
+
             modelBuilder.Entity("Backend.Models.Career", b =>
                 {
                     b.Property<int>("Id")
@@ -194,9 +212,6 @@ namespace Backend.Data.Migrations
                     b.Property<string>("Level")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Progress")
-                        .HasColumnType("int");
 
                     b.Property<string>("ShortDescription")
                         .HasColumnType("nvarchar(100)");
@@ -318,9 +333,6 @@ namespace Backend.Data.Migrations
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Progress")
-                        .HasColumnType("int");
-
                     b.Property<string>("Text")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -331,9 +343,6 @@ namespace Backend.Data.Migrations
 
                     b.Property<string>("Video")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Watched")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -696,6 +705,21 @@ namespace Backend.Data.Migrations
                     b.HasOne("Backend.Models.Course", null)
                         .WithMany()
                         .HasForeignKey("CoursesId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Backend.Models.ApplicationUserLesson", b =>
+                {
+                    b.HasOne("Backend.Data.ApplicationUser", null)
+                        .WithMany()
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Lesson", null)
+                        .WithMany()
+                        .HasForeignKey("LessonId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

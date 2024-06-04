@@ -352,6 +352,7 @@ namespace Backend.Controllers
             {
                 return NotFound();
             }
+            var userId = _userManager.GetUserId(User);
 
             var course = await _context.Courses
                 .Include(c => c.Modules)
@@ -363,10 +364,27 @@ namespace Backend.Controllers
                 .ThenInclude(c => c.Course)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
-            if (course == null)
+            if (course == null || lesson == null)
             {
                 return NotFound();
             }
+
+            var applicationUserLesson = await _context.ApplicationUserLessons
+                .Where(au => au.ApplicationUserId == userId)
+                .Where(au=> au.LessonId == lesson.Id)
+                .FirstOrDefaultAsync();
+
+            if (applicationUserLesson == null)
+            {
+                applicationUserLesson = new ApplicationUserLesson();
+                applicationUserLesson.ApplicationUserId = userId;
+                applicationUserLesson.LessonId = lesson.Id;
+                applicationUserLesson.Watched = false;
+
+                _context.Add(applicationUserLesson);
+                _context.SaveChanges();
+            }
+
             ViewData["Modules"] = course;
             ViewData["courseId"] = course.Id;
 

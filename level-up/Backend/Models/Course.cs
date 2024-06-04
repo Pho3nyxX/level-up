@@ -15,7 +15,7 @@ namespace Backend.Models
         public string? ShortDescription { get; set; }
 
         public int Duration { get; set; }
-        public int? Progress { get; set; }
+        //public int? Progress { get; set; }
 
         public string Level { get; set; }
 

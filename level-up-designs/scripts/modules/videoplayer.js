@@ -429,7 +429,6 @@ class VideoPlayer {
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
-
     }
 
 }

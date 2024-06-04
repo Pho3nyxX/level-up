@@ -16,5 +16,6 @@ namespace Backend.Data
 
         public List<Course> Courses { get; set; } = new List<Course>();
         public List<Review> Reviews { get; set; }
+        public List<Lesson> Lessons { get; set; }
     }
 }

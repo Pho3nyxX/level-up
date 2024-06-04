@@ -21,5 +21,16 @@ namespace Backend.Data
         public DbSet<Backend.Models.Skill> Skills { get; set; }
         public DbSet<Backend.Models.Testimony> Testimonies { get; set; }
         public DbSet<Backend.Models.Review> Reviews { get; set; } //= default!;
+        public DbSet<Backend.Models.ApplicationUserLesson> ApplicationUserLessons { get; set; } 
+        
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            builder.Entity<ApplicationUser>()
+                .HasMany(u => u.Lessons)
+                .WithMany(l => l.ApplicationUsers)
+                .UsingEntity<ApplicationUserLesson>();
+            builder.Entity<ApplicationUserLesson>().HasKey(nameof(ApplicationUserLesson.ApplicationUserId), nameof(ApplicationUserLesson.LessonId));
+        }
     }
 }
