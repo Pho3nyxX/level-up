@@ -405,7 +405,21 @@ class VideoPlayer {
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
+        if(e.code == 'KeyJ'){
+            e.preventDefault();
+            this.videoElement.currentTime = this.videoElement.currentTime + 10;
+            this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
+            this.updateProgressBar(this);
+        }
+
+
         if(e.code == 'Numpad0'){
+            e.preventDefault();
+            this.videoElement.currentTime = 0;
+            this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
+            this.updateProgressBar(this);
+        }
+        if(e.code == 'Digit0'){
             e.preventDefault();
             this.videoElement.currentTime = 0;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
