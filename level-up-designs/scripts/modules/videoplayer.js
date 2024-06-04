@@ -393,13 +393,17 @@ class VideoPlayer {
             e.preventDefault();
             this.MuteUnmute(e);
         }
-
-
         if(e.code == 'ArrowRight'){
             e.preventDefault();
             this.videoElement.currentTime = this.videoElement.currentTime + 5;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
-
+            this.updateProgressBar(this);
+        }
+        if(e.code == 'ArrowLeft'){
+            e.preventDefault();
+            this.videoElement.currentTime = this.videoElement.currentTime - 5;
+            this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
+            this.updateProgressBar(this);
         }
     }
 
