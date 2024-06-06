@@ -16,7 +16,6 @@ class VideoPlayer {
         this.progressBar = ".scrub-progress";
         this.progressHandle = ".scrub-circle";
 
-
         this.videoDurationElement.innerHTML = this.convertSecondsToString(this.videoElement.duration);
 
         this.setUpEvents();
@@ -212,15 +211,39 @@ class VideoPlayer {
         this.videoElement.addEventListener("play", this.videoPlay);
         this.videoElement.addEventListener("pause", this.videoPause);
         this.videoElement.addEventListener("click", this.playPause);
-        document .addEventListener("keydown", this.keyboardShortcuts);
+        document.addEventListener("keydown", this.keyboardShortcuts);
 
+        this.progressHandle.addEventListener("mousedown", this.progressHandleDownMousePress);
+    }
+
+    progressHandleDownMousePress = (e) => {
+        e.preventDefault();
+        document.addEventListener("mousemove", this.scrubVideo);
+        document.addEventListener("mouseup", this.endScrub);
+    }
+
+    scrubVideo = (e) => {
+        e.preventDefault();
+
+        let containerWidth = this.videoContainer.getBoundingClientRect().width;
+        let progressBarWidth = this.progressBar.getBoundingClientRect().width;
+        let progressHandleLeft = this.progressHandle.getBoundingClientRect().width;
+        let movementPercent = (e.movementX / containerWidth) * 100;
+        let progressBarWidthPerCent = (progressBarWidth / containerWidth) * 100;
+        let progressHandleLeftPerCent = (progressHandleLeft / containerWidth) * 100;
+        this.progressBar.style.width = (movementPercent + progressBarWidthPerCent) + "%";
+        this.progressHandle.style.left = (movementPercent + progressHandleLeftPerCent) + "%";
+    }
+
+    endScrub = (e) => {
+        document.removeEventListener("mousemove", this.scrubVideo);
     }
 
     playPause = (e) => {
         if (this.videoElement.paused) {
             this.play();
         } else {
-            this.pause(); 
+            this.pause();
         }
     }
 
@@ -377,53 +400,53 @@ class VideoPlayer {
     }
 
     keyboardShortcuts = (e) => {
-        if(e.code == 'Space'){
+        if (e.code == 'Space') {
             e.preventDefault();
             this.playPause(e);
         }
-        if(e.code == 'KeyK'){
+        if (e.code == 'KeyK') {
             e.preventDefault();
             this.playPause(e);
         }
-        if(e.code == 'KeyF'){
+        if (e.code == 'KeyF') {
             e.preventDefault();
             this.FullExitScreen(e);
         }
-        if(e.code == 'KeyM'){
+        if (e.code == 'KeyM') {
             e.preventDefault();
             this.MuteUnmute(e);
         }
-        if(e.code == 'ArrowRight'){
+        if (e.code == 'ArrowRight') {
             e.preventDefault();
             this.videoElement.currentTime = this.videoElement.currentTime + 5;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
-        if(e.code == 'ArrowLeft'){
+        if (e.code == 'ArrowLeft') {
             e.preventDefault();
             this.videoElement.currentTime = this.videoElement.currentTime - 5;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
-        if(e.code == 'KeyJ'){
+        if (e.code == 'KeyJ') {
             e.preventDefault();
             this.videoElement.currentTime = this.videoElement.currentTime + 10;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
-        if(e.code == 'KeyL'){
+        if (e.code == 'KeyL') {
             e.preventDefault();
             this.videoElement.currentTime = this.videoElement.currentTime - 10;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
-        if(e.code == 'Numpad0'){
+        if (e.code == 'Numpad0') {
             e.preventDefault();
             this.videoElement.currentTime = 0;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
-        if(e.code == 'Digit0'){
+        if (e.code == 'Digit0') {
             e.preventDefault();
             this.videoElement.currentTime = 0;
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
