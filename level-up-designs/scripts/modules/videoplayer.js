@@ -200,7 +200,6 @@ class VideoPlayer {
         }
     }
 
-
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
         this.fullScreenBtn.addEventListener("click", this.FullExitScreen);
@@ -214,29 +213,7 @@ class VideoPlayer {
         document.addEventListener("keydown", this.keyboardShortcuts);
 
         this.progressHandle.addEventListener("mousedown", this.progressHandleDownMousePress);
-    }
-
-    progressHandleDownMousePress = (e) => {
-        e.preventDefault();
-        document.addEventListener("mousemove", this.scrubVideo);
-        document.addEventListener("mouseup", this.endScrub);
-    }
-
-    scrubVideo = (e) => {
-        e.preventDefault();
-
-        let containerWidth = this.videoContainer.getBoundingClientRect().width;
-        let progressBarWidth = this.progressBar.getBoundingClientRect().width;
-        let progressHandleLeft = this.progressHandle.getBoundingClientRect().width;
-        let movementPercent = (e.movementX / containerWidth) * 100;
-        let progressBarWidthPerCent = (progressBarWidth / containerWidth) * 100;
-        let progressHandleLeftPerCent = (progressHandleLeft / containerWidth) * 100;
-        this.progressBar.style.width = (movementPercent + progressBarWidthPerCent) + "%";
-        this.progressHandle.style.left = (movementPercent + progressHandleLeftPerCent) + "%";
-    }
-
-    endScrub = (e) => {
-        document.removeEventListener("mousemove", this.scrubVideo);
+        this.videoElement.addEventListener("seeked", this.seekEventListener);
     }
 
     playPause = (e) => {
@@ -275,10 +252,6 @@ class VideoPlayer {
         let fullscreenBtnIcon = this.fullScreenBtn.querySelector("i");
         fullscreenBtnIcon.classList.add("bi-arrows-fullscreen");
         fullscreenBtnIcon.classList.remove("bi-fullscreen-exit");
-    }
-
-    FullExitScreen = (e) => {
-        this.toggleFullScreen();
     }
 
     toggleFullScreen() {
@@ -373,6 +346,10 @@ class VideoPlayer {
         return timeString;
     }
 
+    seekEventListener = (e) => {
+        this.updateCurrentTime(this);
+    }
+
     updateCurrentTime(self) {
         if (!self) {
             self = this;
@@ -452,6 +429,37 @@ class VideoPlayer {
             this.currentTimeElement.innerHTML = this.convertSecondsToString(this.videoElement.currentTime);
             this.updateProgressBar(this);
         }
+    }
+
+    progressHandleDownMousePress = (e) => {
+        e.preventDefault();
+        document.addEventListener("mousemove", this.scrubVideo);
+        document.addEventListener("mouseup", this.endScrub);
+    }
+
+    scrubVideo = (e) => {
+        e.preventDefault();
+
+        let containerWidth = this.videoContainer.getBoundingClientRect().width;
+        let progressBarWidth = this.progressBar.getBoundingClientRect().width;
+
+        let movementFractional = (e.movementX / containerWidth);
+        let progressBarWidthFractional = (progressBarWidth / containerWidth);
+
+
+        let newVideoTime = this.videoElement.duration * (movementFractional + progressBarWidthFractional);
+
+        let totalPercent = ((movementFractional + progressBarWidthFractional) * 100).toFixed(2);
+        console.log(totalPercent);
+
+        this.progressBar.style.width = totalPercent + "%";
+        this.progressHandle.style.left = totalPercent + "%";
+
+        this.videoElement.currentTime = newVideoTime;
+    }
+
+    endScrub = (e) => {
+        document.removeEventListener("mousemove", this.scrubVideo);
     }
 
 }
