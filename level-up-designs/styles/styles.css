@@ -1579,7 +1579,6 @@ p {
                 }
             }
 
-
             >div:first-child {
                 [type=submit]:first-child {
                     background-color: var(--secondary-blue);
@@ -2332,12 +2331,16 @@ p {
     }
 
     .video-container {
-        background-color: #eee;
-        height: 1148px;
+        background-color: #000;
+        /* height: 1148px; */
+        height: 1060px;
         position: relative;
         overflow: hidden;
+        padding: 0 0;
 
         .video {
+            max-width: 100%;
+            max-height: 100%;
             width: 100%;
         }
 
@@ -2379,7 +2382,7 @@ p {
             left: 0;
             width: 100%;
             padding: 10px;
-            background: #0001;
+            background: #eee1;
 
             .controls {
 
@@ -2399,7 +2402,7 @@ p {
                 }
 
                 span {
-                    color: #000;
+                    color: var(--primary-blue); 
                     line-height: 25px;
                 }
 

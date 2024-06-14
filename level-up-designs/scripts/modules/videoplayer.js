@@ -211,9 +211,12 @@ class VideoPlayer {
         this.videoElement.addEventListener("pause", this.videoPause);
         this.videoElement.addEventListener("click", this.playPause);
         document.addEventListener("keydown", this.keyboardShortcuts);
-
         this.progressHandle.addEventListener("mousedown", this.progressHandleDownMousePress);
         this.videoElement.addEventListener("seeked", this.seekEventListener);
+        this.videoElement.addEventListener("loadedmetadata", this.metaDataLoaded);
+        this.videoElement.addEventListener("videonearend", (e) => {
+            console.log(e);
+        });
     }
 
     playPause = (e) => {
@@ -252,6 +255,10 @@ class VideoPlayer {
         let fullscreenBtnIcon = this.fullScreenBtn.querySelector("i");
         fullscreenBtnIcon.classList.add("bi-arrows-fullscreen");
         fullscreenBtnIcon.classList.remove("bi-fullscreen-exit");
+    }
+
+    FullExitScreen = (e) => {
+        this.toggleFullScreen();
     }
 
     toggleFullScreen() {
@@ -323,6 +330,14 @@ class VideoPlayer {
         }
     }
 
+    checkVideoNearEnd(self) {
+        let event = new Event("videonearend", { bubbles: false, cancelable: false });
+        self.videoElement.dispatchEvent(event);
+
+        clearTimeout(self.videoEndTimer);
+        return true;
+    }
+
     clickedSpeed = (e) => {
         if (e.target.tagName.toLowerCase() == "a") {
             let newSpeed = e.target.dataset.value;
@@ -359,12 +374,19 @@ class VideoPlayer {
 
     videoPlay = (e) => {
         this.currentTimeInterval = setInterval(this.updateCurrentTime, 1000, this);
-        let scrollBarTimer = setInterval(this.updateProgressBar, 16, this);
+        this.progressBarTimer = setInterval(this.updateProgressBar, 16, this);
+        this.setVideoEndTimer();
     }
 
     videoPause = (e) => {
         clearInterval(this.currentTimeInterval);
-        clearInterval(this.scrollBarTimer);
+        clearInterval(this.progressBarTimer);
+        clearTimeout(this.videoEndTimer);
+    }
+
+    setVideoEndTimer() {
+        let timeOut = parseInt((this.videoElement.duration - this.videoElement.currentTime) - 12) * 1000;
+        this.videoEndTimer = setTimeout(this.checkVideoNearEnd, timeOut, this);
     }
 
     updateProgressBar(self) {
@@ -446,7 +468,6 @@ class VideoPlayer {
         let movementFractional = (e.movementX / containerWidth);
         let progressBarWidthFractional = (progressBarWidth / containerWidth);
 
-
         let newVideoTime = this.videoElement.duration * (movementFractional + progressBarWidthFractional);
 
         let totalPercent = ((movementFractional + progressBarWidthFractional) * 100).toFixed(2);
@@ -460,6 +481,15 @@ class VideoPlayer {
 
     endScrub = (e) => {
         document.removeEventListener("mousemove", this.scrubVideo);
+        if (!(this.videoElement.paused || this.videoElement.ended)) {
+            clearTimeout(this.videoEndTimer);
+            this.setVideoEndTimer();
+        }
+    }
+
+    // TODO:: figure this out for delayed loading and video loading before code
+    metaDataLoaded = (e) => {
+        console.log("something");
     }
 
 }
