@@ -15,6 +15,7 @@ class VideoPlayer {
         this.videoDurationElement = ".video-duration";
         this.progressBar = ".scrub-progress";
         this.progressHandle = ".scrub-circle";
+        this.scrubBar = ".scrub-bar";
 
         this.videoDurationElement.innerHTML = this.convertSecondsToString(this.videoElement.duration);
 
@@ -200,6 +201,20 @@ class VideoPlayer {
         }
     }
 
+    get scrubBar() {
+        return this._scrubBar;
+    }
+
+    set scrubBar(selector) {
+        let scrubBarLine = this.videoContainer.querySelector(selector);
+
+        if (scrubBarLine) {
+            this._scrubBar = scrubBarLine;
+        } else {
+            console.error("Cannot load scrub bar");
+        }
+    }
+
     setUpEvents() {
         this.playBtn.addEventListener("click", this.playPause);
         this.fullScreenBtn.addEventListener("click", this.FullExitScreen);
@@ -217,6 +232,7 @@ class VideoPlayer {
         this.videoElement.addEventListener("videonearend", (e) => {
             console.log(e);
         });
+        this.scrubBar.addEventListener("click", this.scrubBarPress);
     }
 
     playPause = (e) => {
@@ -471,7 +487,7 @@ class VideoPlayer {
         let newVideoTime = this.videoElement.duration * (movementFractional + progressBarWidthFractional);
 
         let totalPercent = ((movementFractional + progressBarWidthFractional) * 100).toFixed(2);
-        console.log(totalPercent);
+        // console.log(totalPercent);
 
         this.progressBar.style.width = totalPercent + "%";
         this.progressHandle.style.left = totalPercent + "%";
@@ -490,6 +506,21 @@ class VideoPlayer {
     // TODO:: figure this out for delayed loading and video loading before code
     metaDataLoaded = (e) => {
         console.log("something");
+    }
+
+    scrubBarPress = (e) => {
+        let containerWidth = this.videoContainer.getBoundingClientRect().width;
+
+        let offsetFractional = (e.offsetX / containerWidth);
+
+        let newVideoTime = this.videoElement.duration * offsetFractional;
+
+        let totalPercent = (offsetFractional * 100).toFixed(2);
+
+        this.progressBar.style.width = totalPercent + "%";
+        this.progressHandle.style.left = totalPercent + "%";
+
+        this.videoElement.currentTime = newVideoTime;
     }
 
 }
