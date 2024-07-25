@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240604234302_Initial_Create")]
-    partial class Initial_Create
+    [Migration("20240620212500_Initial Create")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -344,8 +344,11 @@ namespace Backend.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Video")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("VideoPosterUrl")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("VideoUrl")
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

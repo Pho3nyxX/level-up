@@ -68,7 +68,7 @@
             <!-- video  preview -->
             <div class="row">
                 <div class="col video-container" id="videoContainer">
-                    <video class="video" controls="false" src="~/uploads/@Model.Video"></video>
+                    <video class="video" controls="false" src="~/uploads/@Model.VideoUrl"></video>
                     <div class="video-controls justify-content-between">
                         <!-- progress -->
                         <div class="scrub-container">
@@ -80,7 +80,16 @@
 
                         <div class="controls">
                             <button class="play-pause-btn"><i class="bi bi-play-fill"></i></button>
-                            <button class="volumn-btn"><i class="bi bi-volume-up-fill"></i></button>
+                            <button class="volume-btn">
+                                <i class="bi bi-volume-up-fill mute-icon"></i>
+
+                                <div class="volume-scrub-container">
+                                    <div class="volume-scrub-bar">
+                                        <div class="volume-scrub-progress" style="width: 50%;"></div>
+                                        <div class="volume-scrub-circle" style="left: 50%;"></div>
+                                    </div>
+                                </div>
+                            </button>
                             <span>
                                 <span class="video-current-time">00:00</span> /
                                 <span class="video-duration"> 00:00</span>
@@ -152,3 +161,10 @@
         </div>
     </div>
 </div>
+
+
+@section Scripts {
+    <script>
+        
+    </script>
+}

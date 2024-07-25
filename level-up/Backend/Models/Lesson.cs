@@ -1,4 +1,6 @@
 ﻿using Backend.Data;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace Backend.Models
 {
@@ -10,7 +12,14 @@ namespace Backend.Models
         //public bool Watched { get; set; }
         public string Text { get; set; }
         public string? Notes { get; set; }
-        public string? Video { get; set; }
+
+        [Display(Name = "Video Url")]
+        [Column(TypeName = "nvarchar(100)")]
+        public string? VideoUrl { get; set; }
+
+        [Display(Name = "Video Poster Url")]
+        [Column(TypeName = "nvarchar(100)")]
+        public string? VideoPosterUrl { get; set; }
         //public Course Course { get; set; }
         public Module? Module { get; set; }
         public int Duration { get; set; }

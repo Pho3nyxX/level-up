@@ -2332,7 +2332,6 @@ p {
 
     .video-container {
         background-color: #000;
-        /* height: 1148px; */
         height: 1060px;
         position: relative;
         overflow: hidden;
@@ -2386,24 +2385,72 @@ p {
 
             .controls {
 
+                .volume-btn {
+
+                    &:hover {
+
+                        .volume-scrub-container {
+                            width: 81px;
+                        }
+                    }
+
+                    .volume-scrub-container {
+                        position: relative;
+                        height: 10px;
+                        width: 0;
+                        transition: width 0.4s;
+                        overflow: hidden;
+                        /* top: 33px;
+                        left: 108px;
+                        width: 6%;
+                        display: none; */
+
+                        .volume-scrub-bar {
+                            margin: 0;
+                            padding: 0;
+                            background-color: var(--secondary-blue);
+                            width: 100%;
+                            height: 3px;
+
+                            .volume-scrub-progress {
+                                background-color: var(--primary-blue);
+                                height: 3px;
+                                width: 0%;
+                            }
+
+                            .volume-scrub-circle {
+                                position: absolute;
+                                top: -3px;
+                                left: 0%;
+                                border-radius: 50%;
+                                width: 10px;
+                                height: 10px;
+                                background-color: var(--primary-blue);
+                            }
+                        }
+                    }
+                }
+
                 button {
                     border: none;
                     background: transparent;
                     color: var(--primary-blue);
 
-                    &.hover{
-                        
-                    }
+                    &.hover {}
                 }
 
                 i {
                     font-size: 30px;
-                    margin-right: 10px;
+                    /* margin-right: 10px; */
+                    padding-right: 10px;
                 }
 
                 span {
-                    color: var(--primary-blue); 
+                    color: var(--primary-blue);
                     line-height: 25px;
+                    position: relative;
+                    top: -3px;
+                    right: -3px;
                 }
 
                 &.right {
@@ -2426,7 +2473,8 @@ p {
             bottom: 75px;
             right: 15px;
             width: 250px;
-            background-color: #bfbfbf;
+            /* background-color: #bfbfbf; */
+            background-color: #0c0c0c;
             border-radius: 8px;
             padding-top: 5px;
             padding-bottom: 5px;
@@ -2449,6 +2497,7 @@ p {
                 a {
                     display: block;
                     padding: 10px;
+                    color: #fff;
 
                     span:first-child {
                         i {
@@ -2461,7 +2510,9 @@ p {
                     }
 
                     &:hover {
-                        background-color: #93b7c1;
+                        /* background-color: #93b7c1; */
+                        background-color: var(--blue-35);
+                        color: #000;
                     }
                 }
 
@@ -2469,13 +2520,16 @@ p {
 
                     >a {
                         font-size: 18px;
-                        border-bottom: 1px solid #999;
+                        /* border-bottom: 1px solid #999; */
+                        border-bottom: 1px solid #1f1f1f;
+
 
                         i.bi-chevron-left {
                             display: inline;
                         }
 
-                        i.bi-play-circle, i.bi-sliders2,
+                        i.bi-play-circle,
+                        i.bi-sliders2,
                         span:last-child {
                             display: none;
                         }
@@ -2491,8 +2545,10 @@ p {
                     margin-bottom: 0;
                     list-style: none;
                     padding: 0;
-                    background: #ccc;
-                    border-bottom: 1px solid #999;
+                    /* background: #ccc; */
+                    background-color: #0c0c0c;
+                    /* border-bottom: 1px solid #999; */
+                    border-bottom: 1px solid #1f1f1f;
 
                     li {
                         padding-left: 28px;
@@ -2524,8 +2580,8 @@ p {
                 }
             }
 
-            .scrub-container{
-                .scrub-bar{
+            .scrub-container {
+                .scrub-bar {
                     background-color: #fff;
                 }
             }

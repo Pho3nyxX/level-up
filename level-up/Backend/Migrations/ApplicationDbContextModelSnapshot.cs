@@ -341,8 +341,11 @@ namespace Backend.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Video")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("VideoPosterUrl")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("VideoUrl")
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

@@ -314,7 +314,7 @@
                 <!-- video  preview -->
                 <div class="row">
                     <div class="col video-container" id="videoContainer">
-                        <video class="video" controls="false" src="/level-up-designs/video/lesson1.mp4"></video>
+                        <video class="video" controls="false" src="/level-up-designs/video/lesson1.mp4" poster="../images/girl-reading.png"></video>
 
                         <div class="video-controls justify-content-between">
                             <div class="scrub-container">
@@ -326,10 +326,21 @@
 
                             <div class="controls">
                                 <button class="play-pause-btn"><i class="bi bi-play-fill"></i></button>
-                                <button class="volumn-btn"><i class="bi bi-volume-up-fill"></i></button>
+
+                                <button class="volume-btn">
+                                    <i class="bi bi-volume-up-fill mute-icon"></i>
+
+                                    <div class="volume-scrub-container">
+                                        <div class="volume-scrub-bar">
+                                            <div class="volume-scrub-progress" style="width: 50%;"></div>
+                                            <div class="volume-scrub-circle" style="left: 50%;"></div>
+                                        </div>
+                                    </div>
+                                </button>
+
                                 <span>
                                     <span class="video-current-time">00:00</span> /
-                                    <span class="video-duration"> 00:00</span>
+                                    <span class="video-duration">00:00</span>
                                 </span>
                             </div>
 
@@ -356,7 +367,7 @@
                                     <li><a href="#" data-value=2>2</a></li>
                                 </ul>
                             </div>
-                            
+
                             <div class="menu-item">
                                 <a class="menu-item-link" href="#">
                                     <span><i class="bi bi-chevron-left"></i><i class="bi bi-sliders2"></i>Quality</span>

@@ -184,7 +184,7 @@ namespace Backend.Controllers
         }
 
 
-        // GET: Courses/Details/5
+        // GET: Courses/Instructor/5
         public async Task<IActionResult> Instructor(int? id, int page, int pageSize)
         {
             
@@ -277,7 +277,7 @@ namespace Backend.Controllers
         }
 
 
-        // GET: Courses/Review/5
+        // POST: Courses/Review/5
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Review(int id, [Bind("Stars,Comment")] Review review)
@@ -314,7 +314,7 @@ namespace Backend.Controllers
         }
 
 
-        // GET: Courses/Review/5
+        // GET: Courses/CourseReview/5
         public async Task<IActionResult> CourseReview(int? id, string SearchTerm)
         {
             if (id == null)
@@ -389,6 +389,34 @@ namespace Backend.Controllers
             ViewData["courseId"] = course.Id;
 
             return View(lesson);
+        }
+
+        // POST: Courses/MarkLessonAsWatched/5
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> MarkLessonAsWatched(int id)
+        {
+
+            var userId = _userManager.GetUserId(User);
+
+            var applicationUserLesson = await _context.ApplicationUserLessons
+                .Where(au => au.ApplicationUserId == userId)
+                .Where(au => au.LessonId == id)
+                .FirstOrDefaultAsync();
+
+            if (applicationUserLesson != null)
+            {
+                applicationUserLesson.Watched = true;
+
+                //_context.Add(applicationUserLesson);
+                _context.SaveChanges();
+            }
+            var message = new
+            {
+                Status = "success"
+            };
+
+            return Ok(message);
         }
 
 
