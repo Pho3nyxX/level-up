@@ -458,6 +458,7 @@ body.full-page {
         padding: 5px 25px;
         border: 2px solid var(--secondary-blue);
         border-radius: 6px;
+        background-color: #fff;
     }
 
     [type=submit] {

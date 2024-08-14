@@ -314,7 +314,7 @@
                 <!-- video  preview -->
                 <div class="row">
                     <div class="col video-container" id="videoContainer">
-                        <video class="video" controls="false" src="/level-up-designs/video/lesson1.mp4" poster="../images/girl-reading.png"></video>
+                        <video class="video" no-controls src="/level-up-designs/video/lesson1.mp4" poster=""></video>
 
                         <div class="video-controls justify-content-between">
                             <div class="scrub-container">
@@ -390,8 +390,11 @@
                 <!-- buttons -->
                 <div class="row">
                     <div class="col btns mt-4 d-flex justify-content-between">
-                        <a href="#" class="link-2">Previous</a>
-                        <a href="#" class="link">Next</a>
+                        <!-- <a href="#" class="link-2">Previous</a>
+                        <a href="#" class="link">Next</a> -->
+
+                        <button class="link-2">Previous</button>
+                        <button class="link nextBtn">Next</button>
                     </div>
                 </div>
             </div>
@@ -473,6 +476,15 @@
     <script src="../scripts/bootstrap.js"></script>
     <script type="module" src="../scripts/site.js"></script>
 
+    <script>
+        // document.addEventListener("DOMContentLoaded", (event) => {
+        //     const nextBtn = document.querySelector(".nextBtn");
+
+        //     nextBtn.addEventListener("click", markLessonAsComplete());
+
+            
+        // });
+    </script>
 </body>
 
 </html>

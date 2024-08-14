@@ -1,23 +1,44 @@
-import { VideoPlayer } from "./modules/videoplayer.js";
+// import { VideoPlayer } from "./modules/videoplayer.js";
 
-export { VideoPlayer };
+// export { VideoPlayer };
+
 // let vid;
-
-// document.addEventListener("DOMContentLoaded", (event) => {
-
-//     setUpEvents();
-//     vid = new VideoPlayer("videoContainer");
-
-// });
+let scrollToTopBtn;
 
 
-// function setUpEvents() {
-//     // vid.videoElement.addEventListener("videonearend", (e) => {
-//     //     console.log(e);
-//     //     markVideoAsWatched();
-//     // });
-// }
+document.addEventListener("DOMContentLoaded", (event) => {
 
+    setUpEvents();
+    // vid = new VideoPlayer("videoContainer");
+
+});
+
+
+function setUpEvents() {
+    // vid.videoElement.addEventListener("videonearend", (e) => {
+    //     console.log(e);
+    //     markVideoAsWatched();
+    // });
+    scrollToTopBtn = document.querySelector(".scrollToTop");
+
+    document.addEventListener("scroll", toggleScrollBtn);
+    scrollToTopBtn.addEventListener("click", scrollToTop);
+}
+
+
+// show/hide the scroll button
+function toggleScrollBtn(event) {
+    if (window.scrollY > 20) {
+        scrollToTopBtn.classList.remove("hide");
+    } else {
+        scrollToTopBtn.classList.add("hide");
+    }
+}
+
+// scroll back to the top of the page
+function scrollToTop(event) {
+    window.scrollTo(0, 0);
+}
 
 // function markVideoAsWatched() {
 //     fetch('https://localhost:/uploads/lesson1.mp4', {
@@ -38,3 +59,4 @@ export { VideoPlayer };
 //             .catch(error => console.log('Error marking video as watched.'))
 //     })
 // }
+

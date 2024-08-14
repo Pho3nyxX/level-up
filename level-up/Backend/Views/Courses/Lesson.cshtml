@@ -68,7 +68,7 @@
             <!-- video  preview -->
             <div class="row">
                 <div class="col video-container" id="videoContainer">
-                    <video class="video" controls="false" src="~/uploads/@Model.VideoUrl"></video>
+                    <video class="video" no-controls src="~/uploads/@Model.VideoUrl"></video>
                     <div class="video-controls justify-content-between">
                         <!-- progress -->
                         <div class="scrub-container">
@@ -142,8 +142,11 @@
             <!-- buttons -->
             <div class="row">
                 <div class="col btns mt-4 d-flex justify-content-between">
-                    <a href="#" class="link-2">Previous</a>
-                    <a href="#" class="link">Next</a>
+                    <!--    <a href="#" class="link-2">Previous</a>
+                     <a href="#" class="link">Next</a> -->
+
+                    <button class="link-2">Previous</button>
+                    <button class="link nextBtn">Next</button>
                 </div>
             </div>
         </div>

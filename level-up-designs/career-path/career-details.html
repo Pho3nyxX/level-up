@@ -645,9 +645,9 @@
     </footer>
 
     <script src="../scripts/bootstrap.js"></script>
-    <script src="../scripts/site.js"></script>
+    <script type="module" src="../scripts/site.js"></script>
     <script>
-        let scrollToTopBtn;
+        // let scrollToTopBtn;
         let filterLink;
         let categoriesContainer;
         let categoryDropdown;
@@ -670,25 +670,24 @@
 
 
         // show/hide the scroll button
-        function toggleScrollBtn(event) {
-            if (window.scrollY > 20) {
-                scrollToTopBtn.classList.remove("hide");
-            } else {
-                scrollToTopBtn.classList.add("hide");
-            }
-        }
+        // function toggleScrollBtn(event) {
+        //     if (window.scrollY > 20) {
+        //         scrollToTopBtn.classList.remove("hide");
+        //     } else {
+        //         scrollToTopBtn.classList.add("hide");
+        //     }
+        // }
 
-        // scroll back to the top of the page
-        function scrollToTop(event) {
-            window.scrollTo(0, 0);
-        }
+        // // scroll back to the top of the page
+        // function scrollToTop(event) {
+        //     window.scrollTo(0, 0);
+        // }
 
         // show/hide the categories
         function toggleFilterContainer(e) {
             e.preventDefault();
             categoriesContainer.classList.toggle("hide");
         }
-
 
         // show/hide category dropdown
         function toggleCategoryDropdown(e) {
@@ -700,23 +699,20 @@
                 console.log(categoryDiv);
                 categoryDropdown.classList.toggle("show");
             }
-            // categoryDiv.classList.toggle("hide");
-            
+            // categoryDiv.classList.toggle("hide"); 
         }
-        
-        
         
         // loading and event listeners
         function setUpEvents() {
-            scrollToTopBtn = document.querySelector(".scrollToTop");
+            // scrollToTopBtn = document.querySelector(".scrollToTop");
             filterLink = document.querySelector(".filter-menu-toggle a");
             categoriesContainer = document.querySelector(".categories");
             categoryDropdown = document.querySelector(".category-dropdown");
             
             categoryDropdown.addEventListener("click", toggleCategoryDropdown);
             filterLink.addEventListener("click", toggleFilterContainer);
-            document.addEventListener("scroll", toggleScrollBtn);
-            scrollToTopBtn.addEventListener("click", scrollToTop);
+            // document.addEventListener("scroll", toggleScrollBtn);
+            // scrollToTopBtn.addEventListener("click", scrollToTop);
         }
     </script>
 </body>
