@@ -64,6 +64,7 @@ namespace Backend.Controllers
             }
             var courseList = await courses.ToListAsync();
             ViewBag.PageNumber = page;
+            ViewBag.SearchTerm = SearchTerm;
             ViewBag.LastPageNumber = lastPageNumber;
             //courses.Include(c => c.Instructors);
             return View(courseList);

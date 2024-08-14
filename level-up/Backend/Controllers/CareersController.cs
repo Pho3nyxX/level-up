@@ -20,20 +20,50 @@ namespace Backend.Controllers
         }
 
         // GET: Careers
-        public async Task<IActionResult> Index(string SearchTerm)
+        public async Task<IActionResult> Index(string SearchTerm, int page, int pageSize)
         {
             if (_context.Careers == null)
             {
                 return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
             }
-            var careers = from c in _context.Careers select c;
+            if (page < 1)
+            {
+                page = 1;
+            }
+            if (pageSize < 9)
+            {
+                pageSize = 9;
+            }
+
+            var position = (page - 1) * pageSize;
+            var count = await _context.Courses.CountAsync();
+            var lastPageNumber = count % pageSize == 0 ? count / pageSize : count / pageSize + 1;
+            if (page > lastPageNumber)
+            {
+                return RedirectPermanent("~/Careers/");
+            }
+            var careers = from c in _context.Careers
+                     .OrderBy(c => c.Id)
+                     //.Include(c => c.Instructors)
+                     .Skip(position)
+                     .Take(pageSize)
+                      select c;
+
+            //var careers = from c in _context.Careers select c;
             if (!String.IsNullOrEmpty(SearchTerm))
             {
                 careers = careers.Where(c =>
                 (c.PathName!.ToLower().Contains(SearchTerm.ToLower()))
                 || c.ShortDescription!.Contains(SearchTerm));
             }
-            return View(await careers.ToListAsync());
+            var careerList = await careers.ToListAsync();
+            ViewBag.PageNumber = page;
+            ViewBag.SearchTerm = SearchTerm;
+            ViewBag.LastPageNumber = lastPageNumber;
+            //courses.Include(c => c.Instructors);
+            return View(careerList);
+
+            //return View(await careers.ToListAsync());
         }
 
         // GET: Careers/Details/5

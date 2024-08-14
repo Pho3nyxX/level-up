@@ -294,19 +294,30 @@
     </div>
 </div>
 
-<!-- main body -->
-<div class="container main-section">
-    <form asp-controller="Careers" asp-action="Index" method="get">
-        <div class="search">
-            <input type="text" name="SearchTerm" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search by name">
-        </div>
-    </form>
-
+<!-- career filter -->
+<div class="container search-filter-container">
     <div class="row">
+        <div class="title-margin">
+            <h1 class="text-center primary-blue-text">Career</h1>
+        </div>
+        <div class="col-7 filter mb-5">
+            <form asp-controller="Careers" asp-action="Index" method="get">
+                <div class="search">
+                    <input type="search" name="SearchTerm" value="@ViewBag.SearchTerm" class="form-control navbar-search" id="exampleFormControlInput1" placeholder="Search by name">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- courses -->
+<div class="container careers-container">
+
+    <div class="row career">
         @foreach(var item in Model)
         { 
-                <div class="col-sm-12 col-md-4 col-lg-3">
-                    <div class="card mt-5">
+                <div class="col-sm-12 col-md-4 col-lg-3 career-item">
+                    <div class="card">
                         <div class="overlay-container">
                             <a href="">
                                 <img src="../images/software-engineer.jpg" alt="software engineer">
@@ -330,13 +341,10 @@
     </div>
 
     <!-- pagination -->
-    <div class="pagination-container mt-5">
-        <a href="" class="page me-2"><i class="bi bi-chevron-left"></i></a>
-        <a href="" class="page me-2">1</a>
-        <a href="" class="page me-2">2</a>
-        <a href="" class="page me-2">3</a>
-        <a href="" class="page me-2"><i class="bi bi-chevron-right"></i></a>
-    </div>
+    @if (ViewBag.LastPageNumber > 1)
+    {
+        <partial name="_PaginationPartial" />
+    }
 </div>
 
 
