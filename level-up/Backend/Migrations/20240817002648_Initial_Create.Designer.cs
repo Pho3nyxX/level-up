@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240620212500_Initial Create")]
-    partial class InitialCreate
+    [Migration("20240817002648_Initial_Create")]
+    partial class Initial_Create
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -129,6 +129,33 @@ namespace Backend.Data.Migrations
                     b.HasIndex("LessonId");
 
                     b.ToTable("ApplicationUserLessons");
+                });
+
+            modelBuilder.Entity("Backend.Models.Bookmark", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ApplicationUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("DateTime");
+
+                    b.Property<int>("LessonId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("LessonId");
+
+                    b.ToTable("Bookmark");
                 });
 
             modelBuilder.Entity("Backend.Models.Career", b =>
@@ -330,6 +357,9 @@ namespace Backend.Data.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("int");
 
+                    b.Property<int?>("LessonId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("ModuleId")
                         .HasColumnType("int");
 
@@ -351,6 +381,8 @@ namespace Backend.Data.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("LessonId");
 
                     b.HasIndex("ModuleId");
 
@@ -730,8 +762,31 @@ namespace Backend.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Backend.Models.Bookmark", b =>
+                {
+                    b.HasOne("Backend.Data.ApplicationUser", "ApplicationUser")
+                        .WithMany("Bookmarks")
+                        .HasForeignKey("ApplicationUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Backend.Models.Lesson", "Lesson")
+                        .WithMany()
+                        .HasForeignKey("LessonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ApplicationUser");
+
+                    b.Navigation("Lesson");
+                });
+
             modelBuilder.Entity("Backend.Models.Lesson", b =>
                 {
+                    b.HasOne("Backend.Models.Lesson", null)
+                        .WithMany("Lessons")
+                        .HasForeignKey("LessonId");
+
                     b.HasOne("Backend.Models.Module", "Module")
                         .WithMany("Lessons")
                         .HasForeignKey("ModuleId");
@@ -893,6 +948,8 @@ namespace Backend.Data.Migrations
 
             modelBuilder.Entity("Backend.Data.ApplicationUser", b =>
                 {
+                    b.Navigation("Bookmarks");
+
                     b.Navigation("Reviews");
                 });
 
@@ -901,6 +958,11 @@ namespace Backend.Data.Migrations
                     b.Navigation("Modules");
 
                     b.Navigation("Reviews");
+                });
+
+            modelBuilder.Entity("Backend.Models.Lesson", b =>
+                {
+                    b.Navigation("Lessons");
                 });
 
             modelBuilder.Entity("Backend.Models.Module", b =>

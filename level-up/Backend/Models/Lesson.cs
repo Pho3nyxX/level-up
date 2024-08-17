@@ -24,5 +24,6 @@ namespace Backend.Models
         public Module? Module { get; set; }
         public int Duration { get; set; }
         public List<ApplicationUser> ApplicationUsers { get; set; } = new List<ApplicationUser>();
+        public List<Lesson> Lessons { get; set; }
     }
 }

@@ -4,7 +4,7 @@
 
 // let vid;
 let scrollToTopBtn;
-
+let bookmarkIcon, bookmarkLink;
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
@@ -20,9 +20,12 @@ function setUpEvents() {
     //     markVideoAsWatched();
     // });
     scrollToTopBtn = document.querySelector(".scrollToTop");
+    bookmarkLink = document.querySelector(".bookmark");
+    bookmarkIcon = document.querySelector(".bookmark i");
 
     document.addEventListener("scroll", toggleScrollBtn);
-    scrollToTopBtn.addEventListener("click", scrollToTop);
+    // scrollToTopBtn.addEventListener("click", scrollToTop);
+    bookmarkLink.addEventListener("click", toggleBookmark);
 }
 
 
@@ -39,6 +42,30 @@ function toggleScrollBtn(event) {
 function scrollToTop(event) {
     window.scrollTo(0, 0);
 }
+
+
+function toggleBookmark(e) {
+    e.preventDefault();
+    if(bookmarkIcon.classList.contains('bi-bookmark')){
+        addBookmark();
+    }else{
+        removeBookmark();
+    }
+}
+
+function addBookmark(){
+    bookmarkIcon.classList.remove('bi-bookmark');
+    bookmarkIcon.classList.add('bi-bookmark-fill');
+}
+
+function removeBookmark(){
+    bookmarkIcon.classList.remove('bi-bookmark-fill');
+    bookmarkIcon.classList.add('bi-bookmark');
+}
+
+
+
+
 
 // function markVideoAsWatched() {
 //     fetch('https://localhost:/uploads/lesson1.mp4', {

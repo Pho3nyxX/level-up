@@ -421,6 +421,47 @@ namespace Backend.Controllers
         }
 
 
+        // POST: Courses/SaveBookmark/5
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        public async Task<IActionResult> SaveBookmark(int id, int? lessonId)
+        {
+            var userId = _userManager.GetUserId(User);
+
+            var user = await _context.Users
+                .Where(u => u.Id == userId)
+                .FirstOrDefaultAsync();
+
+            DateTime currentTime = DateTime.Now;
+
+            var message = new
+            {
+                Status = "failed"
+            };
+
+            var lesson = await _context.Lessons
+                .Where(l => l.Id == lessonId)
+                .FirstOrDefaultAsync();
+
+            if (lesson != null) { 
+                Bookmark bookmark = new Bookmark();
+
+                bookmark.ApplicationUser = user;
+                bookmark.CreatedAt = currentTime;
+                bookmark.Lesson = lesson;
+
+                _context.Add(bookmark);
+                _context.SaveChanges();
+
+                message = new
+                {
+                    Status = "success"
+                };
+            }
+            return Ok(message);
+        }
+
+
         // GET: Courses/Register/5
         public async Task<IActionResult> Register(int? id)
         {
@@ -493,5 +534,15 @@ namespace Backend.Controllers
         {
             return _context.Courses.Any(e => e.Id == id);
         }
+        
+        
+        //public bool CheckUserRegistration(int userId, int courseId)
+        //{
+        //    var userCourse = _context.User
+        //        .Include(u => u.Courses)
+        //        .Where(u => u.Id == userId)
+        //        .FirstOrDefault();
+        //    if (userId)
+        //}
     }
 }

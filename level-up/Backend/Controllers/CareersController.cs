@@ -24,7 +24,7 @@ namespace Backend.Controllers
         {
             if (_context.Careers == null)
             {
-                return Problem("Entity set 'ApplicationDbContext.Courses'  is null.");
+                return Problem("Entity set 'ApplicationDbContext.Courses' is null.");
             }
             if (page < 1)
             {
@@ -44,12 +44,10 @@ namespace Backend.Controllers
             }
             var careers = from c in _context.Careers
                      .OrderBy(c => c.Id)
-                     //.Include(c => c.Instructors)
                      .Skip(position)
                      .Take(pageSize)
                       select c;
 
-            //var careers = from c in _context.Careers select c;
             if (!String.IsNullOrEmpty(SearchTerm))
             {
                 careers = careers.Where(c =>
@@ -60,10 +58,7 @@ namespace Backend.Controllers
             ViewBag.PageNumber = page;
             ViewBag.SearchTerm = SearchTerm;
             ViewBag.LastPageNumber = lastPageNumber;
-            //courses.Include(c => c.Instructors);
             return View(careerList);
-
-            //return View(await careers.ToListAsync());
         }
 
         // GET: Careers/Details/5
