@@ -9,7 +9,7 @@
     "clean": "rm -rf level-up-designs/dist/*",
     "init": "npm run clean && cp -r level-up-designs/fonts  level-up-designs/dist && cp -r level-up-designs/images level-up-designs/dist && cp -r level-up-designs/*.html level-up-designs/dist",
     "bundle": "npm run init && node ./esbuild.config.js",
-    "build": "npm run bundle -- production",
+    "build": "npm run bundle -- production && cp ./level-up-designs/dist/scripts/lib.js ./level-up/Backend/wwwroot/js/lib.js && cp ./level-up-designs/dist/styles/site.css ./level-up/Backend/wwwroot/css/site.css",
     "start": "npm run bundle -- development"
   },
   "author": "",

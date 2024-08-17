@@ -388,6 +388,7 @@ namespace Backend.Controllers
 
             ViewData["Modules"] = course;
             ViewData["courseId"] = course.Id;
+            ViewData["PageName"] = "Lesson";
 
             return View(lesson);
         }

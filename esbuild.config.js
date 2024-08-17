@@ -24,7 +24,7 @@ const buildCSS = await esbuild.context({
   logLevel: productionMode ? 'error' : 'info',
   minify: productionMode,
   sourcemap: !productionMode && 'linked',
-  outdir: './level-up-designs/dist/styles'
+  outfile: './level-up-designs/dist/styles/site.css'
 
 });
 
@@ -40,7 +40,9 @@ const buildJS = await esbuild.context({
   logLevel: productionMode ? 'error' : 'info',
   minify: productionMode,
   sourcemap: !productionMode && 'linked',
-  outdir: './level-up-designs/dist/scripts'
+  // outdir: './level-up-designs/dist/scripts',
+  outfile: './level-up-designs/dist/scripts/lib.js',
+  // outfile: './level-up/Backend/wwwroot/js/lib.js'
 
 });
 

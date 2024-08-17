@@ -1,7 +1,8 @@
-// import { VideoPlayer } from "./modules/videoplayer.js";
+import { VideoPlayer } from "./modules/videoplayer.js";
 
-// export { VideoPlayer };
+export { VideoPlayer };
 
+/*
 // let vid;
 let scrollToTopBtn;
 let bookmarkIcon, bookmarkLink;
@@ -87,3 +88,4 @@ function removeBookmark(){
 //     })
 // }
 
+*/

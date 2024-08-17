@@ -15,6 +15,7 @@ namespace Backend.Controllers
 
         public IActionResult Index()
         {
+            ViewData["PageName"] = "Home";
             return View();
         }
 

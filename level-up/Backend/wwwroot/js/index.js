@@ -1,31 +1,46 @@
-import { VideoPlayer } from "./modules/videoplayer.js"
+import { VideoPlayer } from "./lib.js"
 let vid;
 let scrollToTopBtn;
 let bookmarkIcon, bookmarkLink;
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    vid = new VideoPlayer("videoContainer");
     setUpEvents();
 
+    let page = getPageName();
+
+    switch (page) {
+        case "Lesson":
+            lessonPage();
+            break;
+
+    }
 });
 
+function getPageName() {
+    return document.body.dataset.pagename;
+}
 
-function setUpEvents() {
-    scrollToTopBtn = document.querySelector(".scrollToTop");
+function lessonPage() {
+    vid = new VideoPlayer("videoContainer");
     bookmarkLink = document.querySelector(".bookmark");
     bookmarkIcon = document.querySelector(".bookmark i");
 
-    document.addEventListener("scroll", toggleScrollBtn);
-    // scrollToTopBtn.addEventListener("click", scrollToTop);
     bookmarkLink.addEventListener("click", toggleBookmark);
 
     vid.videoElement.addEventListener("videonearend", (e) => {
         console.log(e);
         markVideoAsWatched();
     });
+}
 
-    
+function setUpEvents() {
+    scrollToTopBtn = document.querySelector(".scrollToTop");
+
+
+    document.addEventListener("scroll", toggleScrollBtn);
+    // scrollToTopBtn.addEventListener("click", scrollToTop);
+
 }
 
 
@@ -64,7 +79,6 @@ function toggleScrollBtn(event) {
 function scrollToTop(event) {
     window.scrollTo(0, 0);
 }
-
 
 function toggleBookmark(e) {
     e.preventDefault();
