@@ -2,7 +2,7 @@
   "name": "level-up-website",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "A user-friendly platform that provides individuals with tools to gain in-depth knowledge and skills into various career paths.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,7 +12,7 @@
     "build": "npm run bundle -- production && cp ./level-up-designs/dist/scripts/lib.js ./level-up/Backend/wwwroot/js/lib.js && cp ./level-up-designs/dist/styles/site.css ./level-up/Backend/wwwroot/css/site.css",
     "start": "npm run bundle -- development"
   },
-  "author": "",
+  "author": "Abi Matthews-Gordon (https://abimatthewsgordon.dev)",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.3.2",

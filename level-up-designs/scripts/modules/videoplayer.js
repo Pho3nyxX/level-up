@@ -290,12 +290,10 @@ class VideoPlayer {
         this.progressHandle.addEventListener("mousedown", this.progressHandleDownMousePress);
         this.videoElement.addEventListener("seeked", this.seekEventListener);
         this.videoElement.addEventListener("loadedmetadata", this.metaDataLoaded);
-        
+
         this.scrubBar.addEventListener("click", this.scrubBarPress);
 
         this.volumeProgressHandle.addEventListener("mousedown", this.volumeProgressHandleDownMousePress);
-
-     
     }
 
     playPause = (e) => {
@@ -618,6 +616,5 @@ class VideoPlayer {
     endScrubVolume = (e) => {
         document.removeEventListener("mousemove", this.scrubVolume);
     }
-
 }
 export { VideoPlayer };
